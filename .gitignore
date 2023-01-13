@@ -8,3 +8,15 @@ log
 check
 check925
 check923
+
+lst
+
+*.log
+*.bin
+*.txt
+*.pt
+*.npy
+utils/__pycache__
+
+__pycache__
+.vscode

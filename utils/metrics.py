@@ -49,15 +49,15 @@ def compute_error_word(predictionBatch, targetBatch, predictionLenBatch, targetL
         pred = preds[n].numpy()[:-1]
         trgt = trgts[n].numpy()[:-1]
 
-        predWords = np.split(pred, np.where(pred == spaceIx)[0])
+        predWords = np.split(pred, np.where(pred == spaceIx)[0])  #按空格分成好几组
         predWords = [predWords[0].tostring()] + [predWords[i][1:].tostring() for i in range(1, len(predWords)) if len(predWords[i][1:]) != 0]
 
         trgtWords = np.split(trgt, np.where(trgt == spaceIx)[0])
         trgtWords = [trgtWords[0].tostring()] + [trgtWords[i][1:].tostring() for i in range(1, len(trgtWords))]
 
-        numEdits = editdistance.eval(predWords, trgtWords)
+        numEdits = editdistance.eval(predWords, trgtWords)  #所有组
         totalEdits = totalEdits + numEdits
-        totalWords = totalWords + len(trgtWords)
+        totalWords = totalWords + len(trgtWords)  #6 一组一个词
 
     return totalEdits, totalWords
 

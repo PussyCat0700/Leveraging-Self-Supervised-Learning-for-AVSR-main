@@ -134,7 +134,7 @@ class TransposeLayer(nn.Module):
 def generate_square_subsequent_mask(sz: int, device):
     r"""Generate a square mask for the sequence. The masked positions are filled with float('-inf').
         Unmasked positions are filled with float(0.0).
-    """
+    """    # 三角矩阵 为了infer的时候的decode
     mask = (torch.triu(torch.ones((sz, sz), device=device)) == 1).transpose(0, 1)
     mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
     return mask

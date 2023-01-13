@@ -14,8 +14,8 @@ class SmoothCTCLoss(_Loss):
         self.kldiv = nn.KLDivLoss(reduction='batchmean')  #KL-divergence
 
     def forward(self, log_probs, targets, input_lengths, target_lengths):
-        ctc_loss = self.ctc(log_probs, targets, input_lengths, target_lengths)
-
+        ctc_loss = self.ctc(log_probs, targets, input_lengths, target_lengths)  #log_probs(155,64,40)  input_lengths:(64,) tensor([ 80,  80,  88, 151,  80,  80,  80, 108, ...) 加在一起是6099  这里最大长度是155
+        #targets(3384,)  target_lengths:(64,)   tensor([ 12,  58,  65,  87,  15,  35,  20,  80,  30,  52,  说明input和target长度不一致
         kl_inp = log_probs.transpose(0, 1)  #(8,152,40)
         kl_tar = torch.full_like(kl_inp, 1. / self.num_classes) # (8,152,40)
         kldiv_loss = self.kldiv(kl_inp, kl_tar) # 12,2485
@@ -38,7 +38,7 @@ class SmoothCrossEntropyLoss(nn.Module):
         self.reduction = reduction
 
     def forward(self, preds, target):
-        n = preds.size()[-1]
+        n = preds.size()[-1]   #preds (64,140,40) target(64,140)
         log_preds = F.log_softmax(preds.reshape(-1, n), dim=-1) #(736,40)
         loss = reduce_loss(-log_preds.sum(dim=-1), self.reduction)
         nll = F.nll_loss(log_preds, target.long().reshape(-1), ignore_index=0, reduction=self.reduction)

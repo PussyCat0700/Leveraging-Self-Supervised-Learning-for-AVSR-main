@@ -14,7 +14,7 @@ def prepare_main_input(index, modal, h5, targetFile, charToIx, transform, noise,
     #print(index)
 
     with open(targetFile, "r") as f:
-        trgt = f.readline().strip()[7:]  #'SO WE NEED YOU TO HELP US IN OUR REVIVAL CAMPAIGN'
+        trgt = f.readline().strip()[7:]  #'SO WE NEED YOU TO HELP US IN OUR REVIVAL CAMPAIGN'  'YOU ARE A HEALER IN A STONE AGE VILLAGE'
 
         coun = trgt.count("{")
         for i in range(coun):

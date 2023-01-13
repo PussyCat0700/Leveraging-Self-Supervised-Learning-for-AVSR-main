@@ -32,9 +32,9 @@ args["MOCO_FILE"] = "pretrain_model/moco_v2_200ep_pretrain.pth"
 args["GPU_IDS"] = [1] #[ 0,1,2,3]
 #args["GPU_IDS"] = [0,1,2,3,4,5,6,7] #[ 0,1,2,3]
 args["GPU_ID"] = [0]
-args["NUM_WORKERS"] = 2  # 4*GPU？
+args["NUM_WORKERS"] = 4  # 4*GPU？
 args["NUM_CPU_CORE"] = 2
-args["BATCH_SIZE"] = 1  # 8？    一张卡：8，12  3张卡：12 12 （gpu挺满的） 但是很慢 准备试试 8，12    AV四卡12 13，14min左右
+args["BATCH_SIZE"] = 16  # 8？    一张卡：8，12  3张卡：12 12 （gpu挺满的） 但是很慢 准备试试 8，12    AV四卡12 13，14min左右
 args["STEP_SIZE"] = 16384
 args["INIT_LR"] = 1e-5
 
@@ -72,7 +72,7 @@ args["BETA"] = 0.6   # 参考那个end 论文
 args["BEAM_WIDTH"] = 5
 args["TEST_WITH_NOISE"] = False #True
 args["TEST_NOISE_SNR_DB"] = 10
-args["DECODE_TYPE"] = "FAIRSEQ_LM"  # HYBRID ATTN TFATTN CTC HYBRID_LM FAIRSEQ_LM
+args["DECODE_TYPE"] = "HYBRID_LM"  # HYBRID ATTN TFATTN CTC HYBRID_LM
 
 #args["EVAL_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/checkpoints/models/train-step_0108-wer_0.058.ckpt"
 #args["EVAL_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check925/train-step_0081-wer_0.058.ckpt"
@@ -85,10 +85,6 @@ args["DECODE_TYPE"] = "FAIRSEQ_LM"  # HYBRID ATTN TFATTN CTC HYBRID_LM FAIRSEQ_L
 #args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0101-wer_0.057.ckpt"
 args["EVAL_LRS2_MODEL_FILE"] =  "check/train-step_0604-wer_0.054.ckpt"
 #train-step_0123-wer_0.062.ckpt"
-
-
-#args["decoding"] = {'_name': None, 'nbest': 1, 'unitlm': False, 'lmpath': '4-gram.bin', 'lexicon': 'librispeech_lexicon.lst', 'beam': 1500, 'beamthreshold': 100.0, 'beamsizetoken': None, 'wordscore': -1.0, 'unkweight': -inf, 'silweight': 0.0, 'lmweight': 2.0, 'type': 'kenlm', 'unique_wer_file': True, 'results_path': None}
-
 
 """ 
     =====Default Parameters=====
@@ -141,11 +137,6 @@ args["INDEX_TO_CHAR"] = {1: " ", 22: "'", 30: "1", 29: "0", 37: "3", 32: "2", 34
                          20: "B", 2: "E", 12: "D", 16: "G", 19: "F", 6: "I", 9: "H", 24: "K", 25: "J", 18: "M", 11: "L", 4: "O", 7: "N", 27: "Q",
                          21: "P", 8: "S", 10: "R", 13: "U", 3: "T", 15: "W", 23: "V", 14: "Y", 26: "X", 28: "Z", 39: "<EOS>"}
 
-#0是nuo，1是空格
-#{'<s>': 0, '<pad>': 40, '</s>': 39, '<unk>': 41, '|': 1, 'E': 2, 'T': 3, 'O': 4, 'A': 5, 'I': 6, 'N': 7, 'S': 8, 'H': 9, 'R': 10, ...}
-
-#fairseq {'<s>': 0, '<pad>': 1, '</s>': 2, '<unk>': 3, '|': 4, 'E': 5, 'T': 6, 'A': 7, 'O': 8, 'N': 9, 'I': 10, 'H': 11, 'S': 12, 'R': 13, 'D': 14, 'L': 15, 'U': 16, 'M': 17, 'W': 18, 'C': 19, 'F': 20, 'G': 21, 'Y': 22, 'P': 23, 'B': 24, 'V': 25, 'K': 26, "'": 27, 'X': 28, 'J': 29, 'Q': 30, 'Z': 31} 32个
-# <s>也是nuo ｜ 是空格
 
 args["WORD_TO_INDEX"] = {'UNION': 0, 'BECOME': 1, 'COMPANIES': 2, 'NUMBERS': 3, 'CHILDREN': 4, 'TEMPERATURES': 5, 'BUILD': 6, 'ANOTHER': 7,
                          'ECONOMY': 8, 'PARTIES': 9, 'FUTURE': 10, 'SERIOUS': 11, 'SIMPLY': 12, 'FOREIGN': 13, 'SINGLE': 14, 'SEEMS': 15,
@@ -212,8 +203,6 @@ args["WORD_TO_INDEX"] = {'UNION': 0, 'BECOME': 1, 'COMPANIES': 2, 'NUMBERS': 3, 
                          'BLACK': 479, 'LEADERSHIP': 480, 'TIMES': 481, 'UNITED': 482, 'WORST': 483, 'LOOKING': 484, 'THINGS': 485, 'ALMOST': 486,
                          'SPENT': 487, 'HUMAN': 488, 'SERVICES': 489, 'KILLED': 490, 'DIFFERENCE': 491, 'DEGREES': 492, 'AGREEMENT': 493,
                          'TRADE': 494, 'AROUND': 495, 'KNOWN': 496, 'NUMBER': 497, 'PLACES': 498, 'AREAS': 499}
-
-
 
 if __name__ == "__main__":
 

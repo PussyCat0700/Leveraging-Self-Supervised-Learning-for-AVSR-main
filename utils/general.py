@@ -4,7 +4,7 @@ import torch
 from tqdm import tqdm
 
 from config import args
-from .decoders import ctc_greedy_decode, teacher_forcing_attention_decode
+from .decoders import ctc_greedy_decode, teacher_forcing_attention_decode, flash_infer
 from .metrics import compute_error_ch, compute_error_word
 
 
@@ -29,7 +29,7 @@ def inference(model, evalLoader, device, logger, inferenceParams):
     evalWCount = 0
     evalPCount = 0
 
-    Lambda = inferenceParams["Lambda"]
+    Lambda = inferenceParams["Lambda"]  #args["LAMBDA"] 0.1
     if os.path.exists(args["CODE_DIRECTORY"] + "pred_%s.txt" % inferenceParams["decodeType"]):
         os.remove(args["CODE_DIRECTORY"] + "pred_%s.txt" % inferenceParams["decodeType"])
     if os.path.exists(args["CODE_DIRECTORY"] + "trgt.txt"):
@@ -37,25 +37,34 @@ def inference(model, evalLoader, device, logger, inferenceParams):
 
     model.eval()
     for batch, (inputBatch, targetinBatch, targetoutBatch, targetLenBatch) in enumerate(tqdm(evalLoader, leave=False, desc="Eval", ncols=75)):
-        if inferenceParams['modal'] == "AO":
+        if inferenceParams['modal'] == "AO":   #inputBatch ( (1,33792) audio, (1,33792) 全false mask , None, None )
             inputBatch = (inputBatch[0].float().to(device), inputBatch[1].to(device), None, None)
         elif inferenceParams['modal'] == "VO":
             inputBatch = (None, None, inputBatch[2].float().to(device), inputBatch[3].to(device))
         else:
             inputBatch = \
                 (inputBatch[0].float().to(device), inputBatch[1].to(device), inputBatch[2].float().to(device), inputBatch[3].to(device))
-        targetinBatch = targetinBatch.int().to(device)
-        targetoutBatch = targetoutBatch.int().to(device)
-        targetLenBatch = targetLenBatch.int().to(device)
-        targetMask = torch.zeros((targetLenBatch.shape[0], targetLenBatch.max()), device=targetLenBatch.device)
-        targetMask[(torch.arange(targetMask.shape[0]), targetLenBatch.long() - 1)] = 1
-        targetMask = (1 - targetMask.flip([-1]).cumsum(-1).flip([-1])).bool()
+        targetinBatch = targetinBatch.int().to(device)  #(1,44)   ([39,.....])
+        targetoutBatch = targetoutBatch.int().to(device)  #(1,44)   ([.....,39])
+        targetLenBatch = targetLenBatch.int().to(device)  #[44]
+        targetMask = torch.zeros((targetLenBatch.shape[0], targetLenBatch.max()), device=targetLenBatch.device) #(1,44) 全0
+        targetMask[(torch.arange(targetMask.shape[0]), targetLenBatch.long() - 1)] = 1   #最后一项设为1
+        targetMask = (1 - targetMask.flip([-1]).cumsum(-1).flip([-1])).bool()  #全false？
         concatTargetoutBatch = targetoutBatch[~targetMask]
 
         with torch.no_grad():
             if inferenceParams["decodeType"] == "HYBRID":
+                print("HYBRID")
                 predictionBatch, predictionLenBatch = \
                     model.inference(inputBatch, False, device, Lambda, inferenceParams["beamWidth"], inferenceParams["eosIx"], 0)
+            elif inferenceParams["decodeType"] == "HYBRID_LM":
+                predictionBatch, predictionLenBatch = \
+                    model.my_inference(inputBatch, False, device, Lambda, inferenceParams["beamWidth"], inferenceParams["eosIx"], 0, inferenceParams["beta"])
+            elif inferenceParams["decodeType"] == "FAIRSEQ_LM":
+                print("FAIRSEQ_LM")
+                inputLenBatch, outputBatch = model(inputBatch, targetinBatch, targetLenBatch.long(), False)    
+                predictionBatch, predictionLenBatch,hyp_words  = flash_infer(outputBatch[0], inputLenBatch, inferenceParams["eosIx"])   
+            
             elif inferenceParams["decodeType"] == "ATTN":
                 predictionBatch, predictionLenBatch = \
                     model.attentionAutoregression(inputBatch, False, device, inferenceParams["eosIx"])
@@ -63,20 +72,29 @@ def inference(model, evalLoader, device, logger, inferenceParams):
                 inputLenBatch, outputBatch = model(inputBatch, targetinBatch, targetLenBatch.long(), False)
                 predictionBatch, predictionLenBatch = teacher_forcing_attention_decode(outputBatch[1], inferenceParams["eosIx"])
             elif inferenceParams["decodeType"] == "CTC":
+                #print("CTC")
                 inputLenBatch, outputBatch = model(inputBatch, targetinBatch, targetLenBatch.long(), False)
                 predictionBatch, predictionLenBatch = ctc_greedy_decode(outputBatch[0], inputLenBatch, inferenceParams["eosIx"])
             else:
                 predictionBatch, predictionLenBatch = None, None
 
-            predictionStr = index_to_string(predictionBatch).replace('<EOS>', '\n')
+            predictionStr = index_to_string(predictionBatch).replace('<EOS>', '\n')  #predictionBatch ([2463])
+            #predictionStr = hyp_words  
+            print(predictionStr)
+            # predictionStr=predictionBatch
+            # predictionLenBatch=len    后面算WER CER 是拿idx算的 中间就算多几个空格也无所谓
+
             targetStr = index_to_string(concatTargetoutBatch).replace('<EOS>', '\n')
+            print(targetStr)
+
 
             with open("pred_%s.txt" % inferenceParams["decodeType"], "a") as f:
                 f.write(predictionStr)
 
             with open("trgt.txt", "a") as f:
                 f.write(targetStr)
-
+                
+            
             c_edits, c_count = compute_error_ch(predictionBatch, concatTargetoutBatch, predictionLenBatch, targetLenBatch)
             evalCER += c_edits
             evalCCount += c_count

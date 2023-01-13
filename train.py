@@ -522,8 +522,8 @@ def main():
 
     writer = pl_loggers.TensorBoardLogger(save_dir=args["CODE_DIRECTORY"], name='log', default_hp_metric=False)
     # removing the checkpoints directory if it exists and remaking it
-    if os.path.exists(args["CODE_DIRECTORY"] + "checkpoints"):
-        shutil.rmtree(args["CODE_DIRECTORY"] + "checkpoints")
+    # if os.path.exists(args["CODE_DIRECTORY"] + "checkpoints"):
+    #     shutil.rmtree(args["CODE_DIRECTORY"] + "checkpoints")
 
     checkpoint_callback = ModelCheckpoint(
         dirpath=args["CODE_DIRECTORY"] + "checkpoints/models",   #好像每个epoch都会存一个
@@ -561,8 +561,8 @@ def main():
 
     )
 
-    #trainer.fit(model, LRS2Dataloader)
-    trainer.fit(model, LRS2Dataloader,ckpt_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0127-wer_0.069.ckpt")
+    trainer.fit(model, LRS2Dataloader)
+    #trainer.fit(model, LRS2Dataloader,ckpt_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0127-wer_0.069.ckpt")
 
     #trainer.fit(model, LRS2Dataloader,ckpt_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0010-wer_0.728.ckpt")
     #trainer.fit(model, LRS2Dataloader,ckpt_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0269-wer_0.848.ckpt")

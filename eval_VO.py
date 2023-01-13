@@ -1,5 +1,5 @@
 import logging
-import argparse
+
 import numpy as np
 import torch
 from torch.utils.data import DataLoader
@@ -14,22 +14,14 @@ from utils.general import inference
 def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', filename='info.log', filemode='w')
     logger = logging.getLogger(__name__)
-    
-    # other config
-    parser = argparse.ArgumentParser(description='Evaluation')
-    parser.add_argument('--nbest',type=int,default=1,help="Number of decodings to return")
-    parser.add_argument('--unitlm',type=bool,default=False,help="If set, use unit language model")
-    parser.add_argument('--unitlm',type=bool,default=False,help="If set, use unit language model")
-
-    args = parser.parse_args()
-    print(args.accumulate(args.integers))
-
     # set seed
     np.random.seed(args["SEED"])
     torch.manual_seed(args["SEED"])
     # check device
     torch.set_num_threads(args["NUM_CPU_CORE"])
-    torch.cuda.set_device(0)
+    #torch.cuda.set_device(args["GPU_ID"])
+    # torch.cuda.set_device('cuda:0,1,2,3')
+    torch.cuda.set_device(7)
     gpuAvailable = torch.cuda.is_available()
     device = torch.device("cuda" if gpuAvailable else "cpu")
     kwargs = {"num_workers": args["NUM_WORKERS"], "pin_memory": True} if gpuAvailable else {}
