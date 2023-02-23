@@ -1,0 +1,888 @@
+2023-02-02 14:44:33,477 - __main__ - INFO - Namespace(batch_size=48, beam=500, beamsizetoken=None, beamthreshold=25.0, beta=0.1, decode_type='HYBRID_ORACLE', eval_lrs3_model_file='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt', lexicon='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_VO_result/hybird_oracle_48.txt', modal='VO', nbest=1, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=1)
+2023-02-02 14:44:33,478 - __main__ - INFO - 
+Trained Model File: /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt
+2023-02-02 14:44:33,478 - __main__ - INFO - no noise
+2023-02-02 14:44:37,093 - __main__ - INFO - _IncompatibleKeys(missing_keys=['lstm_lm._float_tensor', 'lstm_lm.models.0.decoder.embed_tokens.weight', 'lstm_lm.models.0.decoder.layers.0.weight_ih', 'lstm_lm.models.0.decoder.layers.0.weight_hh', 'lstm_lm.models.0.decoder.layers.0.bias_ih', 'lstm_lm.models.0.decoder.layers.0.bias_hh'], unexpected_keys=[])
+2023-02-02 14:44:37,188 - __main__ - INFO - 
+Testing the trained model .... 
+
+2023-02-02 14:46:12,354 - __main__ - INFO - oracle index:2
+2023-02-02 14:46:12,438 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:12,455 - __main__ - INFO - oracle index:3
+2023-02-02 14:46:12,481 - __main__ - INFO - oracle index:3
+2023-02-02 14:46:12,523 - __main__ - INFO - oracle index:5
+2023-02-02 14:46:12,572 - __main__ - INFO - oracle index:2
+2023-02-02 14:46:12,584 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:12,620 - __main__ - INFO - oracle index:36
+2023-02-02 14:46:12,654 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:12,696 - __main__ - INFO - oracle index:4
+2023-02-02 14:46:12,708 - __main__ - INFO - oracle index:13
+2023-02-02 14:46:12,721 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:12,758 - __main__ - INFO - oracle index:4
+2023-02-02 14:46:12,786 - __main__ - INFO - oracle index:2
+2023-02-02 14:46:12,799 - __main__ - INFO - oracle index:2
+2023-02-02 14:46:12,815 - __main__ - INFO - oracle index:3
+2023-02-02 14:46:12,870 - __main__ - INFO - oracle index:13
+2023-02-02 14:46:12,894 - __main__ - INFO - oracle index:35
+2023-02-02 14:46:12,923 - __main__ - INFO - oracle index:3
+2023-02-02 14:46:12,949 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:12,962 - __main__ - INFO - oracle index:10
+2023-02-02 14:46:12,974 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:13,013 - __main__ - INFO - oracle index:7
+2023-02-02 14:46:13,042 - __main__ - INFO - oracle index:1
+2023-02-02 14:46:13,048 - __main__ - INFO - 
+
+2023-02-02 14:46:13,048 - __main__ - INFO - evalWER:127,evalCCount:484
+2023-02-02 14:46:13,048 - __main__ - INFO - batch48 || Test CER: 0.20582 || Test WER: 0.26240
+2023-02-02 14:47:41,152 - __main__ - INFO - oracle index:77
+2023-02-02 14:47:41,173 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,186 - __main__ - INFO - oracle index:4
+2023-02-02 14:47:41,198 - __main__ - INFO - oracle index:2
+2023-02-02 14:47:41,211 - __main__ - INFO - oracle index:4
+2023-02-02 14:47:41,235 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,314 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,327 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,346 - __main__ - INFO - oracle index:7
+2023-02-02 14:47:41,357 - __main__ - INFO - oracle index:3
+2023-02-02 14:47:41,370 - __main__ - INFO - oracle index:4
+2023-02-02 14:47:41,386 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,411 - __main__ - INFO - oracle index:3
+2023-02-02 14:47:41,423 - __main__ - INFO - oracle index:7
+2023-02-02 14:47:41,459 - __main__ - INFO - oracle index:7
+2023-02-02 14:47:41,474 - __main__ - INFO - oracle index:4
+2023-02-02 14:47:41,533 - __main__ - INFO - oracle index:3
+2023-02-02 14:47:41,547 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,562 - __main__ - INFO - oracle index:8
+2023-02-02 14:47:41,612 - __main__ - INFO - oracle index:2
+2023-02-02 14:47:41,641 - __main__ - INFO - oracle index:15
+2023-02-02 14:47:41,655 - __main__ - INFO - oracle index:2
+2023-02-02 14:47:41,669 - __main__ - INFO - oracle index:2
+2023-02-02 14:47:41,682 - __main__ - INFO - oracle index:9
+2023-02-02 14:47:41,695 - __main__ - INFO - oracle index:8
+2023-02-02 14:47:41,734 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,749 - __main__ - INFO - oracle index:1
+2023-02-02 14:47:41,767 - __main__ - INFO - oracle index:2
+2023-02-02 14:47:41,780 - __main__ - INFO - oracle index:16
+2023-02-02 14:47:41,794 - __main__ - INFO - oracle index:32
+2023-02-02 14:47:41,807 - __main__ - INFO - oracle index:13
+2023-02-02 14:47:41,832 - __main__ - INFO - oracle index:26
+2023-02-02 14:47:41,838 - __main__ - INFO - 
+
+2023-02-02 14:47:41,838 - __main__ - INFO - evalWER:235,evalCCount:834
+2023-02-02 14:47:41,838 - __main__ - INFO - batch48 || Test CER: 0.21245 || Test WER: 0.28177
+2023-02-02 14:49:04,457 - __main__ - INFO - oracle index:5
+2023-02-02 14:49:04,485 - __main__ - INFO - oracle index:4
+2023-02-02 14:49:04,498 - __main__ - INFO - oracle index:3
+2023-02-02 14:49:04,513 - __main__ - INFO - oracle index:22
+2023-02-02 14:49:04,560 - __main__ - INFO - oracle index:1
+2023-02-02 14:49:04,574 - __main__ - INFO - oracle index:1
+2023-02-02 14:49:04,592 - __main__ - INFO - oracle index:90
+2023-02-02 14:49:04,604 - __main__ - INFO - oracle index:59
+2023-02-02 14:49:04,616 - __main__ - INFO - oracle index:6
+2023-02-02 14:49:04,639 - __main__ - INFO - oracle index:4
+2023-02-02 14:49:04,652 - __main__ - INFO - oracle index:85
+2023-02-02 14:49:04,665 - __main__ - INFO - oracle index:6
+2023-02-02 14:49:04,737 - __main__ - INFO - oracle index:5
+2023-02-02 14:49:04,754 - __main__ - INFO - oracle index:1
+2023-02-02 14:49:04,783 - __main__ - INFO - oracle index:38
+2023-02-02 14:49:04,796 - __main__ - INFO - oracle index:7
+2023-02-02 14:49:04,812 - __main__ - INFO - oracle index:5
+2023-02-02 14:49:04,825 - __main__ - INFO - oracle index:18
+2023-02-02 14:49:04,847 - __main__ - INFO - oracle index:32
+2023-02-02 14:49:04,858 - __main__ - INFO - oracle index:2
+2023-02-02 14:49:04,886 - __main__ - INFO - oracle index:2
+2023-02-02 14:49:04,899 - __main__ - INFO - oracle index:57
+2023-02-02 14:49:04,930 - __main__ - INFO - oracle index:16
+2023-02-02 14:49:04,955 - __main__ - INFO - oracle index:42
+2023-02-02 14:49:04,969 - __main__ - INFO - oracle index:15
+2023-02-02 14:49:05,016 - __main__ - INFO - oracle index:7
+2023-02-02 14:49:05,029 - __main__ - INFO - oracle index:33
+2023-02-02 14:49:05,067 - __main__ - INFO - oracle index:6
+2023-02-02 14:49:05,081 - __main__ - INFO - oracle index:1
+2023-02-02 14:49:05,098 - __main__ - INFO - oracle index:3
+2023-02-02 14:49:05,126 - __main__ - INFO - oracle index:1
+2023-02-02 14:49:05,143 - __main__ - INFO - oracle index:6
+2023-02-02 14:49:05,163 - __main__ - INFO - 
+
+2023-02-02 14:49:05,163 - __main__ - INFO - evalWER:377,evalCCount:1188
+2023-02-02 14:49:05,163 - __main__ - INFO - batch48 || Test CER: 0.24358 || Test WER: 0.31734
+2023-02-02 14:50:30,976 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,014 - __main__ - INFO - oracle index:8
+2023-02-02 14:50:31,030 - __main__ - INFO - oracle index:32
+2023-02-02 14:50:31,042 - __main__ - INFO - oracle index:9
+2023-02-02 14:50:31,055 - __main__ - INFO - oracle index:4
+2023-02-02 14:50:31,068 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,110 - __main__ - INFO - oracle index:2
+2023-02-02 14:50:31,121 - __main__ - INFO - oracle index:3
+2023-02-02 14:50:31,132 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,144 - __main__ - INFO - oracle index:10
+2023-02-02 14:50:31,170 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,182 - __main__ - INFO - oracle index:2
+2023-02-02 14:50:31,210 - __main__ - INFO - oracle index:6
+2023-02-02 14:50:31,227 - __main__ - INFO - oracle index:9
+2023-02-02 14:50:31,255 - __main__ - INFO - oracle index:10
+2023-02-02 14:50:31,268 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,280 - __main__ - INFO - oracle index:6
+2023-02-02 14:50:31,323 - __main__ - INFO - oracle index:4
+2023-02-02 14:50:31,335 - __main__ - INFO - oracle index:5
+2023-02-02 14:50:31,361 - __main__ - INFO - oracle index:53
+2023-02-02 14:50:31,401 - __main__ - INFO - oracle index:24
+2023-02-02 14:50:31,414 - __main__ - INFO - oracle index:3
+2023-02-02 14:50:31,438 - __main__ - INFO - oracle index:5
+2023-02-02 14:50:31,453 - __main__ - INFO - oracle index:3
+2023-02-02 14:50:31,482 - __main__ - INFO - oracle index:4
+2023-02-02 14:50:31,493 - __main__ - INFO - oracle index:17
+2023-02-02 14:50:31,509 - __main__ - INFO - oracle index:5
+2023-02-02 14:50:31,537 - __main__ - INFO - oracle index:29
+2023-02-02 14:50:31,550 - __main__ - INFO - oracle index:8
+2023-02-02 14:50:31,566 - __main__ - INFO - oracle index:15
+2023-02-02 14:50:31,578 - __main__ - INFO - oracle index:4
+2023-02-02 14:50:31,597 - __main__ - INFO - oracle index:1
+2023-02-02 14:50:31,616 - __main__ - INFO - oracle index:10
+2023-02-02 14:50:31,622 - __main__ - INFO - 
+
+2023-02-02 14:50:31,622 - __main__ - INFO - evalWER:509,evalCCount:1518
+2023-02-02 14:50:31,622 - __main__ - INFO - batch48 || Test CER: 0.25984 || Test WER: 0.33531
+2023-02-02 14:52:01,300 - __main__ - INFO - oracle index:6
+2023-02-02 14:52:01,328 - __main__ - INFO - oracle index:3
+2023-02-02 14:52:01,369 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,381 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,403 - __main__ - INFO - oracle index:5
+2023-02-02 14:52:01,424 - __main__ - INFO - oracle index:4
+2023-02-02 14:52:01,437 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,451 - __main__ - INFO - oracle index:63
+2023-02-02 14:52:01,466 - __main__ - INFO - oracle index:2
+2023-02-02 14:52:01,495 - __main__ - INFO - oracle index:18
+2023-02-02 14:52:01,511 - __main__ - INFO - oracle index:2
+2023-02-02 14:52:01,544 - __main__ - INFO - oracle index:6
+2023-02-02 14:52:01,563 - __main__ - INFO - oracle index:4
+2023-02-02 14:52:01,631 - __main__ - INFO - oracle index:3
+2023-02-02 14:52:01,646 - __main__ - INFO - oracle index:21
+2023-02-02 14:52:01,665 - __main__ - INFO - oracle index:7
+2023-02-02 14:52:01,692 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,718 - __main__ - INFO - oracle index:27
+2023-02-02 14:52:01,730 - __main__ - INFO - oracle index:69
+2023-02-02 14:52:01,781 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,796 - __main__ - INFO - oracle index:50
+2023-02-02 14:52:01,811 - __main__ - INFO - oracle index:2
+2023-02-02 14:52:01,855 - __main__ - INFO - oracle index:4
+2023-02-02 14:52:01,896 - __main__ - INFO - oracle index:4
+2023-02-02 14:52:01,922 - __main__ - INFO - oracle index:6
+2023-02-02 14:52:01,933 - __main__ - INFO - oracle index:11
+2023-02-02 14:52:01,949 - __main__ - INFO - oracle index:1
+2023-02-02 14:52:01,998 - __main__ - INFO - 
+
+2023-02-02 14:52:01,998 - __main__ - INFO - evalWER:688,evalCCount:1908
+2023-02-02 14:52:01,998 - __main__ - INFO - batch48 || Test CER: 0.27695 || Test WER: 0.36059
+2023-02-02 14:53:33,132 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,146 - __main__ - INFO - oracle index:69
+2023-02-02 14:53:33,159 - __main__ - INFO - oracle index:6
+2023-02-02 14:53:33,192 - __main__ - INFO - oracle index:6
+2023-02-02 14:53:33,207 - __main__ - INFO - oracle index:47
+2023-02-02 14:53:33,258 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,296 - __main__ - INFO - oracle index:16
+2023-02-02 14:53:33,310 - __main__ - INFO - oracle index:41
+2023-02-02 14:53:33,322 - __main__ - INFO - oracle index:29
+2023-02-02 14:53:33,349 - __main__ - INFO - oracle index:19
+2023-02-02 14:53:33,388 - __main__ - INFO - oracle index:3
+2023-02-02 14:53:33,403 - __main__ - INFO - oracle index:19
+2023-02-02 14:53:33,417 - __main__ - INFO - oracle index:14
+2023-02-02 14:53:33,432 - __main__ - INFO - oracle index:5
+2023-02-02 14:53:33,481 - __main__ - INFO - oracle index:20
+2023-02-02 14:53:33,521 - __main__ - INFO - oracle index:1
+2023-02-02 14:53:33,540 - __main__ - INFO - oracle index:1
+2023-02-02 14:53:33,590 - __main__ - INFO - oracle index:11
+2023-02-02 14:53:33,636 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,661 - __main__ - INFO - oracle index:15
+2023-02-02 14:53:33,679 - __main__ - INFO - oracle index:19
+2023-02-02 14:53:33,692 - __main__ - INFO - oracle index:11
+2023-02-02 14:53:33,722 - __main__ - INFO - oracle index:26
+2023-02-02 14:53:33,735 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,755 - __main__ - INFO - oracle index:50
+2023-02-02 14:53:33,772 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,787 - __main__ - INFO - oracle index:22
+2023-02-02 14:53:33,825 - __main__ - INFO - oracle index:1
+2023-02-02 14:53:33,862 - __main__ - INFO - oracle index:2
+2023-02-02 14:53:33,875 - __main__ - INFO - oracle index:4
+2023-02-02 14:53:33,881 - __main__ - INFO - 
+
+2023-02-02 14:53:33,881 - __main__ - INFO - evalWER:834,evalCCount:2310
+2023-02-02 14:53:33,881 - __main__ - INFO - batch48 || Test CER: 0.27581 || Test WER: 0.36104
+2023-02-02 14:55:05,935 - __main__ - INFO - oracle index:6
+2023-02-02 14:55:05,967 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:05,993 - __main__ - INFO - oracle index:20
+2023-02-02 14:55:06,007 - __main__ - INFO - oracle index:79
+2023-02-02 14:55:06,027 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,051 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,098 - __main__ - INFO - oracle index:3
+2023-02-02 14:55:06,111 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,128 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,141 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,179 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,192 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,228 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,240 - __main__ - INFO - oracle index:3
+2023-02-02 14:55:06,285 - __main__ - INFO - oracle index:4
+2023-02-02 14:55:06,296 - __main__ - INFO - oracle index:12
+2023-02-02 14:55:06,308 - __main__ - INFO - oracle index:40
+2023-02-02 14:55:06,323 - __main__ - INFO - oracle index:15
+2023-02-02 14:55:06,337 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,351 - __main__ - INFO - oracle index:70
+2023-02-02 14:55:06,368 - __main__ - INFO - oracle index:17
+2023-02-02 14:55:06,389 - __main__ - INFO - oracle index:5
+2023-02-02 14:55:06,404 - __main__ - INFO - oracle index:17
+2023-02-02 14:55:06,417 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,431 - __main__ - INFO - oracle index:3
+2023-02-02 14:55:06,452 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,464 - __main__ - INFO - oracle index:3
+2023-02-02 14:55:06,531 - __main__ - INFO - oracle index:1
+2023-02-02 14:55:06,555 - __main__ - INFO - oracle index:3
+2023-02-02 14:55:06,575 - __main__ - INFO - oracle index:2
+2023-02-02 14:55:06,587 - __main__ - INFO - oracle index:10
+2023-02-02 14:55:06,605 - __main__ - INFO - 
+
+2023-02-02 14:55:06,605 - __main__ - INFO - evalWER:936,evalCCount:2719
+2023-02-02 14:55:06,605 - __main__ - INFO - batch48 || Test CER: 0.26061 || Test WER: 0.34424
+2023-02-02 14:56:33,122 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,138 - __main__ - INFO - oracle index:7
+2023-02-02 14:56:33,175 - __main__ - INFO - oracle index:8
+2023-02-02 14:56:33,212 - __main__ - INFO - oracle index:5
+2023-02-02 14:56:33,248 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,275 - __main__ - INFO - oracle index:26
+2023-02-02 14:56:33,291 - __main__ - INFO - oracle index:2
+2023-02-02 14:56:33,321 - __main__ - INFO - oracle index:2
+2023-02-02 14:56:33,379 - __main__ - INFO - oracle index:3
+2023-02-02 14:56:33,405 - __main__ - INFO - oracle index:2
+2023-02-02 14:56:33,458 - __main__ - INFO - oracle index:2
+2023-02-02 14:56:33,470 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,482 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,493 - __main__ - INFO - oracle index:4
+2023-02-02 14:56:33,525 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,536 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,589 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,659 - __main__ - INFO - oracle index:3
+2023-02-02 14:56:33,676 - __main__ - INFO - oracle index:8
+2023-02-02 14:56:33,689 - __main__ - INFO - oracle index:1
+2023-02-02 14:56:33,701 - __main__ - INFO - oracle index:2
+2023-02-02 14:56:33,727 - __main__ - INFO - oracle index:6
+2023-02-02 14:56:33,754 - __main__ - INFO - oracle index:84
+2023-02-02 14:56:33,760 - __main__ - INFO - 
+
+2023-02-02 14:56:33,760 - __main__ - INFO - evalWER:1058,evalCCount:3029
+2023-02-02 14:56:33,760 - __main__ - INFO - batch48 || Test CER: 0.26460 || Test WER: 0.34929
+2023-02-02 14:58:03,134 - __main__ - INFO - oracle index:19
+2023-02-02 14:58:03,147 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,162 - __main__ - INFO - oracle index:3
+2023-02-02 14:58:03,199 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,221 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,235 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,246 - __main__ - INFO - oracle index:66
+2023-02-02 14:58:03,266 - __main__ - INFO - oracle index:27
+2023-02-02 14:58:03,294 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,308 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,322 - __main__ - INFO - oracle index:11
+2023-02-02 14:58:03,336 - __main__ - INFO - oracle index:85
+2023-02-02 14:58:03,355 - __main__ - INFO - oracle index:5
+2023-02-02 14:58:03,367 - __main__ - INFO - oracle index:3
+2023-02-02 14:58:03,382 - __main__ - INFO - oracle index:21
+2023-02-02 14:58:03,396 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,431 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,443 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,454 - __main__ - INFO - oracle index:8
+2023-02-02 14:58:03,467 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,508 - __main__ - INFO - oracle index:3
+2023-02-02 14:58:03,522 - __main__ - INFO - oracle index:3
+2023-02-02 14:58:03,539 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,568 - __main__ - INFO - oracle index:4
+2023-02-02 14:58:03,583 - __main__ - INFO - oracle index:11
+2023-02-02 14:58:03,595 - __main__ - INFO - oracle index:13
+2023-02-02 14:58:03,608 - __main__ - INFO - oracle index:4
+2023-02-02 14:58:03,636 - __main__ - INFO - oracle index:68
+2023-02-02 14:58:03,648 - __main__ - INFO - oracle index:55
+2023-02-02 14:58:03,668 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,683 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,696 - __main__ - INFO - oracle index:57
+2023-02-02 14:58:03,745 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,760 - __main__ - INFO - oracle index:35
+2023-02-02 14:58:03,773 - __main__ - INFO - oracle index:2
+2023-02-02 14:58:03,785 - __main__ - INFO - oracle index:1
+2023-02-02 14:58:03,820 - __main__ - INFO - oracle index:6
+2023-02-02 14:58:03,825 - __main__ - INFO - 
+
+2023-02-02 14:58:03,825 - __main__ - INFO - evalWER:1184,evalCCount:3390
+2023-02-02 14:58:03,825 - __main__ - INFO - batch48 || Test CER: 0.26626 || Test WER: 0.34926
+2023-02-02 14:59:24,915 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:24,935 - __main__ - INFO - oracle index:4
+2023-02-02 14:59:24,958 - __main__ - INFO - oracle index:2
+2023-02-02 14:59:25,012 - __main__ - INFO - oracle index:3
+2023-02-02 14:59:25,027 - __main__ - INFO - oracle index:2
+2023-02-02 14:59:25,040 - __main__ - INFO - oracle index:3
+2023-02-02 14:59:25,090 - __main__ - INFO - oracle index:8
+2023-02-02 14:59:25,105 - __main__ - INFO - oracle index:2
+2023-02-02 14:59:25,120 - __main__ - INFO - oracle index:2
+2023-02-02 14:59:25,163 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:25,175 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:25,188 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:25,200 - __main__ - INFO - oracle index:3
+2023-02-02 14:59:25,212 - __main__ - INFO - oracle index:4
+2023-02-02 14:59:25,228 - __main__ - INFO - oracle index:42
+2023-02-02 14:59:25,253 - __main__ - INFO - oracle index:15
+2023-02-02 14:59:25,266 - __main__ - INFO - oracle index:35
+2023-02-02 14:59:25,279 - __main__ - INFO - oracle index:4
+2023-02-02 14:59:25,291 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:25,302 - __main__ - INFO - oracle index:10
+2023-02-02 14:59:25,329 - __main__ - INFO - oracle index:8
+2023-02-02 14:59:25,380 - __main__ - INFO - oracle index:1
+2023-02-02 14:59:25,393 - __main__ - INFO - oracle index:68
+2023-02-02 14:59:25,418 - __main__ - INFO - oracle index:7
+2023-02-02 14:59:25,430 - __main__ - INFO - oracle index:6
+2023-02-02 14:59:25,470 - __main__ - INFO - oracle index:2
+2023-02-02 14:59:25,539 - __main__ - INFO - oracle index:81
+2023-02-02 14:59:25,553 - __main__ - INFO - oracle index:12
+2023-02-02 14:59:25,558 - __main__ - INFO - 
+
+2023-02-02 14:59:25,558 - __main__ - INFO - evalWER:1298,evalCCount:3695
+2023-02-02 14:59:25,559 - __main__ - INFO - batch48 || Test CER: 0.26751 || Test WER: 0.35129
+2023-02-02 15:00:56,225 - __main__ - INFO - oracle index:8
+2023-02-02 15:00:56,242 - __main__ - INFO - oracle index:4
+2023-02-02 15:00:56,270 - __main__ - INFO - oracle index:42
+2023-02-02 15:00:56,299 - __main__ - INFO - oracle index:7
+2023-02-02 15:00:56,311 - __main__ - INFO - oracle index:23
+2023-02-02 15:00:56,333 - __main__ - INFO - oracle index:57
+2023-02-02 15:00:56,365 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,377 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,407 - __main__ - INFO - oracle index:3
+2023-02-02 15:00:56,441 - __main__ - INFO - oracle index:3
+2023-02-02 15:00:56,455 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,479 - __main__ - INFO - oracle index:4
+2023-02-02 15:00:56,495 - __main__ - INFO - oracle index:29
+2023-02-02 15:00:56,536 - __main__ - INFO - oracle index:18
+2023-02-02 15:00:56,588 - __main__ - INFO - oracle index:56
+2023-02-02 15:00:56,599 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,610 - __main__ - INFO - oracle index:2
+2023-02-02 15:00:56,622 - __main__ - INFO - oracle index:73
+2023-02-02 15:00:56,647 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,660 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,678 - __main__ - INFO - oracle index:2
+2023-02-02 15:00:56,691 - __main__ - INFO - oracle index:15
+2023-02-02 15:00:56,703 - __main__ - INFO - oracle index:3
+2023-02-02 15:00:56,727 - __main__ - INFO - oracle index:3
+2023-02-02 15:00:56,793 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,864 - __main__ - INFO - oracle index:6
+2023-02-02 15:00:56,881 - __main__ - INFO - oracle index:1
+2023-02-02 15:00:56,910 - __main__ - INFO - 
+
+2023-02-02 15:00:56,910 - __main__ - INFO - evalWER:1411,evalCCount:3997
+2023-02-02 15:00:56,910 - __main__ - INFO - batch48 || Test CER: 0.26994 || Test WER: 0.35301
+2023-02-02 15:02:14,163 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,175 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,189 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,229 - __main__ - INFO - oracle index:4
+2023-02-02 15:02:14,267 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,310 - __main__ - INFO - oracle index:3
+2023-02-02 15:02:14,322 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,383 - __main__ - INFO - oracle index:4
+2023-02-02 15:02:14,409 - __main__ - INFO - oracle index:9
+2023-02-02 15:02:14,504 - __main__ - INFO - oracle index:2
+2023-02-02 15:02:14,547 - __main__ - INFO - oracle index:60
+2023-02-02 15:02:14,558 - __main__ - INFO - oracle index:9
+2023-02-02 15:02:14,582 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,601 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,629 - __main__ - INFO - oracle index:3
+2023-02-02 15:02:14,641 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,655 - __main__ - INFO - oracle index:8
+2023-02-02 15:02:14,681 - __main__ - INFO - oracle index:7
+2023-02-02 15:02:14,695 - __main__ - INFO - oracle index:63
+2023-02-02 15:02:14,712 - __main__ - INFO - oracle index:23
+2023-02-02 15:02:14,735 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,782 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,829 - __main__ - INFO - oracle index:1
+2023-02-02 15:02:14,836 - __main__ - INFO - 
+
+2023-02-02 15:02:14,836 - __main__ - INFO - evalWER:1486,evalCCount:4307
+2023-02-02 15:02:14,836 - __main__ - INFO - batch48 || Test CER: 0.26281 || Test WER: 0.34502
+2023-02-02 15:03:46,123 - __main__ - INFO - oracle index:3
+2023-02-02 15:03:46,146 - __main__ - INFO - oracle index:71
+2023-02-02 15:03:46,159 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,190 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,203 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,230 - __main__ - INFO - oracle index:39
+2023-02-02 15:03:46,247 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,259 - __main__ - INFO - oracle index:56
+2023-02-02 15:03:46,295 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,319 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,356 - __main__ - INFO - oracle index:13
+2023-02-02 15:03:46,370 - __main__ - INFO - oracle index:3
+2023-02-02 15:03:46,416 - __main__ - INFO - oracle index:4
+2023-02-02 15:03:46,482 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,495 - __main__ - INFO - oracle index:3
+2023-02-02 15:03:46,544 - __main__ - INFO - oracle index:3
+2023-02-02 15:03:46,581 - __main__ - INFO - oracle index:26
+2023-02-02 15:03:46,594 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,623 - __main__ - INFO - oracle index:4
+2023-02-02 15:03:46,639 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,653 - __main__ - INFO - oracle index:61
+2023-02-02 15:03:46,702 - __main__ - INFO - oracle index:4
+2023-02-02 15:03:46,714 - __main__ - INFO - oracle index:31
+2023-02-02 15:03:46,737 - __main__ - INFO - oracle index:80
+2023-02-02 15:03:46,752 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,772 - __main__ - INFO - oracle index:1
+2023-02-02 15:03:46,809 - __main__ - INFO - oracle index:2
+2023-02-02 15:03:46,814 - __main__ - INFO - 
+
+2023-02-02 15:03:46,814 - __main__ - INFO - evalWER:1589,evalCCount:4652
+2023-02-02 15:03:46,815 - __main__ - INFO - batch48 || Test CER: 0.25945 || Test WER: 0.34157
+2023-02-02 15:05:10,307 - __main__ - INFO - oracle index:6
+2023-02-02 15:05:10,332 - __main__ - INFO - oracle index:13
+2023-02-02 15:05:10,393 - __main__ - INFO - oracle index:16
+2023-02-02 15:05:10,503 - __main__ - INFO - oracle index:13
+2023-02-02 15:05:10,516 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,600 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,612 - __main__ - INFO - oracle index:9
+2023-02-02 15:05:10,626 - __main__ - INFO - oracle index:68
+2023-02-02 15:05:10,665 - __main__ - INFO - oracle index:12
+2023-02-02 15:05:10,707 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,737 - __main__ - INFO - oracle index:12
+2023-02-02 15:05:10,772 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,790 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,805 - __main__ - INFO - oracle index:2
+2023-02-02 15:05:10,828 - __main__ - INFO - oracle index:11
+2023-02-02 15:05:10,852 - __main__ - INFO - oracle index:3
+2023-02-02 15:05:10,891 - __main__ - INFO - oracle index:3
+2023-02-02 15:05:10,905 - __main__ - INFO - oracle index:39
+2023-02-02 15:05:10,924 - __main__ - INFO - oracle index:5
+2023-02-02 15:05:10,976 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,987 - __main__ - INFO - oracle index:1
+2023-02-02 15:05:10,993 - __main__ - INFO - 
+
+2023-02-02 15:05:10,993 - __main__ - INFO - evalWER:1770,evalCCount:5049
+2023-02-02 15:05:10,993 - __main__ - INFO - batch48 || Test CER: 0.26429 || Test WER: 0.35056
+2023-02-02 15:06:40,879 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:40,935 - __main__ - INFO - oracle index:5
+2023-02-02 15:06:40,963 - __main__ - INFO - oracle index:1
+2023-02-02 15:06:40,979 - __main__ - INFO - oracle index:69
+2023-02-02 15:06:40,991 - __main__ - INFO - oracle index:9
+2023-02-02 15:06:41,013 - __main__ - INFO - oracle index:8
+2023-02-02 15:06:41,030 - __main__ - INFO - oracle index:47
+2023-02-02 15:06:41,046 - __main__ - INFO - oracle index:5
+2023-02-02 15:06:41,074 - __main__ - INFO - oracle index:57
+2023-02-02 15:06:41,087 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,105 - __main__ - INFO - oracle index:4
+2023-02-02 15:06:41,149 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,192 - __main__ - INFO - oracle index:92
+2023-02-02 15:06:41,217 - __main__ - INFO - oracle index:3
+2023-02-02 15:06:41,257 - __main__ - INFO - oracle index:13
+2023-02-02 15:06:41,283 - __main__ - INFO - oracle index:1
+2023-02-02 15:06:41,328 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,339 - __main__ - INFO - oracle index:1
+2023-02-02 15:06:41,357 - __main__ - INFO - oracle index:6
+2023-02-02 15:06:41,370 - __main__ - INFO - oracle index:12
+2023-02-02 15:06:41,382 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,405 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,418 - __main__ - INFO - oracle index:7
+2023-02-02 15:06:41,430 - __main__ - INFO - oracle index:14
+2023-02-02 15:06:41,480 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,524 - __main__ - INFO - oracle index:2
+2023-02-02 15:06:41,543 - __main__ - INFO - 
+
+2023-02-02 15:06:41,544 - __main__ - INFO - evalWER:1923,evalCCount:5379
+2023-02-02 15:06:41,544 - __main__ - INFO - batch48 || Test CER: 0.26972 || Test WER: 0.35750
+2023-02-02 15:07:49,079 - __main__ - INFO - oracle index:16
+2023-02-02 15:07:49,091 - __main__ - INFO - oracle index:26
+2023-02-02 15:07:49,124 - __main__ - INFO - oracle index:1
+2023-02-02 15:07:49,141 - __main__ - INFO - oracle index:6
+2023-02-02 15:07:49,161 - __main__ - INFO - oracle index:4
+2023-02-02 15:07:49,172 - __main__ - INFO - oracle index:1
+2023-02-02 15:07:49,203 - __main__ - INFO - oracle index:3
+2023-02-02 15:07:49,215 - __main__ - INFO - oracle index:3
+2023-02-02 15:07:49,229 - __main__ - INFO - oracle index:4
+2023-02-02 15:07:49,243 - __main__ - INFO - oracle index:3
+2023-02-02 15:07:49,258 - __main__ - INFO - oracle index:4
+2023-02-02 15:07:49,294 - __main__ - INFO - oracle index:23
+2023-02-02 15:07:49,307 - __main__ - INFO - oracle index:2
+2023-02-02 15:07:49,376 - __main__ - INFO - oracle index:2
+2023-02-02 15:07:49,389 - __main__ - INFO - oracle index:19
+2023-02-02 15:07:49,401 - __main__ - INFO - oracle index:14
+2023-02-02 15:07:49,418 - __main__ - INFO - oracle index:2
+2023-02-02 15:07:49,434 - __main__ - INFO - oracle index:6
+2023-02-02 15:07:49,464 - __main__ - INFO - oracle index:42
+2023-02-02 15:07:49,492 - __main__ - INFO - oracle index:30
+2023-02-02 15:07:49,520 - __main__ - INFO - oracle index:36
+2023-02-02 15:07:49,533 - __main__ - INFO - oracle index:2
+2023-02-02 15:07:49,579 - __main__ - INFO - oracle index:86
+2023-02-02 15:07:49,622 - __main__ - INFO - oracle index:14
+2023-02-02 15:07:49,636 - __main__ - INFO - oracle index:4
+2023-02-02 15:07:49,653 - __main__ - INFO - oracle index:3
+2023-02-02 15:07:49,665 - __main__ - INFO - oracle index:66
+2023-02-02 15:07:49,678 - __main__ - INFO - oracle index:98
+2023-02-02 15:07:49,691 - __main__ - INFO - oracle index:1
+2023-02-02 15:07:49,702 - __main__ - INFO - oracle index:1
+2023-02-02 15:07:49,707 - __main__ - INFO - 
+
+2023-02-02 15:07:49,707 - __main__ - INFO - evalWER:2063,evalCCount:5719
+2023-02-02 15:07:49,707 - __main__ - INFO - batch48 || Test CER: 0.27244 || Test WER: 0.36073
+2023-02-02 15:09:15,449 - __main__ - INFO - oracle index:3
+2023-02-02 15:09:15,462 - __main__ - INFO - oracle index:3
+2023-02-02 15:09:15,488 - __main__ - INFO - oracle index:25
+2023-02-02 15:09:15,500 - __main__ - INFO - oracle index:1
+2023-02-02 15:09:15,525 - __main__ - INFO - oracle index:32
+2023-02-02 15:09:15,539 - __main__ - INFO - oracle index:1
+2023-02-02 15:09:15,565 - __main__ - INFO - oracle index:8
+2023-02-02 15:09:15,581 - __main__ - INFO - oracle index:15
+2023-02-02 15:09:15,607 - __main__ - INFO - oracle index:1
+2023-02-02 15:09:15,621 - __main__ - INFO - oracle index:1
+2023-02-02 15:09:15,658 - __main__ - INFO - oracle index:2
+2023-02-02 15:09:15,674 - __main__ - INFO - oracle index:2
+2023-02-02 15:09:15,687 - __main__ - INFO - oracle index:8
+2023-02-02 15:09:15,746 - __main__ - INFO - oracle index:2
+2023-02-02 15:09:15,758 - __main__ - INFO - oracle index:10
+2023-02-02 15:09:15,798 - __main__ - INFO - oracle index:5
+2023-02-02 15:09:15,879 - __main__ - INFO - oracle index:2
+2023-02-02 15:09:15,915 - __main__ - INFO - oracle index:3
+2023-02-02 15:09:15,926 - __main__ - INFO - oracle index:2
+2023-02-02 15:09:15,963 - __main__ - INFO - oracle index:3
+2023-02-02 15:09:15,977 - __main__ - INFO - oracle index:76
+2023-02-02 15:09:16,004 - __main__ - INFO - oracle index:14
+2023-02-02 15:09:16,029 - __main__ - INFO - oracle index:6
+2023-02-02 15:09:16,052 - __main__ - INFO - oracle index:42
+2023-02-02 15:09:16,064 - __main__ - INFO - oracle index:35
+2023-02-02 15:09:16,076 - __main__ - INFO - oracle index:3
+2023-02-02 15:09:16,099 - __main__ - INFO - 
+
+2023-02-02 15:09:16,099 - __main__ - INFO - evalWER:2192,evalCCount:6019
+2023-02-02 15:09:16,099 - __main__ - INFO - batch48 || Test CER: 0.27462 || Test WER: 0.36418
+2023-02-02 15:10:47,780 - __main__ - INFO - oracle index:5
+2023-02-02 15:10:47,809 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:47,822 - __main__ - INFO - oracle index:25
+2023-02-02 15:10:47,844 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:47,857 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:47,885 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:47,908 - __main__ - INFO - oracle index:69
+2023-02-02 15:10:47,930 - __main__ - INFO - oracle index:5
+2023-02-02 15:10:47,962 - __main__ - INFO - oracle index:10
+2023-02-02 15:10:47,976 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:47,992 - __main__ - INFO - oracle index:44
+2023-02-02 15:10:48,008 - __main__ - INFO - oracle index:4
+2023-02-02 15:10:48,068 - __main__ - INFO - oracle index:4
+2023-02-02 15:10:48,087 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:48,123 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:48,163 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:48,176 - __main__ - INFO - oracle index:48
+2023-02-02 15:10:48,189 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:48,215 - __main__ - INFO - oracle index:10
+2023-02-02 15:10:48,274 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:48,303 - __main__ - INFO - oracle index:30
+2023-02-02 15:10:48,353 - __main__ - INFO - oracle index:17
+2023-02-02 15:10:48,366 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:48,390 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:48,401 - __main__ - INFO - oracle index:2
+2023-02-02 15:10:48,456 - __main__ - INFO - oracle index:1
+2023-02-02 15:10:48,468 - __main__ - INFO - oracle index:6
+2023-02-02 15:10:48,474 - __main__ - INFO - 
+
+2023-02-02 15:10:48,474 - __main__ - INFO - evalWER:2323,evalCCount:6394
+2023-02-02 15:10:48,474 - __main__ - INFO - batch48 || Test CER: 0.27311 || Test WER: 0.36331
+2023-02-02 15:12:17,488 - __main__ - INFO - oracle index:3
+2023-02-02 15:12:17,500 - __main__ - INFO - oracle index:5
+2023-02-02 15:12:17,549 - __main__ - INFO - oracle index:2
+2023-02-02 15:12:17,570 - __main__ - INFO - oracle index:19
+2023-02-02 15:12:17,584 - __main__ - INFO - oracle index:2
+2023-02-02 15:12:17,607 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,642 - __main__ - INFO - oracle index:43
+2023-02-02 15:12:17,670 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,699 - __main__ - INFO - oracle index:5
+2023-02-02 15:12:17,724 - __main__ - INFO - oracle index:2
+2023-02-02 15:12:17,767 - __main__ - INFO - oracle index:12
+2023-02-02 15:12:17,788 - __main__ - INFO - oracle index:78
+2023-02-02 15:12:17,808 - __main__ - INFO - oracle index:3
+2023-02-02 15:12:17,837 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,887 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,903 - __main__ - INFO - oracle index:2
+2023-02-02 15:12:17,917 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,942 - __main__ - INFO - oracle index:3
+2023-02-02 15:12:17,956 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:17,968 - __main__ - INFO - oracle index:5
+2023-02-02 15:12:17,981 - __main__ - INFO - oracle index:2
+2023-02-02 15:12:17,992 - __main__ - INFO - oracle index:60
+2023-02-02 15:12:18,005 - __main__ - INFO - oracle index:8
+2023-02-02 15:12:18,031 - __main__ - INFO - oracle index:17
+2023-02-02 15:12:18,088 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:18,112 - __main__ - INFO - oracle index:1
+2023-02-02 15:12:18,117 - __main__ - INFO - 
+
+2023-02-02 15:12:18,117 - __main__ - INFO - evalWER:2432,evalCCount:6716
+2023-02-02 15:12:18,117 - __main__ - INFO - batch48 || Test CER: 0.27179 || Test WER: 0.36212
+2023-02-02 15:13:45,983 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,071 - __main__ - INFO - oracle index:26
+2023-02-02 15:13:46,083 - __main__ - INFO - oracle index:41
+2023-02-02 15:13:46,095 - __main__ - INFO - oracle index:22
+2023-02-02 15:13:46,140 - __main__ - INFO - oracle index:15
+2023-02-02 15:13:46,152 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,163 - __main__ - INFO - oracle index:3
+2023-02-02 15:13:46,177 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,188 - __main__ - INFO - oracle index:14
+2023-02-02 15:13:46,201 - __main__ - INFO - oracle index:3
+2023-02-02 15:13:46,233 - __main__ - INFO - oracle index:3
+2023-02-02 15:13:46,248 - __main__ - INFO - oracle index:12
+2023-02-02 15:13:46,260 - __main__ - INFO - oracle index:14
+2023-02-02 15:13:46,289 - __main__ - INFO - oracle index:21
+2023-02-02 15:13:46,308 - __main__ - INFO - oracle index:11
+2023-02-02 15:13:46,322 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,336 - __main__ - INFO - oracle index:12
+2023-02-02 15:13:46,349 - __main__ - INFO - oracle index:4
+2023-02-02 15:13:46,361 - __main__ - INFO - oracle index:2
+2023-02-02 15:13:46,404 - __main__ - INFO - oracle index:4
+2023-02-02 15:13:46,416 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,428 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,482 - __main__ - INFO - oracle index:4
+2023-02-02 15:13:46,497 - __main__ - INFO - oracle index:16
+2023-02-02 15:13:46,512 - __main__ - INFO - oracle index:4
+2023-02-02 15:13:46,524 - __main__ - INFO - oracle index:2
+2023-02-02 15:13:46,548 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,567 - __main__ - INFO - oracle index:2
+2023-02-02 15:13:46,586 - __main__ - INFO - oracle index:4
+2023-02-02 15:13:46,615 - __main__ - INFO - oracle index:1
+2023-02-02 15:13:46,644 - __main__ - INFO - oracle index:2
+2023-02-02 15:13:46,660 - __main__ - INFO - oracle index:7
+2023-02-02 15:13:46,679 - __main__ - INFO - 
+
+2023-02-02 15:13:46,680 - __main__ - INFO - evalWER:2620,evalCCount:7103
+2023-02-02 15:13:46,680 - __main__ - INFO - batch48 || Test CER: 0.27701 || Test WER: 0.36886
+2023-02-02 15:15:14,277 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,291 - __main__ - INFO - oracle index:2
+2023-02-02 15:15:14,304 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,343 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,376 - __main__ - INFO - oracle index:31
+2023-02-02 15:15:14,435 - __main__ - INFO - oracle index:25
+2023-02-02 15:15:14,464 - __main__ - INFO - oracle index:4
+2023-02-02 15:15:14,481 - __main__ - INFO - oracle index:2
+2023-02-02 15:15:14,509 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,527 - __main__ - INFO - oracle index:73
+2023-02-02 15:15:14,540 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,554 - __main__ - INFO - oracle index:7
+2023-02-02 15:15:14,568 - __main__ - INFO - oracle index:2
+2023-02-02 15:15:14,581 - __main__ - INFO - oracle index:15
+2023-02-02 15:15:14,607 - __main__ - INFO - oracle index:1
+2023-02-02 15:15:14,621 - __main__ - INFO - oracle index:2
+2023-02-02 15:15:14,655 - __main__ - INFO - oracle index:10
+2023-02-02 15:15:14,685 - __main__ - INFO - oracle index:4
+2023-02-02 15:15:14,731 - __main__ - INFO - oracle index:5
+2023-02-02 15:15:14,744 - __main__ - INFO - oracle index:5
+2023-02-02 15:15:14,784 - __main__ - INFO - oracle index:2
+2023-02-02 15:15:14,800 - __main__ - INFO - oracle index:8
+2023-02-02 15:15:14,813 - __main__ - INFO - oracle index:6
+2023-02-02 15:15:14,825 - __main__ - INFO - oracle index:39
+2023-02-02 15:15:14,836 - __main__ - INFO - oracle index:16
+2023-02-02 15:15:14,849 - __main__ - INFO - oracle index:4
+2023-02-02 15:15:14,892 - __main__ - INFO - oracle index:6
+2023-02-02 15:15:14,917 - __main__ - INFO - oracle index:4
+2023-02-02 15:15:14,957 - __main__ - INFO - oracle index:5
+2023-02-02 15:15:14,983 - __main__ - INFO - 
+
+2023-02-02 15:15:14,983 - __main__ - INFO - evalWER:2750,evalCCount:7487
+2023-02-02 15:15:14,984 - __main__ - INFO - batch48 || Test CER: 0.27577 || Test WER: 0.36730
+2023-02-02 15:16:46,128 - __main__ - INFO - oracle index:1
+2023-02-02 15:16:46,173 - __main__ - INFO - oracle index:1
+2023-02-02 15:16:46,217 - __main__ - INFO - oracle index:33
+2023-02-02 15:16:46,270 - __main__ - INFO - oracle index:5
+2023-02-02 15:16:46,294 - __main__ - INFO - oracle index:3
+2023-02-02 15:16:46,307 - __main__ - INFO - oracle index:15
+2023-02-02 15:16:46,319 - __main__ - INFO - oracle index:1
+2023-02-02 15:16:46,343 - __main__ - INFO - oracle index:15
+2023-02-02 15:16:46,371 - __main__ - INFO - oracle index:44
+2023-02-02 15:16:46,388 - __main__ - INFO - oracle index:1
+2023-02-02 15:16:46,417 - __main__ - INFO - oracle index:8
+2023-02-02 15:16:46,445 - __main__ - INFO - oracle index:3
+2023-02-02 15:16:46,457 - __main__ - INFO - oracle index:2
+2023-02-02 15:16:46,486 - __main__ - INFO - oracle index:2
+2023-02-02 15:16:46,525 - __main__ - INFO - oracle index:89
+2023-02-02 15:16:46,542 - __main__ - INFO - oracle index:3
+2023-02-02 15:16:46,557 - __main__ - INFO - oracle index:12
+2023-02-02 15:16:46,572 - __main__ - INFO - oracle index:29
+2023-02-02 15:16:46,615 - __main__ - INFO - oracle index:16
+2023-02-02 15:16:46,660 - __main__ - INFO - oracle index:24
+2023-02-02 15:16:46,721 - __main__ - INFO - oracle index:3
+2023-02-02 15:16:46,741 - __main__ - INFO - oracle index:3
+2023-02-02 15:16:46,754 - __main__ - INFO - oracle index:5
+2023-02-02 15:16:46,773 - __main__ - INFO - 
+
+2023-02-02 15:16:46,773 - __main__ - INFO - evalWER:2907,evalCCount:7876
+2023-02-02 15:16:46,773 - __main__ - INFO - batch48 || Test CER: 0.27736 || Test WER: 0.36910
+2023-02-02 15:18:14,247 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,279 - __main__ - INFO - oracle index:3
+2023-02-02 15:18:14,310 - __main__ - INFO - oracle index:9
+2023-02-02 15:18:14,395 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,419 - __main__ - INFO - oracle index:2
+2023-02-02 15:18:14,430 - __main__ - INFO - oracle index:7
+2023-02-02 15:18:14,455 - __main__ - INFO - oracle index:24
+2023-02-02 15:18:14,468 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,498 - __main__ - INFO - oracle index:2
+2023-02-02 15:18:14,511 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,524 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,552 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,566 - __main__ - INFO - oracle index:2
+2023-02-02 15:18:14,590 - __main__ - INFO - oracle index:8
+2023-02-02 15:18:14,606 - __main__ - INFO - oracle index:9
+2023-02-02 15:18:14,635 - __main__ - INFO - oracle index:56
+2023-02-02 15:18:14,649 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,665 - __main__ - INFO - oracle index:25
+2023-02-02 15:18:14,681 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,696 - __main__ - INFO - oracle index:39
+2023-02-02 15:18:14,729 - __main__ - INFO - oracle index:6
+2023-02-02 15:18:14,745 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,759 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,774 - __main__ - INFO - oracle index:4
+2023-02-02 15:18:14,799 - __main__ - INFO - oracle index:1
+2023-02-02 15:18:14,870 - __main__ - INFO - oracle index:3
+2023-02-02 15:18:14,876 - __main__ - INFO - 
+
+2023-02-02 15:18:14,876 - __main__ - INFO - evalWER:3027,evalCCount:8243
+2023-02-02 15:18:14,876 - __main__ - INFO - batch48 || Test CER: 0.27505 || Test WER: 0.36722
+2023-02-02 15:19:36,868 - __main__ - INFO - oracle index:5
+2023-02-02 15:19:36,883 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:36,907 - __main__ - INFO - oracle index:2
+2023-02-02 15:19:36,936 - __main__ - INFO - oracle index:67
+2023-02-02 15:19:36,962 - __main__ - INFO - oracle index:4
+2023-02-02 15:19:36,978 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:36,992 - __main__ - INFO - oracle index:11
+2023-02-02 15:19:37,028 - __main__ - INFO - oracle index:32
+2023-02-02 15:19:37,057 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,072 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,090 - __main__ - INFO - oracle index:20
+2023-02-02 15:19:37,104 - __main__ - INFO - oracle index:2
+2023-02-02 15:19:37,118 - __main__ - INFO - oracle index:3
+2023-02-02 15:19:37,136 - __main__ - INFO - oracle index:6
+2023-02-02 15:19:37,208 - __main__ - INFO - oracle index:26
+2023-02-02 15:19:37,221 - __main__ - INFO - oracle index:2
+2023-02-02 15:19:37,232 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,246 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,259 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,273 - __main__ - INFO - oracle index:54
+2023-02-02 15:19:37,296 - __main__ - INFO - oracle index:3
+2023-02-02 15:19:37,315 - __main__ - INFO - oracle index:19
+2023-02-02 15:19:37,391 - __main__ - INFO - oracle index:5
+2023-02-02 15:19:37,430 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,441 - __main__ - INFO - oracle index:71
+2023-02-02 15:19:37,456 - __main__ - INFO - oracle index:4
+2023-02-02 15:19:37,537 - __main__ - INFO - oracle index:1
+2023-02-02 15:19:37,553 - __main__ - INFO - oracle index:7
+2023-02-02 15:19:37,559 - __main__ - INFO - 
+
+2023-02-02 15:19:37,559 - __main__ - INFO - evalWER:3160,evalCCount:8613
+2023-02-02 15:19:37,559 - __main__ - INFO - batch48 || Test CER: 0.27487 || Test WER: 0.36689
+2023-02-02 15:21:00,107 - __main__ - INFO - oracle index:2
+2023-02-02 15:21:00,119 - __main__ - INFO - oracle index:21
+2023-02-02 15:21:00,139 - __main__ - INFO - oracle index:16
+2023-02-02 15:21:00,204 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,245 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,275 - __main__ - INFO - oracle index:4
+2023-02-02 15:21:00,297 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,322 - __main__ - INFO - oracle index:23
+2023-02-02 15:21:00,369 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,380 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,393 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,445 - __main__ - INFO - oracle index:12
+2023-02-02 15:21:00,458 - __main__ - INFO - oracle index:45
+2023-02-02 15:21:00,472 - __main__ - INFO - oracle index:4
+2023-02-02 15:21:00,514 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,535 - __main__ - INFO - oracle index:4
+2023-02-02 15:21:00,560 - __main__ - INFO - oracle index:50
+2023-02-02 15:21:00,574 - __main__ - INFO - oracle index:1
+2023-02-02 15:21:00,600 - __main__ - INFO - oracle index:2
+2023-02-02 15:21:00,613 - __main__ - INFO - oracle index:2
+2023-02-02 15:21:00,638 - __main__ - INFO - oracle index:6
+2023-02-02 15:21:00,656 - __main__ - INFO - oracle index:12
+2023-02-02 15:21:00,668 - __main__ - INFO - oracle index:13
+2023-02-02 15:21:00,724 - __main__ - INFO - oracle index:5
+2023-02-02 15:21:00,772 - __main__ - INFO - oracle index:2
+2023-02-02 15:21:00,792 - __main__ - INFO - 
+
+2023-02-02 15:21:00,792 - __main__ - INFO - evalWER:3245,evalCCount:8967
+2023-02-02 15:21:00,792 - __main__ - INFO - batch48 || Test CER: 0.27047 || Test WER: 0.36188
+2023-02-02 15:22:27,462 - __main__ - INFO - oracle index:2
+2023-02-02 15:22:27,489 - __main__ - INFO - oracle index:2
+2023-02-02 15:22:27,510 - __main__ - INFO - oracle index:18
+2023-02-02 15:22:27,545 - __main__ - INFO - oracle index:1
+2023-02-02 15:22:27,571 - __main__ - INFO - oracle index:5
+2023-02-02 15:22:27,582 - __main__ - INFO - oracle index:33
+2023-02-02 15:22:27,641 - __main__ - INFO - oracle index:8
+2023-02-02 15:22:27,677 - __main__ - INFO - oracle index:34
+2023-02-02 15:22:27,694 - __main__ - INFO - oracle index:2
+2023-02-02 15:22:27,718 - __main__ - INFO - oracle index:1
+2023-02-02 15:22:27,730 - __main__ - INFO - oracle index:3
+2023-02-02 15:22:27,746 - __main__ - INFO - oracle index:6
+2023-02-02 15:22:27,823 - __main__ - INFO - oracle index:19
+2023-02-02 15:22:27,835 - __main__ - INFO - oracle index:1
+2023-02-02 15:22:27,846 - __main__ - INFO - oracle index:8
+2023-02-02 15:22:27,930 - __main__ - INFO - oracle index:3
+2023-02-02 15:22:27,969 - __main__ - INFO - oracle index:4
+2023-02-02 15:22:27,989 - __main__ - INFO - oracle index:8
+2023-02-02 15:22:28,001 - __main__ - INFO - oracle index:93
+2023-02-02 15:22:28,014 - __main__ - INFO - oracle index:2
+2023-02-02 15:22:28,027 - __main__ - INFO - oracle index:12
+2023-02-02 15:22:28,041 - __main__ - INFO - oracle index:1
+2023-02-02 15:22:28,057 - __main__ - INFO - oracle index:4
+2023-02-02 15:22:28,071 - __main__ - INFO - oracle index:5
+2023-02-02 15:22:28,085 - __main__ - INFO - oracle index:22
+2023-02-02 15:22:28,096 - __main__ - INFO - oracle index:15
+2023-02-02 15:22:28,102 - __main__ - INFO - 
+
+2023-02-02 15:22:28,102 - __main__ - INFO - evalWER:3363,evalCCount:9335
+2023-02-02 15:22:28,102 - __main__ - INFO - batch48 || Test CER: 0.27000 || Test WER: 0.36026
+2023-02-02 15:23:54,925 - __main__ - INFO - oracle index:1
+2023-02-02 15:23:54,949 - __main__ - INFO - oracle index:42
+2023-02-02 15:23:54,962 - __main__ - INFO - oracle index:29
+2023-02-02 15:23:55,006 - __main__ - INFO - oracle index:4
+2023-02-02 15:23:55,020 - __main__ - INFO - oracle index:1
+2023-02-02 15:23:55,039 - __main__ - INFO - oracle index:23
+2023-02-02 15:23:55,072 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,101 - __main__ - INFO - oracle index:13
+2023-02-02 15:23:55,115 - __main__ - INFO - oracle index:3
+2023-02-02 15:23:55,149 - __main__ - INFO - oracle index:1
+2023-02-02 15:23:55,213 - __main__ - INFO - oracle index:1
+2023-02-02 15:23:55,231 - __main__ - INFO - oracle index:10
+2023-02-02 15:23:55,246 - __main__ - INFO - oracle index:19
+2023-02-02 15:23:55,258 - __main__ - INFO - oracle index:35
+2023-02-02 15:23:55,303 - __main__ - INFO - oracle index:8
+2023-02-02 15:23:55,327 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,356 - __main__ - INFO - oracle index:3
+2023-02-02 15:23:55,369 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,382 - __main__ - INFO - oracle index:5
+2023-02-02 15:23:55,395 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,408 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,437 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,476 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,491 - __main__ - INFO - oracle index:1
+2023-02-02 15:23:55,524 - __main__ - INFO - oracle index:4
+2023-02-02 15:23:55,541 - __main__ - INFO - oracle index:3
+2023-02-02 15:23:55,555 - __main__ - INFO - oracle index:6
+2023-02-02 15:23:55,570 - __main__ - INFO - oracle index:4
+2023-02-02 15:23:55,586 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,599 - __main__ - INFO - oracle index:2
+2023-02-02 15:23:55,620 - __main__ - INFO - 
+
+2023-02-02 15:23:55,620 - __main__ - INFO - evalWER:3474,evalCCount:9689
+2023-02-02 15:23:55,620 - __main__ - INFO - batch48 || Test CER: 0.26827 || Test WER: 0.35855
+2023-02-02 15:24:48,001 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,063 - __main__ - INFO - oracle index:82
+2023-02-02 15:24:48,075 - __main__ - INFO - oracle index:71
+2023-02-02 15:24:48,088 - __main__ - INFO - oracle index:1
+2023-02-02 15:24:48,103 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,119 - __main__ - INFO - oracle index:8
+2023-02-02 15:24:48,146 - __main__ - INFO - oracle index:4
+2023-02-02 15:24:48,169 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,184 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,208 - __main__ - INFO - oracle index:1
+2023-02-02 15:24:48,247 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,276 - __main__ - INFO - oracle index:23
+2023-02-02 15:24:48,295 - __main__ - INFO - oracle index:2
+2023-02-02 15:24:48,313 - __main__ - INFO - oracle index:1
+2023-02-02 15:24:48,363 - __main__ - INFO - 
+
+2023-02-02 15:24:48,363 - __main__ - INFO - evalWER:3556,evalCCount:9890
+2023-02-02 15:24:48,363 - __main__ - INFO - batch25 || Test CER: 0.26959 || Test WER: 0.35956
+2023-02-02 15:24:48,363 - __main__ - INFO - evalWER:3556,evalCCount:9890
+2023-02-02 15:24:48,364 - __main__ - INFO - VOMODAL || Test CER: 0.26959 || Test WER: 0.35956
+2023-02-02 15:24:48,365 - __main__ - INFO - 
+Testing Done.
+
