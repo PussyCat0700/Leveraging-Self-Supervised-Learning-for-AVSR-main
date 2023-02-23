@@ -30,9 +30,8 @@ args["MOCO_FILE"] = "pretrain_model/moco_v2_200ep_pretrain.pth"
     =====Experimental Setting=====
 """
 args["GPU_IDS"] = [1] #[ 0,1,2,3]
-#args["GPU_IDS"] = [0,1,2,3,4,5,6,7] #[ 0,1,2,3]
 args["GPU_ID"] = [0]
-args["NUM_WORKERS"] = 2  # 4*GPU？
+args["NUM_WORKERS"] = 0  # 4*GPU？
 args["NUM_CPU_CORE"] = 2
 args["BATCH_SIZE"] = 1  # 8？    一张卡：8，12  3张卡：12 12 （gpu挺满的） 但是很慢 准备试试 8，12    AV四卡12 13，14min左右
 args["STEP_SIZE"] = 16384
@@ -58,13 +57,12 @@ args["NOISE_PROBABILITY"] = 0.25
 args["W2V_FREEZE_EPOCH"] = 40
 args["LRS2_WARMUP_PERIOD"] = 40     # 现在这个optimizer肯定没问题了
 
-args["MOCO_FRONTEND_FILE"] = "pretrain_model/moco_frontend.pt"
-args["WAV2VEC_FILE"] = "pretrain_model/wav2vec_vox_new.pt"
+args["MOCO_FRONTEND_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/moco_frontend.pt"
+args["WAV2VEC_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/wav2vec_vox_new.pt"
 
-#args["TRAIN_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0140-wer_0.073.ckpt"
-args["TRAIN_LRS2_MODEL_FILE"] ="check/train-step_0604-wer_0.054.ckpt" # "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check923/train-step_0184-wer_0.062.ckpt" #"/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check914/train-step_0158-wer_0.064.ckpt"
-args["TRAINED_AO_FILE"] = "check/train-step_0604-wer_0.054.ckpt"
-args["TRAINED_VO_FILE"] = "check/train-step_1191-wer_0.674.ckpt"
+args["TRAIN_LRS2_MODEL_FILE"] ="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt" # "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check923/train-step_0184-wer_0.062.ckpt" #"/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check914/train-step_0158-wer_0.064.ckpt" #args["TRAIN_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0140-wer_0.073.ckpt"
+args["TRAINED_AO_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt"
+args["TRAINED_VO_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt"
 
 # Used for evaluation
 args["LAMBDA"] = 0.1
@@ -83,11 +81,7 @@ args["DECODE_TYPE"] = "FAIRSEQ_LM"  # HYBRID ATTN TFATTN CTC HYBRID_LM FAIRSEQ_L
 #args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0078-wer_0.057.ckpt"
 #args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0083-wer_0.057.ckpt"
 #args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0101-wer_0.057.ckpt"
-args["EVAL_LRS2_MODEL_FILE"] =  "check/train-step_0604-wer_0.054.ckpt"
-#train-step_0123-wer_0.062.ckpt"
-
-
-#args["decoding"] = {'_name': None, 'nbest': 1, 'unitlm': False, 'lmpath': '4-gram.bin', 'lexicon': 'librispeech_lexicon.lst', 'beam': 1500, 'beamthreshold': 100.0, 'beamsizetoken': None, 'wordscore': -1.0, 'unkweight': -inf, 'silweight': 0.0, 'lmweight': 2.0, 'type': 'kenlm', 'unique_wer_file': True, 'results_path': None}
+args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/check/train-step_1191-wer_0.674.ckpt"
 
 
 """ 
@@ -219,8 +213,3 @@ if __name__ == "__main__":
 
     for key, value in args.items():
         print(str(key) + " : " + str(value))
-
-
- # 我试了CTC debug AOMODAL || Test CER: 0.010 || Test WER: 0.023
- # 我试了ATTN debug AOMODAL || Test CER: 0.010 || Test WER: 0.018
-#    HYBRID debug  AOMODAL || Test CER: 0.009 || Test WER: 0.017

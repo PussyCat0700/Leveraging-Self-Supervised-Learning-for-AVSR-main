@@ -1,177 +1,177 @@
-#!/usr/bin/env python3
+# #!/usr/bin/env python3
 
-# Copyright (c) Facebook, Inc. and its affiliates.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
+# # Copyright (c) Facebook, Inc. and its affiliates.
+# #
+# # This source code is licensed under the MIT license found in the
+# # LICENSE file in the root directory of this source tree.
 
-import gc
-import os.path as osp
-import warnings
-from collections import deque, namedtuple
-from typing import Any, Dict, Tuple
+# import gc
+# import os.path as osp
+# import warnings
+# from collections import deque, namedtuple
+# from typing import Any, Dict, Tuple
 
-import numpy as np
-import torch
-from fairseq import tasks
-from fairseq.data.dictionary import Dictionary
-#from fairseq.dataclass.utils import convert_namespace_to_omegaconf
-from fairseq.models.fairseq_model import FairseqModel
-from fairseq.utils import apply_to_sample
-from omegaconf import open_dict, OmegaConf
+# import numpy as np
+# import torch
+# from fairseq import tasks
+# from fairseq.data.dictionary import Dictionary
+# from fairseq.dataclass.utils import convert_namespace_to_omegaconf
+# from fairseq.models.fairseq_model import FairseqModel
+# from fairseq.utils import apply_to_sample
+# from omegaconf import open_dict, OmegaConf
 
-from typing import List
+# from typing import List
 
-from .decoder_config import FlashlightDecoderConfig
-from .base_decoder import BaseDecoder
+# from .decoder_config import FlashlightDecoderConfig
+# from .base_decoder import BaseDecoder
 
-try:
-    from flashlight.lib.text.decoder import (
-        LM,
-        CriterionType,
-        DecodeResult,
-        KenLM,
-        LexiconDecoder,
-        LexiconDecoderOptions,
-        LexiconFreeDecoder,
-        LexiconFreeDecoderOptions,
-        LMState,
-        SmearingMode,
-        Trie,
-    )
-    from flashlight.lib.text.dictionary import create_word_dict, load_words
-except ImportError:
-    warnings.warn(
-        "flashlight python bindings are required to use this functionality. "
-        "Please install from "
-        "https://github.com/facebookresearch/flashlight/tree/master/bindings/python"
-    )
-    LM = object
-    LMState = object
-
-
-class KenLMDecoder(BaseDecoder):
-    def __init__(self, cfg: FlashlightDecoderConfig, tgt_dict: Dictionary) -> None:
-        super().__init__(tgt_dict)
-
-        self.nbest = cfg.nbest  #1  #'dict' object has no attribute 'nbest'
-        self.unitlm = cfg.unitlm  #false  unit lm
-
-        if cfg.lexicon:
-            self.lexicon = load_words(cfg.lexicon)
-            self.word_dict = create_word_dict(self.lexicon) #{dict:200118} {'CHABA': [['C', 'H', 'A', 'B', 'A', '|']],
-            self.unk_word = self.word_dict.get_index("<unk>")  #28298
-
-            self.lm = KenLM(cfg.lmpath, self.word_dict)
-            self.trie = Trie(self.vocab_size, self.silence)
-
-            start_state = self.lm.start(False)
-            for word, spellings in self.lexicon.items():  #word:'CHABA' spellings:[['C', 'H', 'A', 'B', 'A', '|']]
-                word_idx = self.word_dict.get_index(word) #124602
-                _, score = self.lm.score(start_state, word_idx) #score:-2.6173698902130127
-                for spelling in spellings:
-                    spelling_idxs = [tgt_dict.index(token) for token in spelling]  #[19, 11, 7, 24, 7, 4] 就是CHABA｜ 对应词典中的id
-                    assert (
-                        tgt_dict.unk() not in spelling_idxs
-                    ), f"{word} {spelling} {spelling_idxs}"
-                    self.trie.insert(spelling_idxs, word_idx, score)
-            self.trie.smear(SmearingMode.MAX)
-
-            self.decoder_opts = LexiconDecoderOptions(
-                beam_size=cfg.beam,
-                beam_size_token=cfg.beamsizetoken or len(tgt_dict),
-                beam_threshold=cfg.beamthreshold,
-                lm_weight=cfg.lmweight,
-                word_score=cfg.wordscore,
-                unk_score=cfg.unkweight,
-                sil_score=cfg.silweight,
-                log_add=False,
-                criterion_type=CriterionType.CTC,
-            )
-
-            self.decoder = LexiconDecoder(
-                self.decoder_opts,
-                self.trie,
-                self.lm,
-                self.silence,
-                self.blank,
-                self.unk_word,
-                [],
-                self.unitlm,
-            )
-        else:
-            assert self.unitlm, "Lexicon-free decoding requires unit LM"
-
-            d = {w: [[w]] for w in tgt_dict.symbols}
-            self.word_dict = create_word_dict(d)
-            self.lm = KenLM(cfg.lmpath, self.word_dict)
-            self.decoder_opts = LexiconFreeDecoderOptions(
-                beam_size=cfg.beam,
-                beam_size_token=cfg.beamsizetoken or len(tgt_dict),
-                beam_threshold=cfg.beamthreshold,
-                lm_weight=cfg.lmweight,
-                sil_score=cfg.silweight,
-                log_add=False,
-                criterion_type=CriterionType.CTC,
-            )
-            self.decoder = LexiconFreeDecoder(
-                self.decoder_opts, self.lm, self.silence, self.blank, []
-            )
-
-    def get_timesteps(self, token_idxs: List[int]) -> List[int]:
-        """Returns frame numbers corresponding to every non-blank token.
-
-        Parameters
-        ----------
-        token_idxs : List[int]
-            IDs of decoded tokens.
-
-        Returns
-        -------
-        List[int]
-            Frame numbers corresponding to every non-blank token.
-        """
-        timesteps = []
-        for i, token_idx in enumerate(token_idxs):
-            if token_idx == self.blank:
-                continue
-            if i == 0 or token_idx != token_idxs[i-1]:
-                timesteps.append(i)
-        return timesteps
-
-    def decode(
-        self,
-        emissions: torch.FloatTensor,
-    ) -> List[List[Dict[str, torch.LongTensor]]]:  #emissions:(2,1624,32)
-        B, T, N = emissions.size()  #B:2，T:1624 ,N:32，  #解码的字符有32个 <s> <pad></s> <unk>...  #336,32,603  #  B 10,T 155, N 39  没问题
-        hypos = []  # list 我猜里面的words 是解码出来的
-        for b in range(B):
-            emissions_ptr = emissions.data_ptr() + 4 * b * emissions.stride(0) #93835366019456  # 为什么一次跳4个 这块确实不太懂 指针 Tensor.data_ptr() Returns the address of the first element of self tensor.
-            results = self.decoder.decode(emissions_ptr, T, N)    #stride is the jump necessary to go from one element to the next one in the specified dimension dim.  所以emissions.stride(0)=1624*32=51968
-            #库函数 list:595  <flashlight.lib.text.flashlight_lib_text_decoder.DecodeResult object at 0x7fa66d20c7f0>
-            nbest_results = results[: self.nbest]  #{list:1} #self.nbest=1
-            hypos.append(
-                [
-                    {
-                        "tokens": self.get_tokens(result.tokens),   #(1626)  我感觉是每个t的解码结果  #(157) 前后加了两个｜ 
-                        "score": result.score,
-                        "timesteps": self.get_timesteps(result.tokens),   # list:507
-                        "words": [self.word_dict.get_entry(x) for x in result.words if x >= 0],
-                    }
-                    for result in nbest_results
-                ]
-            )
-        return hypos   #{list:2}   #(1: 48 )
+# try:
+#     from flashlight.lib.text.decoder import (
+#         LM,
+#         CriterionType,
+#         DecodeResult,
+#         KenLM,
+#         LexiconDecoder,
+#         LexiconDecoderOptions,
+#         LexiconFreeDecoder,
+#         LexiconFreeDecoderOptions,
+#         LMState,
+#         SmearingMode,
+#         Trie,
+#     )
+#     from flashlight.lib.text.dictionary import create_word_dict, load_words
+# except ImportError:
+#     warnings.warn(
+#         "flashlight python bindings are required to use this functionality. "
+#         "Please install from "
+#         "https://github.com/facebookresearch/flashlight/tree/master/bindings/python"
+#     )
+#     LM = object
+#     LMState = object
 
 
-FairseqLMState = namedtuple(
-    "FairseqLMState",
-    [
-        "prefix",
-        "incremental_state",
-        "probs",
-    ],
-)
+# class KenLMDecoder(BaseDecoder):
+#     def __init__(self, cfg: FlashlightDecoderConfig, tgt_dict: Dictionary) -> None:
+#         super().__init__(tgt_dict)
+
+#         self.nbest = cfg.nbest  #1  #'dict' object has no attribute 'nbest'
+#         self.unitlm = cfg.unitlm  #false  unit lm
+
+#         if cfg.lexicon:
+#             self.lexicon = load_words(cfg.lexicon)
+#             self.word_dict = create_word_dict(self.lexicon) #{dict:200118} {'CHABA': [['C', 'H', 'A', 'B', 'A', '|']],
+#             self.unk_word = self.word_dict.get_index("<unk>")  #28298
+
+#             self.lm = KenLM(cfg.lmpath, self.word_dict)
+#             self.trie = Trie(self.vocab_size, self.silence)
+
+#             start_state = self.lm.start(False)
+#             for word, spellings in self.lexicon.items():  #word:'CHABA' spellings:[['C', 'H', 'A', 'B', 'A', '|']]
+#                 word_idx = self.word_dict.get_index(word) #124602
+#                 _, score = self.lm.score(start_state, word_idx) #score:-2.6173698902130127
+#                 for spelling in spellings:
+#                     spelling_idxs = [tgt_dict.index(token) for token in spelling]  #[19, 11, 7, 24, 7, 4] 就是CHABA｜ 对应词典中的id
+#                     assert (
+#                         tgt_dict.unk() not in spelling_idxs
+#                     ), f"{word} {spelling} {spelling_idxs}"
+#                     self.trie.insert(spelling_idxs, word_idx, score)
+#             self.trie.smear(SmearingMode.MAX)
+
+#             self.decoder_opts = LexiconDecoderOptions(
+#                 beam_size=cfg.beam,
+#                 beam_size_token=cfg.beamsizetoken or len(tgt_dict),
+#                 beam_threshold=cfg.beamthreshold,
+#                 lm_weight=cfg.lmweight,
+#                 word_score=cfg.wordscore,
+#                 unk_score=cfg.unkweight,
+#                 sil_score=cfg.silweight,
+#                 log_add=False,
+#                 criterion_type=CriterionType.CTC,
+#             )
+
+#             self.decoder = LexiconDecoder(
+#                 self.decoder_opts,
+#                 self.trie,
+#                 self.lm,
+#                 self.silence,
+#                 self.blank,
+#                 self.unk_word,
+#                 [],
+#                 self.unitlm,
+#             )
+#         else:
+#             assert self.unitlm, "Lexicon-free decoding requires unit LM"
+
+#             d = {w: [[w]] for w in tgt_dict.symbols}
+#             self.word_dict = create_word_dict(d)
+#             self.lm = KenLM(cfg.lmpath, self.word_dict)
+#             self.decoder_opts = LexiconFreeDecoderOptions(
+#                 beam_size=cfg.beam,
+#                 beam_size_token=cfg.beamsizetoken or len(tgt_dict),
+#                 beam_threshold=cfg.beamthreshold,
+#                 lm_weight=cfg.lmweight,
+#                 sil_score=cfg.silweight,
+#                 log_add=False,
+#                 criterion_type=CriterionType.CTC,
+#             )
+#             self.decoder = LexiconFreeDecoder(
+#                 self.decoder_opts, self.lm, self.silence, self.blank, []
+#             )
+
+#     def get_timesteps(self, token_idxs: List[int]) -> List[int]:
+#         """Returns frame numbers corresponding to every non-blank token.
+
+#         Parameters
+#         ----------
+#         token_idxs : List[int]
+#             IDs of decoded tokens.
+
+#         Returns
+#         -------
+#         List[int]
+#             Frame numbers corresponding to every non-blank token.
+#         """
+#         timesteps = []
+#         for i, token_idx in enumerate(token_idxs):
+#             if token_idx == self.blank:
+#                 continue
+#             if i == 0 or token_idx != token_idxs[i-1]:
+#                 timesteps.append(i)
+#         return timesteps
+
+#     def decode(
+#         self,
+#         emissions: torch.FloatTensor,
+#     ) -> List[List[Dict[str, torch.LongTensor]]]:  #emissions:(2,1624,32)
+#         B, T, N = emissions.size()  #B:2，T:1624 ,N:32，  #解码的字符有32个 <s> <pad></s> <unk>...  #336,32,603  #  B 10,T 155, N 39  没问题
+#         hypos = []  # list 我猜里面的words 是解码出来的
+#         for b in range(B):
+#             emissions_ptr = emissions.data_ptr() + 4 * b * emissions.stride(0) #93835366019456  # 为什么一次跳4个 这块确实不太懂 指针 Tensor.data_ptr() Returns the address of the first element of self tensor.
+#             results = self.decoder.decode(emissions_ptr, T, N)    #stride is the jump necessary to go from one element to the next one in the specified dimension dim.  所以emissions.stride(0)=1624*32=51968
+#             #库函数 list:595  <flashlight.lib.text.flashlight_lib_text_decoder.DecodeResult object at 0x7fa66d20c7f0>
+#             nbest_results = results[: self.nbest]  #{list:1} #self.nbest=1
+#             hypos.append(
+#                 [
+#                     {
+#                         "tokens": self.get_tokens(result.tokens),   #(1626)  我感觉是每个t的解码结果  #(157) 前后加了两个｜ 
+#                         "score": result.score,
+#                         "timesteps": self.get_timesteps(result.tokens),   # list:507
+#                         "words": [self.word_dict.get_entry(x) for x in result.words if x >= 0],
+#                     }
+#                     for result in nbest_results
+#                 ]
+#             )
+#         return hypos   #{list:2}   #(1: 48 )
+
+
+# FairseqLMState = namedtuple(
+#     "FairseqLMState",
+#     [
+#         "prefix",
+#         "incremental_state",
+#         "probs",
+#     ],
+# )
 
 
 # class FairseqLM(LM):
@@ -320,7 +320,7 @@ FairseqLMState = namedtuple(
 #         if "cfg" in checkpoint and checkpoint["cfg"] is not None:
 #             lm_args = checkpoint["cfg"]
 #         else:
-#             lm_args = convert_namespace_to_omegaconf(checkpoint["args"])
+#             lm_args = convert_namespace_to_omegaconf(checkpoint["args"])  #要用到这个函数
 
 #         if not OmegaConf.is_dict(lm_args):
 #             lm_args = OmegaConf.create(lm_args)

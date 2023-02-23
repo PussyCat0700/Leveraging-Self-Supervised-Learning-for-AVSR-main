@@ -1,20 +1,21 @@
 from itertools import groupby
 
-from utils.dictionary import Dictionary
-# from utils.fairseq_dictionary import Dictionary
+
 import numpy as np
 import torch
+"""
 
 from .flashlight_decoder import KenLMDecoder
 from .viterbi_decoder import ViterbiDecoder
 from .decoder_config import FlashlightDecoderConfig
-
+from .flashlight_decoder import FairseqLMDecoder
+"""
 np.seterr(divide="ignore")
 
 #debug    
 #fairseq_dictionary= Dictionary.load('fairseq_dict.ltr.txt') #decoder= KenLMDecoder(cfg, fairseq_dictionary)  #decoder=ViterbiDecoder(dictionary) # npy_path= "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/test.npy" # outputBatch= np.load(npy_path) # outputBatch= torch.from_numpy(outputBatch)   #(2, 1624, 32) # print(outputBatch.shape)
-
-def flash_infer(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size=1的版本
+"""
+def flash_infer(outputBatch, inputLenBatch, eosIx,cfg,logger, blank=0):   #batch_size=1的版本
     outputBatch = outputBatch.cpu() #(155,48,40) 
     inputLenBatch = inputLenBatch.cpu()  #(48)
     outputBatch[:, :, blank] = torch.log(torch.exp(outputBatch[:, :, blank]) + torch.exp(outputBatch[:, :, eosIx]))  
@@ -22,17 +23,20 @@ def flash_infer(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size=1的�
     reqIxs = reqIxs[reqIxs != eosIx]   #array([0,...,38])
     outputBatch = outputBatch[:, :, reqIxs]   #(152,48,39)    #得加上这些
       
-    dictionary=Dictionary.load('dict.ltr.txt')
+    dictionary=Dictionary.load('/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/dict.ltr.txt')
 
-    cfg1={'nbest': 1, 'unitlm': False, 'lmpath': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin', 
-          'lexicon': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/plus.lst',
-          'beam': 1500, 'beamthreshold': 100.0, 'beamsizetoken': None, 'wordscore': -1.0, 
-          'unkweight': float('-inf'), 'silweight': 0.0, 'lmweight': 2.0}
- 
-    cfg = FlashlightDecoderConfig.create(cfg1)
-    decoder= KenLMDecoder(cfg, dictionary)   #(155,10,39)  需要B T N 
-    outputBatch=outputBatch.transpose(0,1) #(10,155,39)   40
-    result=decoder.decode(outputBatch)   
+    if cfg.type == "fairseqlm":
+        cfg=FlashlightDecoderConfig.from_namespace(cfg)
+        decoder= FairseqLMDecoder(cfg, dictionary)   
+        outputBatch=outputBatch.transpose(0,1) #(10,155,39)   40
+        result=decoder.decode(outputBatch)   
+            
+    else:  #kenlm 
+        cfg=FlashlightDecoderConfig.from_namespace(cfg)
+        #cfg = FlashlightDecoderConfig.create(cfg1)
+        decoder= KenLMDecoder(cfg, dictionary)   #(155,10,39)  需要B T N 
+        outputBatch=outputBatch.transpose(0,1) #(10,155,39)   40
+        result=decoder.decode(outputBatch)   
 
     preds = list()
     predLens = list()
@@ -44,13 +48,15 @@ def flash_infer(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size=1的�
         print(hyp_words)
         
         pred=hypo["tokens"]
-        print(pred)
+
         pred=pred.int().cpu().tolist()
 
         # assert(pred[0]==1 and pred[-1]==1)    #确实全是这样所以        
         pred=pred[1:-1]
 
         pred.append(eosIx)  #最后加了一个39   len:36 type是np.aray([])  最后解码尾巴有很多1 这块可能得删？？？
+        logger.info(pred)
+        #print(pred)
         preds.extend(pred)
         predLens.append(len(pred)) 
             
@@ -58,7 +64,7 @@ def flash_infer(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size=1的�
     predictionLenBatch = torch.tensor(predLens).int()
     return predictionBatch, predictionLenBatch,hyp_words   #tensor([49, 49, 49, 46, 46, 46, 47, 47, 47, 48], dtype=torch.int32)
                 
-
+"""
 def ctc_greedy_decode(outputBatch, inputLenBatch, eosIx, blank=0):
     """       # outputbatch(155,48,40)  #<EOS>index=39 blank=0
     Greedy search technique for CTC decoding.
@@ -94,6 +100,7 @@ def ctc_greedy_decode(outputBatch, inputLenBatch, eosIx, blank=0):
     predictionLenBatch = torch.tensor(predLens).int()
     return predictionBatch, predictionLenBatch
 
+"""
 def flash_infer_store(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size=1的版本
     outputBatch = outputBatch.cpu() #(155,48,40) 
     inputLenBatch = inputLenBatch.cpu()  #(48)
@@ -141,6 +148,7 @@ def flash_infer_store(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size
 
 
     return predictionBatch, predictionLenBatch   #tensor([49, 49, 49, 46, 46, 46, 47, 47, 47, 48], dtype=torch.int32)
+"""
 
 def teacher_forcing_attention_decode(outputBatch, eosIx):
     outputBatch = outputBatch.cpu()
@@ -160,7 +168,7 @@ def teacher_forcing_attention_decode(outputBatch, eosIx):
 # alpha 是 attentionOutLogProbs
 def compute_CTC_prob(h, alpha, CTCOutLogProbs, T, gamma_n, gamma_b, numBeam, numClasses, blank, eosIx):
     batch = h.shape[0]  #1  hbe本来是[39,1][39,2]...
-    g = h[:, :, :, :-1]  # (1,1,39,1) 取了到-1（不含） 所以全是39
+    g = h[:, :, :, :-1]  # (1,1,39,1) 取了到-1（不含） 所以全是39  拆成g和c
     c = h[:, :, :, -1]  #(1,1,39)  [1,...,39] 取最后一项 所以是1到39
     alphaCTC = torch.zeros_like(alpha) #(1,1,39) 全0
     eosIxMask = c == eosIx #(1,1,39) 前面全是false 最后是true

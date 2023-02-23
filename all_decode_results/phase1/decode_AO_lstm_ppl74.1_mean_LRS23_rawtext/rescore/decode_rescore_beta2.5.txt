@@ -1,0 +1,150 @@
+2023-02-02 10:15:47,550 - __main__ - INFO - Namespace(batch_size=48, beam=500, beamsizetoken=None, beamthreshold=25.0, beta=2.5, decode_type='HYBRID_RESCORE', eval_lrs3_model_file='/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt', lexicon='/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_rescore_beta2.5.txt', modal='AO', nbest=1, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=1)
+2023-02-02 10:15:47,551 - __main__ - INFO - 
+Trained Model File: /mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt
+2023-02-02 10:15:47,552 - __main__ - INFO - no noise
+2023-02-02 10:16:43,616 - __main__ - INFO - _IncompatibleKeys(missing_keys=['lstm_lm._float_tensor', 'lstm_lm.models.0.decoder.embed_tokens.weight', 'lstm_lm.models.0.decoder.layers.0.weight_ih', 'lstm_lm.models.0.decoder.layers.0.weight_hh', 'lstm_lm.models.0.decoder.layers.0.bias_ih', 'lstm_lm.models.0.decoder.layers.0.bias_hh'], unexpected_keys=[])
+2023-02-02 10:16:44,208 - __main__ - INFO - 
+Testing the trained model .... 
+
+2023-02-02 10:19:53,594 - __main__ - INFO - 
+
+2023-02-02 10:19:53,596 - __main__ - INFO - evalWER:12,evalCCount:484
+2023-02-02 10:19:53,596 - __main__ - INFO - batch1 || Test CER: 0.01312 || Test WER: 0.02479
+2023-02-02 10:22:11,503 - __main__ - INFO - rescore index:1
+2023-02-02 10:23:02,159 - __main__ - INFO - 
+
+2023-02-02 10:23:02,160 - __main__ - INFO - evalWER:21,evalCCount:834
+2023-02-02 10:23:02,160 - __main__ - INFO - batch2 || Test CER: 0.01378 || Test WER: 0.02518
+2023-02-02 10:25:16,591 - __main__ - INFO - rescore index:1
+2023-02-02 10:25:56,380 - __main__ - INFO - 
+
+2023-02-02 10:25:56,382 - __main__ - INFO - evalWER:31,evalCCount:1188
+2023-02-02 10:25:56,382 - __main__ - INFO - batch3 || Test CER: 0.01584 || Test WER: 0.02609
+2023-02-02 10:28:48,571 - __main__ - INFO - 
+
+2023-02-02 10:28:48,573 - __main__ - INFO - evalWER:35,evalCCount:1518
+2023-02-02 10:28:48,573 - __main__ - INFO - batch4 || Test CER: 0.01390 || Test WER: 0.02306
+2023-02-02 10:30:36,113 - __main__ - INFO - rescore index:36
+2023-02-02 10:31:17,632 - __main__ - INFO - rescore index:1
+2023-02-02 10:31:47,022 - __main__ - INFO - 
+
+2023-02-02 10:31:47,025 - __main__ - INFO - evalWER:42,evalCCount:1908
+2023-02-02 10:31:47,025 - __main__ - INFO - batch5 || Test CER: 0.01352 || Test WER: 0.02201
+2023-02-02 10:33:55,360 - __main__ - INFO - rescore index:1
+2023-02-02 10:34:46,910 - __main__ - INFO - 
+
+2023-02-02 10:34:46,912 - __main__ - INFO - evalWER:46,evalCCount:2310
+2023-02-02 10:34:46,913 - __main__ - INFO - batch6 || Test CER: 0.01217 || Test WER: 0.01991
+2023-02-02 10:37:49,879 - __main__ - INFO - 
+
+2023-02-02 10:37:49,921 - __main__ - INFO - evalWER:53,evalCCount:2719
+2023-02-02 10:37:49,922 - __main__ - INFO - batch7 || Test CER: 0.01191 || Test WER: 0.01949
+2023-02-02 10:39:41,917 - __main__ - INFO - rescore index:1
+2023-02-02 10:40:44,337 - __main__ - INFO - 
+
+2023-02-02 10:40:44,339 - __main__ - INFO - evalWER:58,evalCCount:3029
+2023-02-02 10:40:44,339 - __main__ - INFO - batch8 || Test CER: 0.01170 || Test WER: 0.01915
+2023-02-02 10:43:27,917 - __main__ - INFO - rescore index:1
+2023-02-02 10:43:29,799 - __main__ - INFO - rescore index:1
+2023-02-02 10:43:41,902 - __main__ - INFO - 
+
+2023-02-02 10:43:41,904 - __main__ - INFO - evalWER:63,evalCCount:3390
+2023-02-02 10:43:41,904 - __main__ - INFO - batch9 || Test CER: 0.01156 || Test WER: 0.01858
+2023-02-02 10:46:30,257 - __main__ - INFO - 
+
+2023-02-02 10:46:30,258 - __main__ - INFO - evalWER:70,evalCCount:3695
+2023-02-02 10:46:30,259 - __main__ - INFO - batch10 || Test CER: 0.01143 || Test WER: 0.01894
+2023-02-02 10:48:40,432 - __main__ - INFO - rescore index:1
+2023-02-02 10:49:27,461 - __main__ - INFO - 
+
+2023-02-02 10:49:27,463 - __main__ - INFO - evalWER:79,evalCCount:3997
+2023-02-02 10:49:27,464 - __main__ - INFO - batch11 || Test CER: 0.01144 || Test WER: 0.01976
+2023-02-02 10:52:10,743 - __main__ - INFO - 
+
+2023-02-02 10:52:10,745 - __main__ - INFO - evalWER:81,evalCCount:4307
+2023-02-02 10:52:10,746 - __main__ - INFO - batch12 || Test CER: 0.01072 || Test WER: 0.01881
+2023-02-02 10:54:59,763 - __main__ - INFO - rescore index:1
+2023-02-02 10:55:10,318 - __main__ - INFO - 
+
+2023-02-02 10:55:10,320 - __main__ - INFO - evalWER:86,evalCCount:4652
+2023-02-02 10:55:10,320 - __main__ - INFO - batch13 || Test CER: 0.01057 || Test WER: 0.01849
+2023-02-02 10:58:03,904 - __main__ - INFO - 
+
+2023-02-02 10:58:03,905 - __main__ - INFO - evalWER:91,evalCCount:5049
+2023-02-02 10:58:03,906 - __main__ - INFO - batch14 || Test CER: 0.01018 || Test WER: 0.01802
+2023-02-02 11:00:15,614 - __main__ - INFO - rescore index:1
+2023-02-02 11:00:25,570 - __main__ - INFO - rescore index:36
+2023-02-02 11:01:01,638 - __main__ - INFO - 
+
+2023-02-02 11:01:01,641 - __main__ - INFO - evalWER:96,evalCCount:5379
+2023-02-02 11:01:01,642 - __main__ - INFO - batch15 || Test CER: 0.01024 || Test WER: 0.01785
+2023-02-02 11:02:27,419 - __main__ - INFO - rescore index:1
+2023-02-02 11:03:34,671 - __main__ - INFO - 
+
+2023-02-02 11:03:34,673 - __main__ - INFO - evalWER:102,evalCCount:5719
+2023-02-02 11:03:34,673 - __main__ - INFO - batch16 || Test CER: 0.01002 || Test WER: 0.01784
+2023-02-02 11:05:32,726 - __main__ - INFO - rescore index:1
+2023-02-02 11:05:44,854 - __main__ - INFO - rescore index:1
+2023-02-02 11:06:30,923 - __main__ - INFO - 
+
+2023-02-02 11:06:30,925 - __main__ - INFO - evalWER:108,evalCCount:6019
+2023-02-02 11:06:30,926 - __main__ - INFO - batch17 || Test CER: 0.00971 || Test WER: 0.01794
+2023-02-02 11:09:34,641 - __main__ - INFO - 
+
+2023-02-02 11:09:34,644 - __main__ - INFO - evalWER:117,evalCCount:6394
+2023-02-02 11:09:34,644 - __main__ - INFO - batch18 || Test CER: 0.00991 || Test WER: 0.01830
+2023-02-02 11:11:18,803 - __main__ - INFO - rescore index:7
+2023-02-02 11:11:43,514 - __main__ - INFO - rescore index:1
+2023-02-02 11:12:13,689 - __main__ - INFO - rescore index:2
+2023-02-02 11:12:20,894 - __main__ - INFO - rescore index:1
+2023-02-02 11:12:34,846 - __main__ - INFO - 
+
+2023-02-02 11:12:34,848 - __main__ - INFO - evalWER:123,evalCCount:6716
+2023-02-02 11:12:34,848 - __main__ - INFO - batch19 || Test CER: 0.00985 || Test WER: 0.01831
+2023-02-02 11:14:22,630 - __main__ - INFO - rescore index:1
+2023-02-02 11:14:30,195 - __main__ - INFO - rescore index:1
+2023-02-02 11:15:34,728 - __main__ - INFO - 
+
+2023-02-02 11:15:34,729 - __main__ - INFO - evalWER:130,evalCCount:7103
+2023-02-02 11:15:34,730 - __main__ - INFO - batch20 || Test CER: 0.00975 || Test WER: 0.01830
+2023-02-02 11:17:31,255 - __main__ - INFO - rescore index:2
+2023-02-02 11:17:55,830 - __main__ - INFO - rescore index:1
+2023-02-02 11:18:12,803 - __main__ - INFO - rescore index:1
+2023-02-02 11:18:34,180 - __main__ - INFO - 
+
+2023-02-02 11:18:34,182 - __main__ - INFO - evalWER:134,evalCCount:7487
+2023-02-02 11:18:34,182 - __main__ - INFO - batch21 || Test CER: 0.00950 || Test WER: 0.01790
+2023-02-02 11:21:41,967 - __main__ - INFO - 
+
+2023-02-02 11:21:41,969 - __main__ - INFO - evalWER:140,evalCCount:7876
+2023-02-02 11:21:41,969 - __main__ - INFO - batch22 || Test CER: 0.00938 || Test WER: 0.01778
+2023-02-02 11:24:41,899 - __main__ - INFO - 
+
+2023-02-02 11:24:41,901 - __main__ - INFO - evalWER:147,evalCCount:8243
+2023-02-02 11:24:41,902 - __main__ - INFO - batch23 || Test CER: 0.00935 || Test WER: 0.01783
+2023-02-02 11:27:33,461 - __main__ - INFO - 
+
+2023-02-02 11:27:33,463 - __main__ - INFO - evalWER:151,evalCCount:8613
+2023-02-02 11:27:33,463 - __main__ - INFO - batch24 || Test CER: 0.00927 || Test WER: 0.01753
+2023-02-02 11:30:29,318 - __main__ - INFO - 
+
+2023-02-02 11:30:29,320 - __main__ - INFO - evalWER:155,evalCCount:8967
+2023-02-02 11:30:29,320 - __main__ - INFO - batch25 || Test CER: 0.00910 || Test WER: 0.01729
+2023-02-02 11:33:17,440 - __main__ - INFO - rescore index:1
+2023-02-02 11:33:26,419 - __main__ - INFO - 
+
+2023-02-02 11:33:26,421 - __main__ - INFO - evalWER:159,evalCCount:9335
+2023-02-02 11:33:26,421 - __main__ - INFO - batch26 || Test CER: 0.00894 || Test WER: 0.01703
+2023-02-02 11:36:21,881 - __main__ - INFO - 
+
+2023-02-02 11:36:21,883 - __main__ - INFO - evalWER:162,evalCCount:9689
+2023-02-02 11:36:21,883 - __main__ - INFO - batch27 || Test CER: 0.00885 || Test WER: 0.01672
+2023-02-02 11:38:01,993 - __main__ - INFO - 
+
+2023-02-02 11:38:01,994 - __main__ - INFO - evalWER:172,evalCCount:9890
+2023-02-02 11:38:01,995 - __main__ - INFO - batch28 || Test CER: 0.00967 || Test WER: 0.01739
+2023-02-02 11:38:01,996 - __main__ - INFO - evalWER:172,evalCCount:9890
+2023-02-02 11:38:01,996 - __main__ - INFO - AOMODAL || Test CER: 0.00967 || Test WER: 0.01739
+2023-02-02 11:38:01,997 - __main__ - INFO - 
+Testing Done.
+
