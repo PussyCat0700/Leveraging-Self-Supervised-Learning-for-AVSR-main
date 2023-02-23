@@ -36,21 +36,21 @@ def compute_cer(predictionBatch, targetBatch, predictionLenBatch, targetLenBatch
     return totalEdits / totalChars
 
 
-def compute_error_word(predictionBatch, targetBatch, predictionLenBatch, targetLenBatch, spaceIx):
+def compute_error_word(predictionBatch, targetBatch, predictionLenBatch, targetLenBatch, spaceIx):  #当batchsize=12时  predictionBatch也是拼在一起的
     targetBatch = targetBatch.cpu()
     targetLenBatch = targetLenBatch.cpu()
 
-    preds = list(torch.split(predictionBatch, predictionLenBatch.tolist()))
+    preds = list(torch.split(predictionBatch, predictionLenBatch.tolist()))   #按各自的长度分成12个tensor，1个list
     trgts = list(torch.split(targetBatch, targetLenBatch.tolist()))
     totalEdits = 0
     totalWords = 0
 
     for n in range(len(preds)):
-        pred = preds[n].numpy()[:-1]
-        trgt = trgts[n].numpy()[:-1]
+        pred = preds[n].numpy()[:-1]    #去掉最后的39
+        trgt = trgts[n].numpy()[:-1]    #去掉最后的39
 
-        predWords = np.split(pred, np.where(pred == spaceIx)[0])  #按空格分成好几组
-        predWords = [predWords[0].tostring()] + [predWords[i][1:].tostring() for i in range(1, len(predWords)) if len(predWords[i][1:]) != 0]
+        predWords = np.split(pred, np.where(pred == spaceIx)[0])  #按空格分成好几组 最终结果: 一个list 每遇到1另起一行  # np.where(pred == spaceIx)[0]:array([ 3, 14, 19, 23, 28])   # np.where(pred == spaceIx):(array([ 3, 14, 19, 23, 28]),)
+        predWords = [predWords[0].tostring()] + [predWords[i][1:].tostring() for i in range(1, len(predWords)) if len(predWords[i][1:]) != 0]  #numpy.ndarray.tostring: tobytes. Despite its name, it returns bytes not strs.
 
         trgtWords = np.split(trgt, np.where(trgt == spaceIx)[0])
         trgtWords = [trgtWords[0].tostring()] + [trgtWords[i][1:].tostring() for i in range(1, len(trgtWords))]
