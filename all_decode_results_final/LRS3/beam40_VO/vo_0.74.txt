@@ -1,0 +1,1024 @@
+2023-03-03 02:01:44,794 - __main__ - INFO - Namespace(batch_size=48, beam=500, beamWidth=40, beamsizetoken=None, beamthreshold=100.0, beta=0.74, decode_type='HYBRID_RESCORE', eval_lrs3_model_file='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt', lexicon='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/beam40_LRS3/vo_0.74.txt', modal='VO', nbest=30, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=2)
+2023-03-03 02:01:44,795 - __main__ - INFO - 
+Trained Model File: /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt
+2023-03-03 02:01:44,795 - __main__ - INFO - no noise
+2023-03-03 02:01:49,277 - __main__ - INFO - _IncompatibleKeys(missing_keys=['transformer_lm._float_tensor', 'transformer_lm.models.0.decoder.version', 'transformer_lm.models.0.decoder.embed_tokens.weight', 'transformer_lm.models.0.decoder.project_in_dim.weight', 'transformer_lm.models.0.decoder.embed_positions._float_tensor', 'transformer_lm.models.0.decoder.layers.0.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.0.fc1.weight', 'transformer_lm.models.0.decoder.layers.0.fc1.bias', 'transformer_lm.models.0.decoder.layers.0.fc2.weight', 'transformer_lm.models.0.decoder.layers.0.fc2.bias', 'transformer_lm.models.0.decoder.layers.0.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.0.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.1.fc1.weight', 'transformer_lm.models.0.decoder.layers.1.fc1.bias', 'transformer_lm.models.0.decoder.layers.1.fc2.weight', 'transformer_lm.models.0.decoder.layers.1.fc2.bias', 'transformer_lm.models.0.decoder.layers.1.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.1.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.2.fc1.weight', 'transformer_lm.models.0.decoder.layers.2.fc1.bias', 'transformer_lm.models.0.decoder.layers.2.fc2.weight', 'transformer_lm.models.0.decoder.layers.2.fc2.bias', 'transformer_lm.models.0.decoder.layers.2.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.2.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.3.fc1.weight', 'transformer_lm.models.0.decoder.layers.3.fc1.bias', 'transformer_lm.models.0.decoder.layers.3.fc2.weight', 'transformer_lm.models.0.decoder.layers.3.fc2.bias', 'transformer_lm.models.0.decoder.layers.3.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.3.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.4.fc1.weight', 'transformer_lm.models.0.decoder.layers.4.fc1.bias', 'transformer_lm.models.0.decoder.layers.4.fc2.weight', 'transformer_lm.models.0.decoder.layers.4.fc2.bias', 'transformer_lm.models.0.decoder.layers.4.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.4.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.5.fc1.weight', 'transformer_lm.models.0.decoder.layers.5.fc1.bias', 'transformer_lm.models.0.decoder.layers.5.fc2.weight', 'transformer_lm.models.0.decoder.layers.5.fc2.bias', 'transformer_lm.models.0.decoder.layers.5.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.5.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.6.fc1.weight', 'transformer_lm.models.0.decoder.layers.6.fc1.bias', 'transformer_lm.models.0.decoder.layers.6.fc2.weight', 'transformer_lm.models.0.decoder.layers.6.fc2.bias', 'transformer_lm.models.0.decoder.layers.6.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.6.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.7.fc1.weight', 'transformer_lm.models.0.decoder.layers.7.fc1.bias', 'transformer_lm.models.0.decoder.layers.7.fc2.weight', 'transformer_lm.models.0.decoder.layers.7.fc2.bias', 'transformer_lm.models.0.decoder.layers.7.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.7.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.8.fc1.weight', 'transformer_lm.models.0.decoder.layers.8.fc1.bias', 'transformer_lm.models.0.decoder.layers.8.fc2.weight', 'transformer_lm.models.0.decoder.layers.8.fc2.bias', 'transformer_lm.models.0.decoder.layers.8.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.8.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.9.fc1.weight', 'transformer_lm.models.0.decoder.layers.9.fc1.bias', 'transformer_lm.models.0.decoder.layers.9.fc2.weight', 'transformer_lm.models.0.decoder.layers.9.fc2.bias', 'transformer_lm.models.0.decoder.layers.9.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.9.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.10.fc1.weight', 'transformer_lm.models.0.decoder.layers.10.fc1.bias', 'transformer_lm.models.0.decoder.layers.10.fc2.weight', 'transformer_lm.models.0.decoder.layers.10.fc2.bias', 'transformer_lm.models.0.decoder.layers.10.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.10.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.11.fc1.weight', 'transformer_lm.models.0.decoder.layers.11.fc1.bias', 'transformer_lm.models.0.decoder.layers.11.fc2.weight', 'transformer_lm.models.0.decoder.layers.11.fc2.bias', 'transformer_lm.models.0.decoder.layers.11.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.11.final_layer_norm.bias', 'transformer_lm.models.0.decoder.project_out_dim.weight', 'transformer_lm.models.0.decoder.output_projection.weight'], unexpected_keys=[])
+2023-03-03 02:01:49,420 - __main__ - INFO - 
+Testing the trained model .... 
+
+2023-03-03 02:01:49,420 - __main__ - INFO - beamWidth:40.000000
+2023-03-03 02:13:26,849 - __main__ - INFO - rescore index:6
+2023-03-03 02:13:27,509 - __main__ - INFO - rescore index:1
+2023-03-03 02:13:28,179 - __main__ - INFO - rescore index:3
+2023-03-03 02:13:30,175 - __main__ - INFO - rescore index:18
+2023-03-03 02:13:30,861 - __main__ - INFO - rescore index:5
+2023-03-03 02:13:31,538 - __main__ - INFO - rescore index:7
+2023-03-03 02:13:32,920 - __main__ - INFO - rescore index:22
+2023-03-03 02:13:34,895 - __main__ - INFO - rescore index:7
+2023-03-03 02:13:35,579 - __main__ - INFO - rescore index:6
+2023-03-03 02:13:36,252 - __main__ - INFO - rescore index:11
+2023-03-03 02:13:40,209 - __main__ - INFO - rescore index:5
+2023-03-03 02:13:40,865 - __main__ - INFO - rescore index:1
+2023-03-03 02:13:42,887 - __main__ - INFO - rescore index:11
+2023-03-03 02:13:43,549 - __main__ - INFO - rescore index:29
+2023-03-03 02:13:44,197 - __main__ - INFO - rescore index:7
+2023-03-03 02:13:44,869 - __main__ - INFO - rescore index:2
+2023-03-03 02:13:45,534 - __main__ - INFO - rescore index:5
+2023-03-03 02:13:46,207 - __main__ - INFO - rescore index:22
+2023-03-03 02:13:47,561 - __main__ - INFO - rescore index:12
+2023-03-03 02:13:50,327 - __main__ - INFO - rescore index:6
+2023-03-03 02:13:50,999 - __main__ - INFO - rescore index:21
+2023-03-03 02:13:53,004 - __main__ - INFO - rescore index:16
+2023-03-03 02:13:53,690 - __main__ - INFO - rescore index:3
+2023-03-03 02:13:55,693 - __main__ - INFO - rescore index:8
+2023-03-03 02:13:57,642 - __main__ - INFO - rescore index:2
+2023-03-03 02:13:58,975 - __main__ - INFO - rescore index:3
+2023-03-03 02:13:59,743 - __main__ - INFO - 
+
+2023-03-03 02:13:59,743 - __main__ - INFO - evalWER:158,evalWCount:484
+2023-03-03 02:13:59,743 - __main__ - INFO - batch1 || Test CER: 0.21894 || Test WER: 0.32645
+2023-03-03 02:25:13,652 - __main__ - INFO - rescore index:23
+2023-03-03 02:25:14,321 - __main__ - INFO - rescore index:12
+2023-03-03 02:25:14,968 - __main__ - INFO - rescore index:4
+2023-03-03 02:25:16,234 - __main__ - INFO - rescore index:16
+2023-03-03 02:25:16,872 - __main__ - INFO - rescore index:26
+2023-03-03 02:25:17,535 - __main__ - INFO - rescore index:15
+2023-03-03 02:25:18,833 - __main__ - INFO - rescore index:18
+2023-03-03 02:25:19,491 - __main__ - INFO - rescore index:2
+2023-03-03 02:25:20,142 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:20,810 - __main__ - INFO - rescore index:12
+2023-03-03 02:25:21,459 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:22,114 - __main__ - INFO - rescore index:11
+2023-03-03 02:25:22,764 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:23,412 - __main__ - INFO - rescore index:4
+2023-03-03 02:25:24,069 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:26,012 - __main__ - INFO - rescore index:10
+2023-03-03 02:25:27,323 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:27,965 - __main__ - INFO - rescore index:13
+2023-03-03 02:25:28,611 - __main__ - INFO - rescore index:19
+2023-03-03 02:25:29,899 - __main__ - INFO - rescore index:5
+2023-03-03 02:25:31,185 - __main__ - INFO - rescore index:2
+2023-03-03 02:25:31,827 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:32,482 - __main__ - INFO - rescore index:2
+2023-03-03 02:25:34,463 - __main__ - INFO - rescore index:17
+2023-03-03 02:25:35,131 - __main__ - INFO - rescore index:26
+2023-03-03 02:25:36,452 - __main__ - INFO - rescore index:6
+2023-03-03 02:25:37,880 - __main__ - INFO - rescore index:11
+2023-03-03 02:25:38,532 - __main__ - INFO - rescore index:24
+2023-03-03 02:25:39,173 - __main__ - INFO - rescore index:14
+2023-03-03 02:25:41,121 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:41,751 - __main__ - INFO - rescore index:1
+2023-03-03 02:25:43,036 - __main__ - INFO - rescore index:3
+2023-03-03 02:25:43,690 - __main__ - INFO - rescore index:4
+2023-03-03 02:25:44,330 - __main__ - INFO - rescore index:12
+2023-03-03 02:25:45,605 - __main__ - INFO - rescore index:16
+2023-03-03 02:25:46,398 - __main__ - INFO - 
+
+2023-03-03 02:25:46,398 - __main__ - INFO - evalWER:282,evalWCount:834
+2023-03-03 02:25:46,398 - __main__ - INFO - batch2 || Test CER: 0.22719 || Test WER: 0.33813
+2023-03-03 02:36:47,502 - __main__ - INFO - rescore index:5
+2023-03-03 02:36:48,160 - __main__ - INFO - rescore index:1
+2023-03-03 02:36:48,838 - __main__ - INFO - rescore index:6
+2023-03-03 02:36:49,573 - __main__ - INFO - rescore index:18
+2023-03-03 02:36:50,251 - __main__ - INFO - rescore index:4
+2023-03-03 02:36:52,363 - __main__ - INFO - rescore index:11
+2023-03-03 02:36:53,065 - __main__ - INFO - rescore index:2
+2023-03-03 02:36:53,773 - __main__ - INFO - rescore index:19
+2023-03-03 02:36:56,662 - __main__ - INFO - rescore index:25
+2023-03-03 02:36:57,358 - __main__ - INFO - rescore index:10
+2023-03-03 02:36:58,839 - __main__ - INFO - rescore index:1
+2023-03-03 02:36:59,545 - __main__ - INFO - rescore index:20
+2023-03-03 02:37:00,284 - __main__ - INFO - rescore index:6
+2023-03-03 02:37:00,991 - __main__ - INFO - rescore index:5
+2023-03-03 02:37:01,676 - __main__ - INFO - rescore index:10
+2023-03-03 02:37:02,368 - __main__ - INFO - rescore index:1
+2023-03-03 02:37:03,767 - __main__ - INFO - rescore index:15
+2023-03-03 02:37:04,460 - __main__ - INFO - rescore index:4
+2023-03-03 02:37:05,151 - __main__ - INFO - rescore index:26
+2023-03-03 02:37:05,822 - __main__ - INFO - rescore index:2
+2023-03-03 02:37:07,179 - __main__ - INFO - rescore index:2
+2023-03-03 02:37:10,586 - __main__ - INFO - rescore index:1
+2023-03-03 02:37:12,653 - __main__ - INFO - rescore index:20
+2023-03-03 02:37:13,330 - __main__ - INFO - rescore index:15
+2023-03-03 02:37:14,006 - __main__ - INFO - rescore index:16
+2023-03-03 02:37:14,688 - __main__ - INFO - rescore index:26
+2023-03-03 02:37:15,391 - __main__ - INFO - rescore index:9
+2023-03-03 02:37:16,779 - __main__ - INFO - rescore index:2
+2023-03-03 02:37:17,464 - __main__ - INFO - rescore index:5
+2023-03-03 02:37:18,148 - __main__ - INFO - rescore index:3
+2023-03-03 02:37:19,503 - __main__ - INFO - rescore index:9
+2023-03-03 02:37:20,198 - __main__ - INFO - rescore index:28
+2023-03-03 02:37:20,888 - __main__ - INFO - rescore index:2
+2023-03-03 02:37:21,721 - __main__ - INFO - 
+
+2023-03-03 02:37:21,721 - __main__ - INFO - evalWER:456,evalWCount:1188
+2023-03-03 02:37:21,721 - __main__ - INFO - batch3 || Test CER: 0.26109 || Test WER: 0.38384
+2023-03-03 02:48:17,902 - __main__ - INFO - rescore index:7
+2023-03-03 02:48:18,562 - __main__ - INFO - rescore index:9
+2023-03-03 02:48:19,243 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:19,920 - __main__ - INFO - rescore index:8
+2023-03-03 02:48:20,595 - __main__ - INFO - rescore index:9
+2023-03-03 02:48:21,267 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:21,965 - __main__ - INFO - rescore index:3
+2023-03-03 02:48:23,993 - __main__ - INFO - rescore index:7
+2023-03-03 02:48:25,788 - __main__ - INFO - rescore index:3
+2023-03-03 02:48:26,455 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:27,122 - __main__ - INFO - rescore index:4
+2023-03-03 02:48:27,818 - __main__ - INFO - rescore index:10
+2023-03-03 02:48:28,493 - __main__ - INFO - rescore index:7
+2023-03-03 02:48:29,860 - __main__ - INFO - rescore index:22
+2023-03-03 02:48:30,546 - __main__ - INFO - rescore index:6
+2023-03-03 02:48:31,951 - __main__ - INFO - rescore index:10
+2023-03-03 02:48:32,635 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:33,324 - __main__ - INFO - rescore index:3
+2023-03-03 02:48:34,011 - __main__ - INFO - rescore index:15
+2023-03-03 02:48:34,688 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:35,357 - __main__ - INFO - rescore index:15
+2023-03-03 02:48:36,019 - __main__ - INFO - rescore index:4
+2023-03-03 02:48:37,411 - __main__ - INFO - rescore index:14
+2023-03-03 02:48:38,123 - __main__ - INFO - rescore index:6
+2023-03-03 02:48:39,478 - __main__ - INFO - rescore index:1
+2023-03-03 02:48:40,140 - __main__ - INFO - rescore index:23
+2023-03-03 02:48:40,820 - __main__ - INFO - rescore index:20
+2023-03-03 02:48:41,478 - __main__ - INFO - rescore index:5
+2023-03-03 02:48:42,146 - __main__ - INFO - rescore index:21
+2023-03-03 02:48:43,441 - __main__ - INFO - rescore index:4
+2023-03-03 02:48:44,846 - __main__ - INFO - rescore index:7
+2023-03-03 02:48:46,921 - __main__ - INFO - rescore index:11
+2023-03-03 02:48:47,580 - __main__ - INFO - rescore index:3
+2023-03-03 02:48:48,263 - __main__ - INFO - rescore index:2
+2023-03-03 02:48:49,597 - __main__ - INFO - rescore index:4
+2023-03-03 02:48:50,258 - __main__ - INFO - rescore index:12
+2023-03-03 02:48:50,954 - __main__ - INFO - 
+
+2023-03-03 02:48:50,954 - __main__ - INFO - evalWER:620,evalWCount:1518
+2023-03-03 02:48:50,954 - __main__ - INFO - batch4 || Test CER: 0.27873 || Test WER: 0.40843
+2023-03-03 03:00:05,346 - __main__ - INFO - rescore index:12
+2023-03-03 03:00:06,671 - __main__ - INFO - rescore index:3
+2023-03-03 03:00:08,664 - __main__ - INFO - rescore index:3
+2023-03-03 03:00:09,344 - __main__ - INFO - rescore index:8
+2023-03-03 03:00:10,034 - __main__ - INFO - rescore index:26
+2023-03-03 03:00:10,723 - __main__ - INFO - rescore index:19
+2023-03-03 03:00:11,392 - __main__ - INFO - rescore index:15
+2023-03-03 03:00:12,055 - __main__ - INFO - rescore index:24
+2023-03-03 03:00:12,727 - __main__ - INFO - rescore index:9
+2023-03-03 03:00:14,093 - __main__ - INFO - rescore index:8
+2023-03-03 03:00:14,793 - __main__ - INFO - rescore index:25
+2023-03-03 03:00:15,474 - __main__ - INFO - rescore index:6
+2023-03-03 03:00:16,168 - __main__ - INFO - rescore index:28
+2023-03-03 03:00:16,897 - __main__ - INFO - rescore index:5
+2023-03-03 03:00:17,594 - __main__ - INFO - rescore index:6
+2023-03-03 03:00:18,949 - __main__ - INFO - rescore index:1
+2023-03-03 03:00:20,251 - __main__ - INFO - rescore index:15
+2023-03-03 03:00:21,607 - __main__ - INFO - rescore index:1
+2023-03-03 03:00:22,992 - __main__ - INFO - rescore index:20
+2023-03-03 03:00:25,000 - __main__ - INFO - rescore index:26
+2023-03-03 03:00:26,936 - __main__ - INFO - rescore index:25
+2023-03-03 03:00:27,573 - __main__ - INFO - rescore index:10
+2023-03-03 03:00:28,230 - __main__ - INFO - rescore index:10
+2023-03-03 03:00:28,909 - __main__ - INFO - rescore index:25
+2023-03-03 03:00:30,288 - __main__ - INFO - rescore index:4
+2023-03-03 03:00:30,981 - __main__ - INFO - rescore index:1
+2023-03-03 03:00:31,658 - __main__ - INFO - rescore index:4
+2023-03-03 03:00:32,319 - __main__ - INFO - rescore index:5
+2023-03-03 03:00:32,977 - __main__ - INFO - rescore index:28
+2023-03-03 03:00:33,624 - __main__ - INFO - rescore index:22
+2023-03-03 03:00:34,886 - __main__ - INFO - rescore index:1
+2023-03-03 03:00:36,794 - __main__ - INFO - rescore index:1
+2023-03-03 03:00:37,473 - __main__ - INFO - rescore index:7
+2023-03-03 03:00:38,279 - __main__ - INFO - 
+
+2023-03-03 03:00:38,279 - __main__ - INFO - evalWER:822,evalWCount:1908
+2023-03-03 03:00:38,279 - __main__ - INFO - batch5 || Test CER: 0.29307 || Test WER: 0.43082
+2023-03-03 03:12:19,751 - __main__ - INFO - rescore index:21
+2023-03-03 03:12:20,403 - __main__ - INFO - rescore index:9
+2023-03-03 03:12:21,057 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:21,752 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:23,625 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:24,307 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:25,001 - __main__ - INFO - rescore index:4
+2023-03-03 03:12:25,702 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:27,093 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:28,467 - __main__ - INFO - rescore index:24
+2023-03-03 03:12:29,161 - __main__ - INFO - rescore index:14
+2023-03-03 03:12:29,833 - __main__ - INFO - rescore index:19
+2023-03-03 03:12:30,517 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:31,180 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:31,851 - __main__ - INFO - rescore index:24
+2023-03-03 03:12:32,522 - __main__ - INFO - rescore index:4
+2023-03-03 03:12:33,190 - __main__ - INFO - rescore index:23
+2023-03-03 03:12:33,860 - __main__ - INFO - rescore index:5
+2023-03-03 03:12:35,904 - __main__ - INFO - rescore index:25
+2023-03-03 03:12:36,590 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:37,292 - __main__ - INFO - rescore index:13
+2023-03-03 03:12:37,987 - __main__ - INFO - rescore index:27
+2023-03-03 03:12:39,365 - __main__ - INFO - rescore index:3
+2023-03-03 03:12:42,174 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:42,936 - __main__ - INFO - rescore index:6
+2023-03-03 03:12:43,663 - __main__ - INFO - rescore index:15
+2023-03-03 03:12:44,368 - __main__ - INFO - rescore index:19
+2023-03-03 03:12:45,671 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:46,345 - __main__ - INFO - rescore index:3
+2023-03-03 03:12:47,032 - __main__ - INFO - rescore index:17
+2023-03-03 03:12:47,737 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:48,435 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:49,123 - __main__ - INFO - rescore index:8
+2023-03-03 03:12:49,812 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:51,169 - __main__ - INFO - rescore index:28
+2023-03-03 03:12:51,877 - __main__ - INFO - rescore index:1
+2023-03-03 03:12:52,558 - __main__ - INFO - rescore index:2
+2023-03-03 03:12:53,968 - __main__ - INFO - 
+
+2023-03-03 03:12:53,968 - __main__ - INFO - evalWER:999,evalWCount:2310
+2023-03-03 03:12:53,968 - __main__ - INFO - batch6 || Test CER: 0.29432 || Test WER: 0.43247
+2023-03-03 03:24:37,769 - __main__ - INFO - rescore index:15
+2023-03-03 03:24:38,400 - __main__ - INFO - rescore index:5
+2023-03-03 03:24:39,082 - __main__ - INFO - rescore index:14
+2023-03-03 03:24:40,495 - __main__ - INFO - rescore index:4
+2023-03-03 03:24:42,641 - __main__ - INFO - rescore index:11
+2023-03-03 03:24:43,323 - __main__ - INFO - rescore index:4
+2023-03-03 03:24:44,006 - __main__ - INFO - rescore index:2
+2023-03-03 03:24:45,372 - __main__ - INFO - rescore index:3
+2023-03-03 03:24:46,045 - __main__ - INFO - rescore index:8
+2023-03-03 03:24:46,721 - __main__ - INFO - rescore index:1
+2023-03-03 03:24:47,390 - __main__ - INFO - rescore index:2
+2023-03-03 03:24:49,363 - __main__ - INFO - rescore index:5
+2023-03-03 03:24:49,997 - __main__ - INFO - rescore index:2
+2023-03-03 03:24:51,318 - __main__ - INFO - rescore index:3
+2023-03-03 03:24:51,968 - __main__ - INFO - rescore index:3
+2023-03-03 03:24:52,615 - __main__ - INFO - rescore index:22
+2023-03-03 03:24:53,977 - __main__ - INFO - rescore index:27
+2023-03-03 03:24:54,627 - __main__ - INFO - rescore index:2
+2023-03-03 03:24:55,278 - __main__ - INFO - rescore index:11
+2023-03-03 03:24:56,597 - __main__ - INFO - rescore index:3
+2023-03-03 03:24:57,888 - __main__ - INFO - rescore index:6
+2023-03-03 03:24:58,546 - __main__ - INFO - rescore index:2
+2023-03-03 03:24:59,206 - __main__ - INFO - rescore index:29
+2023-03-03 03:24:59,882 - __main__ - INFO - rescore index:5
+2023-03-03 03:25:00,554 - __main__ - INFO - rescore index:2
+2023-03-03 03:25:01,923 - __main__ - INFO - rescore index:1
+2023-03-03 03:25:02,608 - __main__ - INFO - rescore index:4
+2023-03-03 03:25:04,593 - __main__ - INFO - rescore index:1
+2023-03-03 03:25:05,921 - __main__ - INFO - rescore index:3
+2023-03-03 03:25:06,591 - __main__ - INFO - rescore index:15
+2023-03-03 03:25:07,255 - __main__ - INFO - rescore index:3
+2023-03-03 03:25:07,926 - __main__ - INFO - rescore index:3
+2023-03-03 03:25:08,604 - __main__ - INFO - rescore index:21
+2023-03-03 03:25:10,067 - __main__ - INFO - 
+
+2023-03-03 03:25:10,068 - __main__ - INFO - evalWER:1135,evalWCount:2719
+2023-03-03 03:25:10,068 - __main__ - INFO - batch7 || Test CER: 0.28413 || Test WER: 0.41743
+2023-03-03 03:36:21,039 - __main__ - INFO - rescore index:22
+2023-03-03 03:36:21,711 - __main__ - INFO - rescore index:17
+2023-03-03 03:36:22,402 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:23,762 - __main__ - INFO - rescore index:4
+2023-03-03 03:36:24,450 - __main__ - INFO - rescore index:6
+2023-03-03 03:36:25,839 - __main__ - INFO - rescore index:15
+2023-03-03 03:36:26,522 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:27,228 - __main__ - INFO - rescore index:4
+2023-03-03 03:36:28,486 - __main__ - INFO - rescore index:7
+2023-03-03 03:36:29,143 - __main__ - INFO - rescore index:8
+2023-03-03 03:36:29,850 - __main__ - INFO - rescore index:23
+2023-03-03 03:36:31,248 - __main__ - INFO - rescore index:11
+2023-03-03 03:36:31,925 - __main__ - INFO - rescore index:29
+2023-03-03 03:36:33,218 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:33,889 - __main__ - INFO - rescore index:3
+2023-03-03 03:36:35,242 - __main__ - INFO - rescore index:21
+2023-03-03 03:36:35,927 - __main__ - INFO - rescore index:7
+2023-03-03 03:36:36,618 - __main__ - INFO - rescore index:5
+2023-03-03 03:36:37,311 - __main__ - INFO - rescore index:22
+2023-03-03 03:36:38,000 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:42,663 - __main__ - INFO - rescore index:3
+2023-03-03 03:36:43,326 - __main__ - INFO - rescore index:25
+2023-03-03 03:36:43,980 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:45,299 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:46,645 - __main__ - INFO - rescore index:12
+2023-03-03 03:36:47,328 - __main__ - INFO - rescore index:3
+2023-03-03 03:36:48,632 - __main__ - INFO - rescore index:17
+2023-03-03 03:36:50,166 - __main__ - INFO - rescore index:1
+2023-03-03 03:36:50,804 - __main__ - INFO - rescore index:2
+2023-03-03 03:36:51,451 - __main__ - INFO - rescore index:5
+2023-03-03 03:36:52,793 - __main__ - INFO - rescore index:4
+2023-03-03 03:36:53,446 - __main__ - INFO - rescore index:7
+2023-03-03 03:36:54,220 - __main__ - INFO - 
+
+2023-03-03 03:36:54,220 - __main__ - INFO - evalWER:1280,evalWCount:3029
+2023-03-03 03:36:54,220 - __main__ - INFO - batch8 || Test CER: 0.28826 || Test WER: 0.42258
+2023-03-03 03:48:15,968 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:18,414 - __main__ - INFO - rescore index:8
+2023-03-03 03:48:19,805 - __main__ - INFO - rescore index:16
+2023-03-03 03:48:20,466 - __main__ - INFO - rescore index:2
+2023-03-03 03:48:21,785 - __main__ - INFO - rescore index:17
+2023-03-03 03:48:22,465 - __main__ - INFO - rescore index:28
+2023-03-03 03:48:23,132 - __main__ - INFO - rescore index:28
+2023-03-03 03:48:23,775 - __main__ - INFO - rescore index:3
+2023-03-03 03:48:24,437 - __main__ - INFO - rescore index:8
+2023-03-03 03:48:25,092 - __main__ - INFO - rescore index:7
+2023-03-03 03:48:25,748 - __main__ - INFO - rescore index:5
+2023-03-03 03:48:26,412 - __main__ - INFO - rescore index:8
+2023-03-03 03:48:27,065 - __main__ - INFO - rescore index:3
+2023-03-03 03:48:27,733 - __main__ - INFO - rescore index:27
+2023-03-03 03:48:29,061 - __main__ - INFO - rescore index:2
+2023-03-03 03:48:30,403 - __main__ - INFO - rescore index:10
+2023-03-03 03:48:31,780 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:33,837 - __main__ - INFO - rescore index:10
+2023-03-03 03:48:34,517 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:35,213 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:35,879 - __main__ - INFO - rescore index:11
+2023-03-03 03:48:37,303 - __main__ - INFO - rescore index:3
+2023-03-03 03:48:37,969 - __main__ - INFO - rescore index:20
+2023-03-03 03:48:39,303 - __main__ - INFO - rescore index:26
+2023-03-03 03:48:40,687 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:41,335 - __main__ - INFO - rescore index:28
+2023-03-03 03:48:42,000 - __main__ - INFO - rescore index:22
+2023-03-03 03:48:42,684 - __main__ - INFO - rescore index:3
+2023-03-03 03:48:43,350 - __main__ - INFO - rescore index:2
+2023-03-03 03:48:44,011 - __main__ - INFO - rescore index:4
+2023-03-03 03:48:45,376 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:46,067 - __main__ - INFO - rescore index:10
+2023-03-03 03:48:46,731 - __main__ - INFO - rescore index:2
+2023-03-03 03:48:47,382 - __main__ - INFO - rescore index:1
+2023-03-03 03:48:48,746 - __main__ - INFO - rescore index:28
+2023-03-03 03:48:49,575 - __main__ - INFO - 
+
+2023-03-03 03:48:49,575 - __main__ - INFO - evalWER:1441,evalWCount:3390
+2023-03-03 03:48:49,575 - __main__ - INFO - batch9 || Test CER: 0.29119 || Test WER: 0.42507
+2023-03-03 03:59:22,328 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:23,004 - __main__ - INFO - rescore index:3
+2023-03-03 03:59:24,399 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:26,455 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:27,157 - __main__ - INFO - rescore index:7
+2023-03-03 03:59:27,865 - __main__ - INFO - rescore index:17
+2023-03-03 03:59:29,264 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:30,612 - __main__ - INFO - rescore index:3
+2023-03-03 03:59:31,313 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:32,004 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:32,694 - __main__ - INFO - rescore index:4
+2023-03-03 03:59:34,046 - __main__ - INFO - rescore index:18
+2023-03-03 03:59:35,337 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:36,004 - __main__ - INFO - rescore index:8
+2023-03-03 03:59:36,669 - __main__ - INFO - rescore index:6
+2023-03-03 03:59:37,335 - __main__ - INFO - rescore index:4
+2023-03-03 03:59:37,997 - __main__ - INFO - rescore index:5
+2023-03-03 03:59:38,666 - __main__ - INFO - rescore index:3
+2023-03-03 03:59:39,329 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:39,999 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:42,663 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:43,358 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:44,050 - __main__ - INFO - rescore index:24
+2023-03-03 03:59:44,741 - __main__ - INFO - rescore index:27
+2023-03-03 03:59:46,132 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:46,863 - __main__ - INFO - rescore index:3
+2023-03-03 03:59:47,542 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:48,890 - __main__ - INFO - rescore index:7
+2023-03-03 03:59:49,585 - __main__ - INFO - rescore index:7
+2023-03-03 03:59:50,271 - __main__ - INFO - rescore index:1
+2023-03-03 03:59:50,971 - __main__ - INFO - rescore index:2
+2023-03-03 03:59:52,317 - __main__ - INFO - rescore index:4
+2023-03-03 03:59:54,338 - __main__ - INFO - rescore index:27
+2023-03-03 03:59:55,040 - __main__ - INFO - rescore index:19
+2023-03-03 03:59:55,796 - __main__ - INFO - 
+
+2023-03-03 03:59:55,796 - __main__ - INFO - evalWER:1578,evalWCount:3695
+2023-03-03 03:59:55,797 - __main__ - INFO - batch10 || Test CER: 0.29210 || Test WER: 0.42706
+2023-03-03 04:11:36,301 - __main__ - INFO - rescore index:8
+2023-03-03 04:11:36,953 - __main__ - INFO - rescore index:20
+2023-03-03 04:11:39,634 - __main__ - INFO - rescore index:2
+2023-03-03 04:11:40,304 - __main__ - INFO - rescore index:3
+2023-03-03 04:11:41,469 - __main__ - INFO - rescore index:25
+2023-03-03 04:11:42,165 - __main__ - INFO - rescore index:1
+2023-03-03 04:11:42,854 - __main__ - INFO - rescore index:3
+2023-03-03 04:11:44,201 - __main__ - INFO - rescore index:1
+2023-03-03 04:11:44,877 - __main__ - INFO - rescore index:1
+2023-03-03 04:11:45,536 - __main__ - INFO - rescore index:18
+2023-03-03 04:11:46,188 - __main__ - INFO - rescore index:3
+2023-03-03 04:11:47,513 - __main__ - INFO - rescore index:21
+2023-03-03 04:11:49,538 - __main__ - INFO - rescore index:9
+2023-03-03 04:11:50,228 - __main__ - INFO - rescore index:1
+2023-03-03 04:11:50,896 - __main__ - INFO - rescore index:7
+2023-03-03 04:11:51,643 - __main__ - INFO - rescore index:16
+2023-03-03 04:11:52,350 - __main__ - INFO - rescore index:21
+2023-03-03 04:11:53,068 - __main__ - INFO - rescore index:2
+2023-03-03 04:11:53,745 - __main__ - INFO - rescore index:3
+2023-03-03 04:11:55,131 - __main__ - INFO - rescore index:15
+2023-03-03 04:11:55,876 - __main__ - INFO - rescore index:4
+2023-03-03 04:11:56,605 - __main__ - INFO - rescore index:21
+2023-03-03 04:11:57,341 - __main__ - INFO - rescore index:3
+2023-03-03 04:11:58,799 - __main__ - INFO - rescore index:16
+2023-03-03 04:11:59,580 - __main__ - INFO - rescore index:2
+2023-03-03 04:12:00,286 - __main__ - INFO - rescore index:2
+2023-03-03 04:12:01,024 - __main__ - INFO - rescore index:7
+2023-03-03 04:12:01,705 - __main__ - INFO - rescore index:20
+2023-03-03 04:12:03,650 - __main__ - INFO - rescore index:5
+2023-03-03 04:12:04,996 - __main__ - INFO - rescore index:16
+2023-03-03 04:12:07,000 - __main__ - INFO - rescore index:1
+2023-03-03 04:12:07,692 - __main__ - INFO - rescore index:21
+2023-03-03 04:12:08,391 - __main__ - INFO - rescore index:1
+2023-03-03 04:12:10,543 - __main__ - INFO - 
+
+2023-03-03 04:12:10,543 - __main__ - INFO - evalWER:1708,evalWCount:3997
+2023-03-03 04:12:10,543 - __main__ - INFO - batch11 || Test CER: 0.29381 || Test WER: 0.42732
+2023-03-03 04:22:01,369 - __main__ - INFO - rescore index:3
+2023-03-03 04:22:02,076 - __main__ - INFO - rescore index:2
+2023-03-03 04:22:02,770 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:06,989 - __main__ - INFO - rescore index:27
+2023-03-03 04:22:07,709 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:12,140 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:12,798 - __main__ - INFO - rescore index:4
+2023-03-03 04:22:14,669 - __main__ - INFO - rescore index:3
+2023-03-03 04:22:15,325 - __main__ - INFO - rescore index:18
+2023-03-03 04:22:16,019 - __main__ - INFO - rescore index:3
+2023-03-03 04:22:16,705 - __main__ - INFO - rescore index:9
+2023-03-03 04:22:17,358 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:18,023 - __main__ - INFO - rescore index:14
+2023-03-03 04:22:19,454 - __main__ - INFO - rescore index:16
+2023-03-03 04:22:21,575 - __main__ - INFO - rescore index:5
+2023-03-03 04:22:24,456 - __main__ - INFO - rescore index:14
+2023-03-03 04:22:25,167 - __main__ - INFO - rescore index:27
+2023-03-03 04:22:25,901 - __main__ - INFO - rescore index:7
+2023-03-03 04:22:26,614 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:27,343 - __main__ - INFO - rescore index:3
+2023-03-03 04:22:28,850 - __main__ - INFO - rescore index:3
+2023-03-03 04:22:30,232 - __main__ - INFO - rescore index:7
+2023-03-03 04:22:33,018 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:33,724 - __main__ - INFO - rescore index:5
+2023-03-03 04:22:35,167 - __main__ - INFO - rescore index:1
+2023-03-03 04:22:35,955 - __main__ - INFO - 
+
+2023-03-03 04:22:35,955 - __main__ - INFO - evalWER:1796,evalWCount:4307
+2023-03-03 04:22:35,955 - __main__ - INFO - batch12 || Test CER: 0.28709 || Test WER: 0.41700
+2023-03-03 04:34:25,023 - __main__ - INFO - rescore index:2
+2023-03-03 04:34:25,680 - __main__ - INFO - rescore index:25
+2023-03-03 04:34:26,334 - __main__ - INFO - rescore index:23
+2023-03-03 04:34:27,693 - __main__ - INFO - rescore index:9
+2023-03-03 04:34:28,364 - __main__ - INFO - rescore index:4
+2023-03-03 04:34:29,720 - __main__ - INFO - rescore index:6
+2023-03-03 04:34:30,410 - __main__ - INFO - rescore index:10
+2023-03-03 04:34:32,264 - __main__ - INFO - rescore index:27
+2023-03-03 04:34:33,648 - __main__ - INFO - rescore index:3
+2023-03-03 04:34:34,329 - __main__ - INFO - rescore index:1
+2023-03-03 04:34:35,031 - __main__ - INFO - rescore index:2
+2023-03-03 04:34:35,702 - __main__ - INFO - rescore index:4
+2023-03-03 04:34:38,403 - __main__ - INFO - rescore index:14
+2023-03-03 04:34:39,720 - __main__ - INFO - rescore index:8
+2023-03-03 04:34:41,059 - __main__ - INFO - rescore index:2
+2023-03-03 04:34:43,073 - __main__ - INFO - rescore index:4
+2023-03-03 04:34:45,100 - __main__ - INFO - rescore index:16
+2023-03-03 04:34:45,784 - __main__ - INFO - rescore index:29
+2023-03-03 04:34:46,471 - __main__ - INFO - rescore index:13
+2023-03-03 04:34:47,144 - __main__ - INFO - rescore index:7
+2023-03-03 04:34:47,835 - __main__ - INFO - rescore index:7
+2023-03-03 04:34:48,541 - __main__ - INFO - rescore index:28
+2023-03-03 04:34:49,256 - __main__ - INFO - rescore index:7
+2023-03-03 04:34:49,960 - __main__ - INFO - rescore index:1
+2023-03-03 04:34:50,644 - __main__ - INFO - rescore index:2
+2023-03-03 04:34:52,042 - __main__ - INFO - rescore index:3
+2023-03-03 04:34:54,096 - __main__ - INFO - rescore index:19
+2023-03-03 04:34:54,743 - __main__ - INFO - rescore index:1
+2023-03-03 04:34:55,394 - __main__ - INFO - rescore index:1
+2023-03-03 04:34:56,092 - __main__ - INFO - rescore index:5
+2023-03-03 04:34:58,383 - __main__ - INFO - rescore index:19
+2023-03-03 04:34:59,231 - __main__ - INFO - 
+
+2023-03-03 04:34:59,231 - __main__ - INFO - evalWER:1932,evalWCount:4652
+2023-03-03 04:34:59,231 - __main__ - INFO - batch13 || Test CER: 0.28624 || Test WER: 0.41531
+2023-03-03 04:45:57,238 - __main__ - INFO - rescore index:18
+2023-03-03 04:45:59,927 - __main__ - INFO - rescore index:6
+2023-03-03 04:46:00,611 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:01,988 - __main__ - INFO - rescore index:26
+2023-03-03 04:46:02,694 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:03,409 - __main__ - INFO - rescore index:8
+2023-03-03 04:46:04,107 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:04,804 - __main__ - INFO - rescore index:25
+2023-03-03 04:46:06,249 - __main__ - INFO - rescore index:21
+2023-03-03 04:46:06,959 - __main__ - INFO - rescore index:25
+2023-03-03 04:46:07,602 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:08,250 - __main__ - INFO - rescore index:19
+2023-03-03 04:46:08,908 - __main__ - INFO - rescore index:1
+2023-03-03 04:46:10,085 - __main__ - INFO - rescore index:9
+2023-03-03 04:46:10,724 - __main__ - INFO - rescore index:14
+2023-03-03 04:46:11,380 - __main__ - INFO - rescore index:16
+2023-03-03 04:46:12,017 - __main__ - INFO - rescore index:5
+2023-03-03 04:46:12,651 - __main__ - INFO - rescore index:24
+2023-03-03 04:46:13,304 - __main__ - INFO - rescore index:3
+2023-03-03 04:46:14,582 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:15,247 - __main__ - INFO - rescore index:11
+2023-03-03 04:46:15,907 - __main__ - INFO - rescore index:24
+2023-03-03 04:46:16,575 - __main__ - INFO - rescore index:4
+2023-03-03 04:46:17,284 - __main__ - INFO - rescore index:14
+2023-03-03 04:46:17,968 - __main__ - INFO - rescore index:20
+2023-03-03 04:46:18,646 - __main__ - INFO - rescore index:8
+2023-03-03 04:46:19,314 - __main__ - INFO - rescore index:5
+2023-03-03 04:46:20,669 - __main__ - INFO - rescore index:17
+2023-03-03 04:46:21,339 - __main__ - INFO - rescore index:24
+2023-03-03 04:46:21,996 - __main__ - INFO - rescore index:26
+2023-03-03 04:46:23,333 - __main__ - INFO - rescore index:7
+2023-03-03 04:46:24,022 - __main__ - INFO - rescore index:25
+2023-03-03 04:46:24,703 - __main__ - INFO - rescore index:8
+2023-03-03 04:46:25,390 - __main__ - INFO - rescore index:10
+2023-03-03 04:46:26,088 - __main__ - INFO - rescore index:25
+2023-03-03 04:46:26,762 - __main__ - INFO - rescore index:4
+2023-03-03 04:46:27,430 - __main__ - INFO - rescore index:6
+2023-03-03 04:46:28,119 - __main__ - INFO - rescore index:3
+2023-03-03 04:46:29,475 - __main__ - INFO - rescore index:2
+2023-03-03 04:46:30,243 - __main__ - INFO - 
+
+2023-03-03 04:46:30,244 - __main__ - INFO - evalWER:2133,evalWCount:5049
+2023-03-03 04:46:30,244 - __main__ - INFO - batch14 || Test CER: 0.29047 || Test WER: 0.42246
+2023-03-03 04:58:18,695 - __main__ - INFO - rescore index:7
+2023-03-03 04:58:19,420 - __main__ - INFO - rescore index:7
+2023-03-03 04:58:20,837 - __main__ - INFO - rescore index:18
+2023-03-03 04:58:21,513 - __main__ - INFO - rescore index:9
+2023-03-03 04:58:22,164 - __main__ - INFO - rescore index:8
+2023-03-03 04:58:22,860 - __main__ - INFO - rescore index:25
+2023-03-03 04:58:23,534 - __main__ - INFO - rescore index:22
+2023-03-03 04:58:24,191 - __main__ - INFO - rescore index:1
+2023-03-03 04:58:26,170 - __main__ - INFO - rescore index:14
+2023-03-03 04:58:27,445 - __main__ - INFO - rescore index:22
+2023-03-03 04:58:28,795 - __main__ - INFO - rescore index:13
+2023-03-03 04:58:29,513 - __main__ - INFO - rescore index:1
+2023-03-03 04:58:30,222 - __main__ - INFO - rescore index:27
+2023-03-03 04:58:31,563 - __main__ - INFO - rescore index:16
+2023-03-03 04:58:33,010 - __main__ - INFO - rescore index:5
+2023-03-03 04:58:33,742 - __main__ - INFO - rescore index:12
+2023-03-03 04:58:34,444 - __main__ - INFO - rescore index:7
+2023-03-03 04:58:35,111 - __main__ - INFO - rescore index:10
+2023-03-03 04:58:37,098 - __main__ - INFO - rescore index:15
+2023-03-03 04:58:37,785 - __main__ - INFO - rescore index:14
+2023-03-03 04:58:38,486 - __main__ - INFO - rescore index:26
+2023-03-03 04:58:40,458 - __main__ - INFO - rescore index:5
+2023-03-03 04:58:41,118 - __main__ - INFO - rescore index:7
+2023-03-03 04:58:41,777 - __main__ - INFO - rescore index:1
+2023-03-03 04:58:44,444 - __main__ - INFO - rescore index:1
+2023-03-03 04:58:45,108 - __main__ - INFO - rescore index:3
+2023-03-03 04:58:45,795 - __main__ - INFO - rescore index:1
+2023-03-03 04:58:46,459 - __main__ - INFO - rescore index:4
+2023-03-03 04:58:47,128 - __main__ - INFO - rescore index:5
+2023-03-03 04:58:47,796 - __main__ - INFO - rescore index:5
+2023-03-03 04:58:48,481 - __main__ - INFO - rescore index:11
+2023-03-03 04:58:49,828 - __main__ - INFO - rescore index:3
+2023-03-03 04:58:50,469 - __main__ - INFO - rescore index:20
+2023-03-03 04:58:51,742 - __main__ - INFO - rescore index:5
+2023-03-03 04:58:52,613 - __main__ - INFO - 
+
+2023-03-03 04:58:52,665 - __main__ - INFO - evalWER:2316,evalWCount:5379
+2023-03-03 04:58:52,682 - __main__ - INFO - batch15 || Test CER: 0.29682 || Test WER: 0.43056
+2023-03-03 05:07:08,348 - __main__ - INFO - rescore index:1
+2023-03-03 05:07:10,978 - __main__ - INFO - rescore index:29
+2023-03-03 05:07:11,649 - __main__ - INFO - rescore index:29
+2023-03-03 05:07:12,311 - __main__ - INFO - rescore index:2
+2023-03-03 05:07:12,981 - __main__ - INFO - rescore index:19
+2023-03-03 05:07:13,653 - __main__ - INFO - rescore index:3
+2023-03-03 05:07:14,320 - __main__ - INFO - rescore index:7
+2023-03-03 05:07:14,994 - __main__ - INFO - rescore index:21
+2023-03-03 05:07:16,255 - __main__ - INFO - rescore index:3
+2023-03-03 05:07:16,967 - __main__ - INFO - rescore index:18
+2023-03-03 05:07:18,287 - __main__ - INFO - rescore index:14
+2023-03-03 05:07:18,949 - __main__ - INFO - rescore index:10
+2023-03-03 05:07:20,270 - __main__ - INFO - rescore index:1
+2023-03-03 05:07:22,957 - __main__ - INFO - rescore index:22
+2023-03-03 05:07:23,636 - __main__ - INFO - rescore index:21
+2023-03-03 05:07:24,996 - __main__ - INFO - rescore index:2
+2023-03-03 05:07:25,652 - __main__ - INFO - rescore index:2
+2023-03-03 05:07:26,945 - __main__ - INFO - rescore index:6
+2023-03-03 05:07:28,257 - __main__ - INFO - rescore index:3
+2023-03-03 05:07:28,916 - __main__ - INFO - rescore index:25
+2023-03-03 05:07:29,579 - __main__ - INFO - rescore index:6
+2023-03-03 05:07:30,235 - __main__ - INFO - rescore index:24
+2023-03-03 05:07:31,580 - __main__ - INFO - rescore index:19
+2023-03-03 05:07:32,995 - __main__ - INFO - rescore index:6
+2023-03-03 05:07:33,711 - __main__ - INFO - rescore index:3
+2023-03-03 05:07:35,072 - __main__ - INFO - rescore index:1
+2023-03-03 05:07:36,388 - __main__ - INFO - rescore index:14
+2023-03-03 05:07:37,715 - __main__ - INFO - rescore index:12
+2023-03-03 05:07:38,376 - __main__ - INFO - rescore index:1
+2023-03-03 05:07:39,031 - __main__ - INFO - rescore index:2
+2023-03-03 05:07:40,322 - __main__ - INFO - 
+
+2023-03-03 05:07:40,322 - __main__ - INFO - evalWER:2491,evalWCount:5719
+2023-03-03 05:07:40,322 - __main__ - INFO - batch16 || Test CER: 0.30026 || Test WER: 0.43557
+2023-03-03 05:18:31,220 - __main__ - INFO - rescore index:8
+2023-03-03 05:18:32,311 - __main__ - INFO - rescore index:4
+2023-03-03 05:18:33,650 - __main__ - INFO - rescore index:8
+2023-03-03 05:18:34,313 - __main__ - INFO - rescore index:6
+2023-03-03 05:18:34,978 - __main__ - INFO - rescore index:16
+2023-03-03 05:18:35,652 - __main__ - INFO - rescore index:6
+2023-03-03 05:18:36,981 - __main__ - INFO - rescore index:9
+2023-03-03 05:18:37,635 - __main__ - INFO - rescore index:11
+2023-03-03 05:18:38,310 - __main__ - INFO - rescore index:7
+2023-03-03 05:18:38,992 - __main__ - INFO - rescore index:7
+2023-03-03 05:18:39,676 - __main__ - INFO - rescore index:5
+2023-03-03 05:18:40,370 - __main__ - INFO - rescore index:1
+2023-03-03 05:18:41,037 - __main__ - INFO - rescore index:2
+2023-03-03 05:18:42,346 - __main__ - INFO - rescore index:2
+2023-03-03 05:18:43,638 - __main__ - INFO - rescore index:1
+2023-03-03 05:18:46,278 - __main__ - INFO - rescore index:2
+2023-03-03 05:18:46,935 - __main__ - INFO - rescore index:4
+2023-03-03 05:18:48,252 - __main__ - INFO - rescore index:2
+2023-03-03 05:18:48,927 - __main__ - INFO - rescore index:3
+2023-03-03 05:18:50,243 - __main__ - INFO - rescore index:16
+2023-03-03 05:18:50,920 - __main__ - INFO - rescore index:22
+2023-03-03 05:18:52,267 - __main__ - INFO - rescore index:21
+2023-03-03 05:18:53,602 - __main__ - INFO - rescore index:12
+2023-03-03 05:18:55,035 - __main__ - INFO - rescore index:1
+2023-03-03 05:18:55,667 - __main__ - INFO - rescore index:11
+2023-03-03 05:18:56,981 - __main__ - INFO - rescore index:3
+2023-03-03 05:18:58,277 - __main__ - INFO - rescore index:12
+2023-03-03 05:18:58,921 - __main__ - INFO - rescore index:12
+2023-03-03 05:18:59,565 - __main__ - INFO - rescore index:4
+2023-03-03 05:19:00,203 - __main__ - INFO - rescore index:7
+2023-03-03 05:19:00,878 - __main__ - INFO - rescore index:1
+2023-03-03 05:19:01,547 - __main__ - INFO - rescore index:11
+2023-03-03 05:19:02,235 - __main__ - INFO - rescore index:12
+2023-03-03 05:19:04,367 - __main__ - INFO - 
+
+2023-03-03 05:19:04,367 - __main__ - INFO - evalWER:2655,evalWCount:6019
+2023-03-03 05:19:04,368 - __main__ - INFO - batch17 || Test CER: 0.30328 || Test WER: 0.44110
+2023-03-03 05:30:26,456 - __main__ - INFO - rescore index:11
+2023-03-03 05:30:27,754 - __main__ - INFO - rescore index:18
+2023-03-03 05:30:28,406 - __main__ - INFO - rescore index:2
+2023-03-03 05:30:29,081 - __main__ - INFO - rescore index:14
+2023-03-03 05:30:29,738 - __main__ - INFO - rescore index:16
+2023-03-03 05:30:30,426 - __main__ - INFO - rescore index:21
+2023-03-03 05:30:31,101 - __main__ - INFO - rescore index:8
+2023-03-03 05:30:31,788 - __main__ - INFO - rescore index:3
+2023-03-03 05:30:32,489 - __main__ - INFO - rescore index:2
+2023-03-03 05:30:33,162 - __main__ - INFO - rescore index:13
+2023-03-03 05:30:33,836 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:34,503 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:35,657 - __main__ - INFO - rescore index:13
+2023-03-03 05:30:36,316 - __main__ - INFO - rescore index:18
+2023-03-03 05:30:37,648 - __main__ - INFO - rescore index:5
+2023-03-03 05:30:38,972 - __main__ - INFO - rescore index:5
+2023-03-03 05:30:39,644 - __main__ - INFO - rescore index:5
+2023-03-03 05:30:40,324 - __main__ - INFO - rescore index:3
+2023-03-03 05:30:42,928 - __main__ - INFO - rescore index:2
+2023-03-03 05:30:43,593 - __main__ - INFO - rescore index:2
+2023-03-03 05:30:44,915 - __main__ - INFO - rescore index:20
+2023-03-03 05:30:46,237 - __main__ - INFO - rescore index:10
+2023-03-03 05:30:48,287 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:49,645 - __main__ - INFO - rescore index:6
+2023-03-03 05:30:50,338 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:51,004 - __main__ - INFO - rescore index:3
+2023-03-03 05:30:51,710 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:52,370 - __main__ - INFO - rescore index:5
+2023-03-03 05:30:53,695 - __main__ - INFO - rescore index:6
+2023-03-03 05:30:55,013 - __main__ - INFO - rescore index:23
+2023-03-03 05:30:56,350 - __main__ - INFO - rescore index:4
+2023-03-03 05:30:57,604 - __main__ - INFO - rescore index:18
+2023-03-03 05:30:58,256 - __main__ - INFO - rescore index:1
+2023-03-03 05:30:59,609 - __main__ - INFO - 
+
+2023-03-03 05:30:59,609 - __main__ - INFO - evalWER:2818,evalWCount:6394
+2023-03-03 05:30:59,611 - __main__ - INFO - batch18 || Test CER: 0.30148 || Test WER: 0.44073
+2023-03-03 05:42:22,329 - __main__ - INFO - rescore index:7
+2023-03-03 05:42:26,935 - __main__ - INFO - rescore index:12
+2023-03-03 05:42:27,606 - __main__ - INFO - rescore index:25
+2023-03-03 05:42:28,273 - __main__ - INFO - rescore index:6
+2023-03-03 05:42:29,559 - __main__ - INFO - rescore index:3
+2023-03-03 05:42:30,841 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:31,498 - __main__ - INFO - rescore index:9
+2023-03-03 05:42:32,159 - __main__ - INFO - rescore index:9
+2023-03-03 05:42:33,507 - __main__ - INFO - rescore index:7
+2023-03-03 05:42:34,183 - __main__ - INFO - rescore index:6
+2023-03-03 05:42:34,855 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:35,554 - __main__ - INFO - rescore index:2
+2023-03-03 05:42:36,235 - __main__ - INFO - rescore index:12
+2023-03-03 05:42:36,907 - __main__ - INFO - rescore index:7
+2023-03-03 05:42:38,300 - __main__ - INFO - rescore index:13
+2023-03-03 05:42:38,982 - __main__ - INFO - rescore index:5
+2023-03-03 05:42:40,328 - __main__ - INFO - rescore index:7
+2023-03-03 05:42:40,976 - __main__ - INFO - rescore index:6
+2023-03-03 05:42:42,296 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:42,959 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:43,619 - __main__ - INFO - rescore index:2
+2023-03-03 05:42:45,625 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:46,299 - __main__ - INFO - rescore index:2
+2023-03-03 05:42:46,956 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:48,325 - __main__ - INFO - rescore index:7
+2023-03-03 05:42:48,962 - __main__ - INFO - rescore index:6
+2023-03-03 05:42:49,604 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:50,920 - __main__ - INFO - rescore index:16
+2023-03-03 05:42:52,906 - __main__ - INFO - rescore index:1
+2023-03-03 05:42:53,577 - __main__ - INFO - rescore index:12
+2023-03-03 05:42:54,219 - __main__ - INFO - rescore index:10
+2023-03-03 05:42:55,730 - __main__ - INFO - 
+
+2023-03-03 05:42:55,730 - __main__ - INFO - evalWER:2968,evalWCount:6716
+2023-03-03 05:42:55,730 - __main__ - INFO - batch19 || Test CER: 0.30146 || Test WER: 0.44193
+2023-03-03 05:54:04,969 - __main__ - INFO - rescore index:27
+2023-03-03 05:54:07,569 - __main__ - INFO - rescore index:4
+2023-03-03 05:54:08,806 - __main__ - INFO - rescore index:14
+2023-03-03 05:54:09,464 - __main__ - INFO - rescore index:14
+2023-03-03 05:54:10,763 - __main__ - INFO - rescore index:1
+2023-03-03 05:54:11,412 - __main__ - INFO - rescore index:29
+2023-03-03 05:54:12,085 - __main__ - INFO - rescore index:2
+2023-03-03 05:54:12,779 - __main__ - INFO - rescore index:10
+2023-03-03 05:54:13,448 - __main__ - INFO - rescore index:18
+2023-03-03 05:54:14,785 - __main__ - INFO - rescore index:8
+2023-03-03 05:54:15,443 - __main__ - INFO - rescore index:10
+2023-03-03 05:54:16,091 - __main__ - INFO - rescore index:10
+2023-03-03 05:54:16,727 - __main__ - INFO - rescore index:13
+2023-03-03 05:54:17,362 - __main__ - INFO - rescore index:17
+2023-03-03 05:54:18,028 - __main__ - INFO - rescore index:2
+2023-03-03 05:54:19,348 - __main__ - INFO - rescore index:4
+2023-03-03 05:54:20,010 - __main__ - INFO - rescore index:10
+2023-03-03 05:54:21,347 - __main__ - INFO - rescore index:7
+2023-03-03 05:54:22,009 - __main__ - INFO - rescore index:18
+2023-03-03 05:54:23,344 - __main__ - INFO - rescore index:2
+2023-03-03 05:54:24,683 - __main__ - INFO - rescore index:29
+2023-03-03 05:54:25,368 - __main__ - INFO - rescore index:1
+2023-03-03 05:54:26,743 - __main__ - INFO - rescore index:14
+2023-03-03 05:54:28,139 - __main__ - INFO - rescore index:2
+2023-03-03 05:54:28,870 - __main__ - INFO - rescore index:12
+2023-03-03 05:54:30,175 - __main__ - INFO - rescore index:16
+2023-03-03 05:54:30,850 - __main__ - INFO - rescore index:3
+2023-03-03 05:54:31,511 - __main__ - INFO - rescore index:19
+2023-03-03 05:54:32,199 - __main__ - INFO - rescore index:15
+2023-03-03 05:54:32,867 - __main__ - INFO - rescore index:1
+2023-03-03 05:54:33,541 - __main__ - INFO - rescore index:26
+2023-03-03 05:54:34,891 - __main__ - INFO - rescore index:25
+2023-03-03 05:54:35,567 - __main__ - INFO - rescore index:5
+2023-03-03 05:54:36,251 - __main__ - INFO - rescore index:26
+2023-03-03 05:54:36,949 - __main__ - INFO - rescore index:5
+2023-03-03 05:54:37,638 - __main__ - INFO - rescore index:5
+2023-03-03 05:54:38,377 - __main__ - INFO - 
+
+2023-03-03 05:54:38,377 - __main__ - INFO - evalWER:3171,evalWCount:7103
+2023-03-03 05:54:38,377 - __main__ - INFO - batch20 || Test CER: 0.30543 || Test WER: 0.44643
+2023-03-03 06:05:39,897 - __main__ - INFO - rescore index:7
+2023-03-03 06:05:40,544 - __main__ - INFO - rescore index:17
+2023-03-03 06:05:41,207 - __main__ - INFO - rescore index:4
+2023-03-03 06:05:41,857 - __main__ - INFO - rescore index:9
+2023-03-03 06:05:42,503 - __main__ - INFO - rescore index:1
+2023-03-03 06:05:43,167 - __main__ - INFO - rescore index:5
+2023-03-03 06:05:43,844 - __main__ - INFO - rescore index:6
+2023-03-03 06:05:44,490 - __main__ - INFO - rescore index:18
+2023-03-03 06:05:45,131 - __main__ - INFO - rescore index:13
+2023-03-03 06:05:45,763 - __main__ - INFO - rescore index:18
+2023-03-03 06:05:47,142 - __main__ - INFO - rescore index:29
+2023-03-03 06:05:48,530 - __main__ - INFO - rescore index:4
+2023-03-03 06:05:49,225 - __main__ - INFO - rescore index:28
+2023-03-03 06:05:50,574 - __main__ - INFO - rescore index:5
+2023-03-03 06:05:51,216 - __main__ - INFO - rescore index:5
+2023-03-03 06:05:52,368 - __main__ - INFO - rescore index:19
+2023-03-03 06:05:53,630 - __main__ - INFO - rescore index:2
+2023-03-03 06:05:54,269 - __main__ - INFO - rescore index:6
+2023-03-03 06:05:54,927 - __main__ - INFO - rescore index:2
+2023-03-03 06:05:56,315 - __main__ - INFO - rescore index:25
+2023-03-03 06:05:56,986 - __main__ - INFO - rescore index:18
+2023-03-03 06:05:57,642 - __main__ - INFO - rescore index:24
+2023-03-03 06:05:59,563 - __main__ - INFO - rescore index:1
+2023-03-03 06:06:00,845 - __main__ - INFO - rescore index:25
+2023-03-03 06:06:01,482 - __main__ - INFO - rescore index:6
+2023-03-03 06:06:02,134 - __main__ - INFO - rescore index:6
+2023-03-03 06:06:02,800 - __main__ - INFO - rescore index:1
+2023-03-03 06:06:04,111 - __main__ - INFO - rescore index:2
+2023-03-03 06:06:04,763 - __main__ - INFO - rescore index:1
+2023-03-03 06:06:05,420 - __main__ - INFO - rescore index:8
+2023-03-03 06:06:06,098 - __main__ - INFO - rescore index:10
+2023-03-03 06:06:06,758 - __main__ - INFO - rescore index:11
+2023-03-03 06:06:08,084 - __main__ - INFO - rescore index:4
+2023-03-03 06:06:09,435 - __main__ - INFO - rescore index:11
+2023-03-03 06:06:10,779 - __main__ - INFO - rescore index:22
+2023-03-03 06:06:11,459 - __main__ - INFO - rescore index:1
+2023-03-03 06:06:12,211 - __main__ - INFO - 
+
+2023-03-03 06:06:12,211 - __main__ - INFO - evalWER:3328,evalWCount:7487
+2023-03-03 06:06:12,211 - __main__ - INFO - batch21 || Test CER: 0.30441 || Test WER: 0.44450
+2023-03-03 06:19:01,714 - __main__ - INFO - rescore index:21
+2023-03-03 06:19:03,228 - __main__ - INFO - rescore index:22
+2023-03-03 06:19:04,704 - __main__ - INFO - rescore index:2
+2023-03-03 06:19:06,189 - __main__ - INFO - rescore index:17
+2023-03-03 06:19:06,984 - __main__ - INFO - rescore index:28
+2023-03-03 06:19:07,732 - __main__ - INFO - rescore index:29
+2023-03-03 06:19:08,466 - __main__ - INFO - rescore index:28
+2023-03-03 06:19:09,188 - __main__ - INFO - rescore index:27
+2023-03-03 06:19:09,928 - __main__ - INFO - rescore index:27
+2023-03-03 06:19:11,473 - __main__ - INFO - rescore index:5
+2023-03-03 06:19:12,219 - __main__ - INFO - rescore index:10
+2023-03-03 06:19:13,006 - __main__ - INFO - rescore index:1
+2023-03-03 06:19:13,739 - __main__ - INFO - rescore index:3
+2023-03-03 06:19:14,499 - __main__ - INFO - rescore index:28
+2023-03-03 06:19:16,009 - __main__ - INFO - rescore index:2
+2023-03-03 06:19:16,763 - __main__ - INFO - rescore index:2
+2023-03-03 06:19:17,549 - __main__ - INFO - rescore index:19
+2023-03-03 06:19:18,293 - __main__ - INFO - rescore index:6
+2023-03-03 06:19:19,843 - __main__ - INFO - rescore index:29
+2023-03-03 06:19:21,305 - __main__ - INFO - rescore index:1
+2023-03-03 06:19:22,054 - __main__ - INFO - rescore index:29
+2023-03-03 06:19:25,727 - __main__ - INFO - rescore index:6
+2023-03-03 06:19:26,455 - __main__ - INFO - rescore index:3
+2023-03-03 06:19:27,190 - __main__ - INFO - rescore index:9
+2023-03-03 06:19:27,926 - __main__ - INFO - rescore index:23
+2023-03-03 06:19:28,663 - __main__ - INFO - rescore index:7
+2023-03-03 06:19:29,420 - __main__ - INFO - rescore index:23
+2023-03-03 06:19:30,889 - __main__ - INFO - rescore index:4
+2023-03-03 06:19:31,627 - __main__ - INFO - rescore index:1
+2023-03-03 06:19:32,370 - __main__ - INFO - rescore index:1
+2023-03-03 06:19:33,115 - __main__ - INFO - rescore index:2
+2023-03-03 06:19:33,861 - __main__ - INFO - rescore index:11
+2023-03-03 06:19:34,613 - __main__ - INFO - rescore index:13
+2023-03-03 06:19:35,370 - __main__ - INFO - rescore index:5
+2023-03-03 06:19:36,115 - __main__ - INFO - rescore index:13
+2023-03-03 06:19:37,935 - __main__ - INFO - 
+
+2023-03-03 06:19:37,935 - __main__ - INFO - evalWER:3531,evalWCount:7876
+2023-03-03 06:19:37,937 - __main__ - INFO - batch22 || Test CER: 0.30754 || Test WER: 0.44832
+2023-03-03 06:31:14,682 - __main__ - INFO - rescore index:6
+2023-03-03 06:31:15,330 - __main__ - INFO - rescore index:4
+2023-03-03 06:31:15,975 - __main__ - INFO - rescore index:17
+2023-03-03 06:31:16,630 - __main__ - INFO - rescore index:4
+2023-03-03 06:31:17,281 - __main__ - INFO - rescore index:2
+2023-03-03 06:31:17,937 - __main__ - INFO - rescore index:3
+2023-03-03 06:31:19,897 - __main__ - INFO - rescore index:14
+2023-03-03 06:31:20,558 - __main__ - INFO - rescore index:19
+2023-03-03 06:31:21,210 - __main__ - INFO - rescore index:17
+2023-03-03 06:31:21,859 - __main__ - INFO - rescore index:2
+2023-03-03 06:31:22,502 - __main__ - INFO - rescore index:28
+2023-03-03 06:31:23,157 - __main__ - INFO - rescore index:10
+2023-03-03 06:31:23,803 - __main__ - INFO - rescore index:7
+2023-03-03 06:31:24,473 - __main__ - INFO - rescore index:6
+2023-03-03 06:31:25,833 - __main__ - INFO - rescore index:25
+2023-03-03 06:31:26,495 - __main__ - INFO - rescore index:9
+2023-03-03 06:31:27,856 - __main__ - INFO - rescore index:10
+2023-03-03 06:31:28,498 - __main__ - INFO - rescore index:6
+2023-03-03 06:31:29,143 - __main__ - INFO - rescore index:2
+2023-03-03 06:31:29,796 - __main__ - INFO - rescore index:17
+2023-03-03 06:31:30,454 - __main__ - INFO - rescore index:1
+2023-03-03 06:31:32,405 - __main__ - INFO - rescore index:13
+2023-03-03 06:31:33,067 - __main__ - INFO - rescore index:14
+2023-03-03 06:31:33,746 - __main__ - INFO - rescore index:18
+2023-03-03 06:31:34,412 - __main__ - INFO - rescore index:6
+2023-03-03 06:31:35,048 - __main__ - INFO - rescore index:17
+2023-03-03 06:31:37,613 - __main__ - INFO - rescore index:21
+2023-03-03 06:31:38,268 - __main__ - INFO - rescore index:1
+2023-03-03 06:31:38,941 - __main__ - INFO - rescore index:2
+2023-03-03 06:31:39,604 - __main__ - INFO - rescore index:18
+2023-03-03 06:31:40,263 - __main__ - INFO - rescore index:5
+2023-03-03 06:31:40,917 - __main__ - INFO - rescore index:11
+2023-03-03 06:31:41,575 - __main__ - INFO - rescore index:18
+2023-03-03 06:31:42,259 - __main__ - INFO - rescore index:4
+2023-03-03 06:31:43,702 - __main__ - INFO - rescore index:2
+2023-03-03 06:31:47,164 - __main__ - INFO - 
+
+2023-03-03 06:31:47,164 - __main__ - INFO - evalWER:3691,evalWCount:8243
+2023-03-03 06:31:47,164 - __main__ - INFO - batch23 || Test CER: 0.30703 || Test WER: 0.44777
+2023-03-03 06:42:55,994 - __main__ - INFO - rescore index:17
+2023-03-03 06:42:56,723 - __main__ - INFO - rescore index:23
+2023-03-03 06:42:58,191 - __main__ - INFO - rescore index:1
+2023-03-03 06:42:58,922 - __main__ - INFO - rescore index:1
+2023-03-03 06:43:01,108 - __main__ - INFO - rescore index:21
+2023-03-03 06:43:01,839 - __main__ - INFO - rescore index:3
+2023-03-03 06:43:03,152 - __main__ - INFO - rescore index:10
+2023-03-03 06:43:05,404 - __main__ - INFO - rescore index:8
+2023-03-03 06:43:06,177 - __main__ - INFO - rescore index:9
+2023-03-03 06:43:06,966 - __main__ - INFO - rescore index:20
+2023-03-03 06:43:07,749 - __main__ - INFO - rescore index:9
+2023-03-03 06:43:08,508 - __main__ - INFO - rescore index:25
+2023-03-03 06:43:09,983 - __main__ - INFO - rescore index:2
+2023-03-03 06:43:10,718 - __main__ - INFO - rescore index:13
+2023-03-03 06:43:11,461 - __main__ - INFO - rescore index:22
+2023-03-03 06:43:12,196 - __main__ - INFO - rescore index:1
+2023-03-03 06:43:14,406 - __main__ - INFO - rescore index:10
+2023-03-03 06:43:15,170 - __main__ - INFO - rescore index:2
+2023-03-03 06:43:15,905 - __main__ - INFO - rescore index:1
+2023-03-03 06:43:16,648 - __main__ - INFO - rescore index:18
+2023-03-03 06:43:18,197 - __main__ - INFO - rescore index:2
+2023-03-03 06:43:18,940 - __main__ - INFO - rescore index:8
+2023-03-03 06:43:19,678 - __main__ - INFO - rescore index:4
+2023-03-03 06:43:21,209 - __main__ - INFO - rescore index:21
+2023-03-03 06:43:21,968 - __main__ - INFO - rescore index:16
+2023-03-03 06:43:23,532 - __main__ - INFO - rescore index:11
+2023-03-03 06:43:26,512 - __main__ - INFO - rescore index:29
+2023-03-03 06:43:27,257 - __main__ - INFO - rescore index:1
+2023-03-03 06:43:28,014 - __main__ - INFO - rescore index:9
+2023-03-03 06:43:29,533 - __main__ - INFO - rescore index:6
+2023-03-03 06:43:31,048 - __main__ - INFO - rescore index:2
+2023-03-03 06:43:32,537 - __main__ - INFO - rescore index:26
+2023-03-03 06:43:33,480 - __main__ - INFO - 
+
+2023-03-03 06:43:33,480 - __main__ - INFO - evalWER:3847,evalWCount:8613
+2023-03-03 06:43:33,480 - __main__ - INFO - batch24 || Test CER: 0.30604 || Test WER: 0.44665
+2023-03-03 06:55:11,414 - __main__ - INFO - rescore index:7
+2023-03-03 06:55:12,705 - __main__ - INFO - rescore index:27
+2023-03-03 06:55:15,267 - __main__ - INFO - rescore index:1
+2023-03-03 06:55:16,527 - __main__ - INFO - rescore index:8
+2023-03-03 06:55:18,420 - __main__ - INFO - rescore index:23
+2023-03-03 06:55:19,065 - __main__ - INFO - rescore index:1
+2023-03-03 06:55:21,678 - __main__ - INFO - rescore index:4
+2023-03-03 06:55:22,974 - __main__ - INFO - rescore index:1
+2023-03-03 06:55:23,607 - __main__ - INFO - rescore index:2
+2023-03-03 06:55:24,243 - __main__ - INFO - rescore index:14
+2023-03-03 06:55:26,132 - __main__ - INFO - rescore index:10
+2023-03-03 06:55:26,761 - __main__ - INFO - rescore index:12
+2023-03-03 06:55:27,398 - __main__ - INFO - rescore index:4
+2023-03-03 06:55:28,668 - __main__ - INFO - rescore index:11
+2023-03-03 06:55:29,945 - __main__ - INFO - rescore index:21
+2023-03-03 06:55:31,858 - __main__ - INFO - rescore index:8
+2023-03-03 06:55:32,485 - __main__ - INFO - rescore index:1
+2023-03-03 06:55:33,111 - __main__ - INFO - rescore index:9
+2023-03-03 06:55:33,753 - __main__ - INFO - rescore index:7
+2023-03-03 06:55:36,335 - __main__ - INFO - rescore index:28
+2023-03-03 06:55:36,977 - __main__ - INFO - rescore index:24
+2023-03-03 06:55:39,567 - __main__ - INFO - rescore index:2
+2023-03-03 06:55:41,496 - __main__ - INFO - rescore index:1
+2023-03-03 06:55:42,923 - __main__ - INFO - 
+
+2023-03-03 06:55:42,923 - __main__ - INFO - evalWER:3960,evalWCount:8967
+2023-03-03 06:55:42,923 - __main__ - INFO - batch25 || Test CER: 0.30208 || Test WER: 0.44162
+2023-03-03 07:06:22,458 - __main__ - INFO - rescore index:13
+2023-03-03 07:06:23,086 - __main__ - INFO - rescore index:9
+2023-03-03 07:06:23,712 - __main__ - INFO - rescore index:9
+2023-03-03 07:06:24,369 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:26,922 - __main__ - INFO - rescore index:1
+2023-03-03 07:06:27,551 - __main__ - INFO - rescore index:26
+2023-03-03 07:06:28,184 - __main__ - INFO - rescore index:3
+2023-03-03 07:06:28,821 - __main__ - INFO - rescore index:20
+2023-03-03 07:06:30,075 - __main__ - INFO - rescore index:6
+2023-03-03 07:06:30,702 - __main__ - INFO - rescore index:1
+2023-03-03 07:06:32,603 - __main__ - INFO - rescore index:9
+2023-03-03 07:06:33,235 - __main__ - INFO - rescore index:24
+2023-03-03 07:06:33,879 - __main__ - INFO - rescore index:13
+2023-03-03 07:06:34,516 - __main__ - INFO - rescore index:20
+2023-03-03 07:06:35,149 - __main__ - INFO - rescore index:3
+2023-03-03 07:06:36,419 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:37,049 - __main__ - INFO - rescore index:7
+2023-03-03 07:06:38,338 - __main__ - INFO - rescore index:16
+2023-03-03 07:06:39,645 - __main__ - INFO - rescore index:1
+2023-03-03 07:06:40,275 - __main__ - INFO - rescore index:5
+2023-03-03 07:06:40,918 - __main__ - INFO - rescore index:3
+2023-03-03 07:06:44,076 - __main__ - INFO - rescore index:15
+2023-03-03 07:06:45,351 - __main__ - INFO - rescore index:16
+2023-03-03 07:06:45,984 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:46,628 - __main__ - INFO - rescore index:1
+2023-03-03 07:06:47,900 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:48,538 - __main__ - INFO - rescore index:19
+2023-03-03 07:06:49,171 - __main__ - INFO - rescore index:1
+2023-03-03 07:06:49,801 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:50,432 - __main__ - INFO - rescore index:2
+2023-03-03 07:06:51,069 - __main__ - INFO - rescore index:12
+2023-03-03 07:06:51,698 - __main__ - INFO - rescore index:29
+2023-03-03 07:06:52,458 - __main__ - INFO - 
+
+2023-03-03 07:06:52,459 - __main__ - INFO - evalWER:4112,evalWCount:9335
+2023-03-03 07:06:52,459 - __main__ - INFO - batch26 || Test CER: 0.30211 || Test WER: 0.44049
+2023-03-03 07:17:40,483 - __main__ - INFO - rescore index:2
+2023-03-03 07:17:41,112 - __main__ - INFO - rescore index:4
+2023-03-03 07:17:41,745 - __main__ - INFO - rescore index:3
+2023-03-03 07:17:42,378 - __main__ - INFO - rescore index:21
+2023-03-03 07:17:44,277 - __main__ - INFO - rescore index:7
+2023-03-03 07:17:44,910 - __main__ - INFO - rescore index:1
+2023-03-03 07:17:45,553 - __main__ - INFO - rescore index:7
+2023-03-03 07:17:46,822 - __main__ - INFO - rescore index:3
+2023-03-03 07:17:48,111 - __main__ - INFO - rescore index:25
+2023-03-03 07:17:49,373 - __main__ - INFO - rescore index:2
+2023-03-03 07:17:50,637 - __main__ - INFO - rescore index:8
+2023-03-03 07:17:51,892 - __main__ - INFO - rescore index:10
+2023-03-03 07:17:53,157 - __main__ - INFO - rescore index:6
+2023-03-03 07:17:54,414 - __main__ - INFO - rescore index:23
+2023-03-03 07:17:55,041 - __main__ - INFO - rescore index:1
+2023-03-03 07:17:56,299 - __main__ - INFO - rescore index:17
+2023-03-03 07:17:57,566 - __main__ - INFO - rescore index:1
+2023-03-03 07:18:00,090 - __main__ - INFO - rescore index:21
+2023-03-03 07:18:01,358 - __main__ - INFO - rescore index:15
+2023-03-03 07:18:02,016 - __main__ - INFO - rescore index:2
+2023-03-03 07:18:02,646 - __main__ - INFO - rescore index:22
+2023-03-03 07:18:03,275 - __main__ - INFO - rescore index:8
+2023-03-03 07:18:05,172 - __main__ - INFO - rescore index:24
+2023-03-03 07:18:05,802 - __main__ - INFO - rescore index:1
+2023-03-03 07:18:06,435 - __main__ - INFO - rescore index:1
+2023-03-03 07:18:07,066 - __main__ - INFO - rescore index:5
+2023-03-03 07:18:07,703 - __main__ - INFO - rescore index:12
+2023-03-03 07:18:08,334 - __main__ - INFO - rescore index:26
+2023-03-03 07:18:08,965 - __main__ - INFO - rescore index:1
+2023-03-03 07:18:10,888 - __main__ - INFO - rescore index:2
+2023-03-03 07:18:11,514 - __main__ - INFO - rescore index:3
+2023-03-03 07:18:12,250 - __main__ - INFO - 
+
+2023-03-03 07:18:12,251 - __main__ - INFO - evalWER:4250,evalWCount:9689
+2023-03-03 07:18:12,264 - __main__ - INFO - batch27 || Test CER: 0.30000 || Test WER: 0.43864
+2023-03-03 07:23:28,980 - __main__ - INFO - rescore index:6
+2023-03-03 07:23:31,547 - __main__ - INFO - rescore index:3
+2023-03-03 07:23:33,475 - __main__ - INFO - rescore index:20
+2023-03-03 07:23:34,126 - __main__ - INFO - rescore index:22
+2023-03-03 07:23:35,046 - __main__ - INFO - rescore index:3
+2023-03-03 07:23:36,320 - __main__ - INFO - rescore index:19
+2023-03-03 07:23:36,968 - __main__ - INFO - rescore index:4
+2023-03-03 07:23:37,609 - __main__ - INFO - rescore index:11
+2023-03-03 07:23:38,263 - __main__ - INFO - rescore index:7
+2023-03-03 07:23:41,469 - __main__ - INFO - rescore index:26
+2023-03-03 07:23:42,121 - __main__ - INFO - rescore index:19
+2023-03-03 07:23:42,769 - __main__ - INFO - rescore index:1
+2023-03-03 07:23:43,416 - __main__ - INFO - rescore index:3
+2023-03-03 07:23:44,067 - __main__ - INFO - rescore index:6
+2023-03-03 07:23:44,712 - __main__ - INFO - rescore index:2
+2023-03-03 07:23:45,060 - __main__ - INFO - 
+
+2023-03-03 07:23:45,060 - __main__ - INFO - evalWER:4339,evalWCount:9890
+2023-03-03 07:23:45,060 - __main__ - INFO - batch28 || Test CER: 0.30103 || Test WER: 0.43873
+2023-03-03 07:23:45,060 - __main__ - INFO - evalWER:4339,evalCCount:9890
+2023-03-03 07:23:45,062 - __main__ - INFO - VOMODAL || Test CER: 0.30103 || Test WER: 0.43873
+2023-03-03 07:23:45,062 - __main__ - INFO - 
+Testing Done.
+
