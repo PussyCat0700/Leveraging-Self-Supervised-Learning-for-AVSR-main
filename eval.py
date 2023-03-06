@@ -100,7 +100,7 @@ def main():
         logger.info("\nTesting the trained model .... \n")
 
         inferenceParams = {"spaceIx": args["CHAR_TO_INDEX"][" "], "eosIx": args["CHAR_TO_INDEX"]["<EOS>"], "decodeType": cfg.decode_type,
-                           "beamWidth": args["BEAM_WIDTH"], "modal": args["MODAL"], "Lambda": args["LAMBDA"],"beta":cfg.beta,"nbest":cfg.nbest}
+                           "beamWidth": cfg.beamWidth, "modal": args["MODAL"], "Lambda": args["LAMBDA"],"beta":cfg.beta,"nbest":cfg.nbest} #!!!tmd 这里之前没改，beamwidth参数穿不进去！！！！
 
         testCER, testWER, testPER = inference(model, testLoader, device, logger, inferenceParams,cfg)
 

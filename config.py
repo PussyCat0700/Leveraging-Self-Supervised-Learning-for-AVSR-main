@@ -50,7 +50,7 @@ args["EVAL_LRW_MODEL_FILE"] = None
 """
 args["ALPHA"] = 0.2
 
-args["MODAL"] = "AO"  # "AO" "VO" "AV"
+args["MODAL"] = "VO"  # "AO" "VO" "AV"
 args["NOISE_SNR_DB"] = 5  # noise level in dB SNR
 args["NOISE_PROBABILITY"] = 0.25
 

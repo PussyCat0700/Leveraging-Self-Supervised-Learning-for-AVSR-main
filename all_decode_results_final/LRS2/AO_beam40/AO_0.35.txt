@@ -1,0 +1,123 @@
+2023-03-04 11:44:34,695 - __main__ - INFO - Namespace(batch_size=64, beam=500, beamWidth=40, beamsizetoken=None, beamthreshold=100.0, beta=0.35, decode_type='HYBRID_RESCORE', eval_lrs3_model_file='/home/gryang/L2/newckpt/ao.ckpt', lexicon='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/home/gryang/L2_train/AO_beam40/AO_0.35.txt', modal='AO', nbest=30, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=2)
+2023-03-04 11:44:34,696 - __main__ - INFO - 
+Trained Model File: /home/gryang/L2/newckpt/ao.ckpt
+2023-03-04 11:44:34,697 - __main__ - INFO - no noise
+2023-03-04 11:44:48,031 - __main__ - INFO - _IncompatibleKeys(missing_keys=['transformer_lm._float_tensor', 'transformer_lm.models.0.decoder.version', 'transformer_lm.models.0.decoder.embed_tokens.weight', 'transformer_lm.models.0.decoder.project_in_dim.weight', 'transformer_lm.models.0.decoder.embed_positions._float_tensor', 'transformer_lm.models.0.decoder.layers.0.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.0.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.0.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.0.fc1.weight', 'transformer_lm.models.0.decoder.layers.0.fc1.bias', 'transformer_lm.models.0.decoder.layers.0.fc2.weight', 'transformer_lm.models.0.decoder.layers.0.fc2.bias', 'transformer_lm.models.0.decoder.layers.0.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.0.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.1.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.1.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.1.fc1.weight', 'transformer_lm.models.0.decoder.layers.1.fc1.bias', 'transformer_lm.models.0.decoder.layers.1.fc2.weight', 'transformer_lm.models.0.decoder.layers.1.fc2.bias', 'transformer_lm.models.0.decoder.layers.1.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.1.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.2.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.2.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.2.fc1.weight', 'transformer_lm.models.0.decoder.layers.2.fc1.bias', 'transformer_lm.models.0.decoder.layers.2.fc2.weight', 'transformer_lm.models.0.decoder.layers.2.fc2.bias', 'transformer_lm.models.0.decoder.layers.2.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.2.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.3.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.3.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.3.fc1.weight', 'transformer_lm.models.0.decoder.layers.3.fc1.bias', 'transformer_lm.models.0.decoder.layers.3.fc2.weight', 'transformer_lm.models.0.decoder.layers.3.fc2.bias', 'transformer_lm.models.0.decoder.layers.3.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.3.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.4.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.4.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.4.fc1.weight', 'transformer_lm.models.0.decoder.layers.4.fc1.bias', 'transformer_lm.models.0.decoder.layers.4.fc2.weight', 'transformer_lm.models.0.decoder.layers.4.fc2.bias', 'transformer_lm.models.0.decoder.layers.4.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.4.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.5.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.5.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.5.fc1.weight', 'transformer_lm.models.0.decoder.layers.5.fc1.bias', 'transformer_lm.models.0.decoder.layers.5.fc2.weight', 'transformer_lm.models.0.decoder.layers.5.fc2.bias', 'transformer_lm.models.0.decoder.layers.5.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.5.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.6.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.6.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.6.fc1.weight', 'transformer_lm.models.0.decoder.layers.6.fc1.bias', 'transformer_lm.models.0.decoder.layers.6.fc2.weight', 'transformer_lm.models.0.decoder.layers.6.fc2.bias', 'transformer_lm.models.0.decoder.layers.6.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.6.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.7.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.7.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.7.fc1.weight', 'transformer_lm.models.0.decoder.layers.7.fc1.bias', 'transformer_lm.models.0.decoder.layers.7.fc2.weight', 'transformer_lm.models.0.decoder.layers.7.fc2.bias', 'transformer_lm.models.0.decoder.layers.7.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.7.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.8.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.8.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.8.fc1.weight', 'transformer_lm.models.0.decoder.layers.8.fc1.bias', 'transformer_lm.models.0.decoder.layers.8.fc2.weight', 'transformer_lm.models.0.decoder.layers.8.fc2.bias', 'transformer_lm.models.0.decoder.layers.8.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.8.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.9.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.9.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.9.fc1.weight', 'transformer_lm.models.0.decoder.layers.9.fc1.bias', 'transformer_lm.models.0.decoder.layers.9.fc2.weight', 'transformer_lm.models.0.decoder.layers.9.fc2.bias', 'transformer_lm.models.0.decoder.layers.9.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.9.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.10.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.10.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.10.fc1.weight', 'transformer_lm.models.0.decoder.layers.10.fc1.bias', 'transformer_lm.models.0.decoder.layers.10.fc2.weight', 'transformer_lm.models.0.decoder.layers.10.fc2.bias', 'transformer_lm.models.0.decoder.layers.10.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.10.final_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.k_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.k_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.v_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.v_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.q_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.q_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn.out_proj.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn.out_proj.bias', 'transformer_lm.models.0.decoder.layers.11.self_attn_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.11.self_attn_layer_norm.bias', 'transformer_lm.models.0.decoder.layers.11.fc1.weight', 'transformer_lm.models.0.decoder.layers.11.fc1.bias', 'transformer_lm.models.0.decoder.layers.11.fc2.weight', 'transformer_lm.models.0.decoder.layers.11.fc2.bias', 'transformer_lm.models.0.decoder.layers.11.final_layer_norm.weight', 'transformer_lm.models.0.decoder.layers.11.final_layer_norm.bias', 'transformer_lm.models.0.decoder.project_out_dim.weight', 'transformer_lm.models.0.decoder.output_projection.weight'], unexpected_keys=[])
+2023-03-04 11:44:48,298 - __main__ - INFO - 
+Testing the trained model .... 
+
+2023-03-04 11:44:48,298 - __main__ - INFO - beamWidth:40.000000
+2023-03-04 12:00:14,030 - __main__ - INFO - 
+
+2023-03-04 12:00:14,031 - __main__ - INFO - evalWER:6,evalWCount:411
+2023-03-04 12:00:14,031 - __main__ - INFO - batch1 || Test CER: 0.00345 || Test WER: 0.01460
+2023-03-04 12:05:29,446 - __main__ - INFO - rescore index:1
+2023-03-04 12:05:52,730 - __main__ - INFO - rescore index:1
+2023-03-04 12:05:57,150 - __main__ - INFO - 
+
+2023-03-04 12:05:57,150 - __main__ - INFO - evalWER:13,evalWCount:728
+2023-03-04 12:05:57,150 - __main__ - INFO - batch2 || Test CER: 0.00645 || Test WER: 0.01786
+2023-03-04 12:16:26,942 - __main__ - INFO - 
+
+2023-03-04 12:16:26,943 - __main__ - INFO - evalWER:20,evalWCount:1102
+2023-03-04 12:16:26,943 - __main__ - INFO - batch3 || Test CER: 0.00751 || Test WER: 0.01815
+2023-03-04 12:24:35,598 - __main__ - INFO - rescore index:1
+2023-03-04 12:24:44,930 - __main__ - INFO - rescore index:2
+2023-03-04 12:24:56,784 - __main__ - INFO - 
+
+2023-03-04 12:24:56,784 - __main__ - INFO - evalWER:25,evalWCount:1430
+2023-03-04 12:24:56,784 - __main__ - INFO - batch4 || Test CER: 0.00754 || Test WER: 0.01748
+2023-03-04 12:40:24,608 - __main__ - INFO - rescore index:1
+2023-03-04 12:40:26,294 - __main__ - INFO - 
+
+2023-03-04 12:40:26,295 - __main__ - INFO - evalWER:29,evalWCount:1774
+2023-03-04 12:40:26,295 - __main__ - INFO - batch5 || Test CER: 0.00650 || Test WER: 0.01635
+2023-03-04 12:53:12,540 - __main__ - INFO - 
+
+2023-03-04 12:53:12,540 - __main__ - INFO - evalWER:37,evalWCount:2122
+2023-03-04 12:53:12,540 - __main__ - INFO - batch6 || Test CER: 0.00645 || Test WER: 0.01744
+2023-03-04 13:02:09,225 - __main__ - INFO - rescore index:2
+2023-03-04 13:02:16,524 - __main__ - INFO - rescore index:1
+2023-03-04 13:02:22,484 - __main__ - INFO - rescore index:1
+2023-03-04 13:02:28,478 - __main__ - INFO - 
+
+2023-03-04 13:02:28,478 - __main__ - INFO - evalWER:45,evalWCount:2455
+2023-03-04 13:02:28,478 - __main__ - INFO - batch7 || Test CER: 0.00709 || Test WER: 0.01833
+2023-03-04 13:09:41,806 - __main__ - INFO - rescore index:1
+2023-03-04 13:09:45,639 - __main__ - INFO - 
+
+2023-03-04 13:09:45,639 - __main__ - INFO - evalWER:55,evalWCount:2818
+2023-03-04 13:09:45,639 - __main__ - INFO - batch8 || Test CER: 0.00831 || Test WER: 0.01952
+2023-03-04 13:20:34,110 - __main__ - INFO - rescore index:1
+2023-03-04 13:20:45,729 - __main__ - INFO - 
+
+2023-03-04 13:20:45,729 - __main__ - INFO - evalWER:63,evalWCount:3175
+2023-03-04 13:20:45,729 - __main__ - INFO - batch9 || Test CER: 0.00817 || Test WER: 0.01984
+2023-03-04 13:29:35,691 - __main__ - INFO - rescore index:4
+2023-03-04 13:29:55,753 - __main__ - INFO - rescore index:1
+2023-03-04 13:29:57,071 - __main__ - INFO - rescore index:1
+2023-03-04 13:30:05,734 - __main__ - INFO - 
+
+2023-03-04 13:30:05,734 - __main__ - INFO - evalWER:75,evalWCount:3502
+2023-03-04 13:30:05,734 - __main__ - INFO - batch10 || Test CER: 0.00908 || Test WER: 0.02142
+2023-03-04 13:40:05,947 - __main__ - INFO - rescore index:1
+2023-03-04 13:40:12,683 - __main__ - INFO - 
+
+2023-03-04 13:40:12,683 - __main__ - INFO - evalWER:84,evalWCount:3851
+2023-03-04 13:40:12,683 - __main__ - INFO - batch11 || Test CER: 0.00916 || Test WER: 0.02181
+2023-03-04 13:48:55,350 - __main__ - INFO - rescore index:1
+2023-03-04 13:49:10,492 - __main__ - INFO - 
+
+2023-03-04 13:49:10,492 - __main__ - INFO - evalWER:90,evalWCount:4173
+2023-03-04 13:49:10,492 - __main__ - INFO - batch12 || Test CER: 0.00923 || Test WER: 0.02157
+2023-03-04 13:55:48,688 - __main__ - INFO - rescore index:3
+2023-03-04 13:56:27,390 - __main__ - INFO - 
+
+2023-03-04 13:56:27,390 - __main__ - INFO - evalWER:99,evalWCount:4507
+2023-03-04 13:56:27,390 - __main__ - INFO - batch13 || Test CER: 0.00963 || Test WER: 0.02197
+2023-03-04 14:06:09,820 - __main__ - INFO - rescore index:1
+2023-03-04 14:06:10,481 - __main__ - INFO - rescore index:1
+2023-03-04 14:06:14,404 - __main__ - INFO - rescore index:2
+2023-03-04 14:06:28,233 - __main__ - INFO - rescore index:1
+2023-03-04 14:06:29,577 - __main__ - INFO - 
+
+2023-03-04 14:06:29,577 - __main__ - INFO - evalWER:116,evalWCount:4880
+2023-03-04 14:06:29,577 - __main__ - INFO - batch14 || Test CER: 0.01058 || Test WER: 0.02377
+2023-03-04 14:14:20,020 - __main__ - INFO - rescore index:2
+2023-03-04 14:14:23,983 - __main__ - INFO - rescore index:1
+2023-03-04 14:14:38,385 - __main__ - INFO - rescore index:3
+2023-03-04 14:14:45,731 - __main__ - INFO - 
+
+2023-03-04 14:14:45,731 - __main__ - INFO - evalWER:124,evalWCount:5178
+2023-03-04 14:14:45,731 - __main__ - INFO - batch15 || Test CER: 0.01053 || Test WER: 0.02395
+2023-03-04 14:19:47,366 - __main__ - INFO - rescore index:3
+2023-03-04 14:20:13,397 - __main__ - INFO - 
+
+2023-03-04 14:20:13,397 - __main__ - INFO - evalWER:128,evalWCount:5499
+2023-03-04 14:20:13,397 - __main__ - INFO - batch16 || Test CER: 0.01020 || Test WER: 0.02328
+2023-03-04 14:34:45,252 - __main__ - INFO - rescore index:2
+2023-03-04 14:35:17,960 - __main__ - INFO - 
+
+2023-03-04 14:35:17,961 - __main__ - INFO - evalWER:134,evalWCount:5852
+2023-03-04 14:35:17,961 - __main__ - INFO - batch17 || Test CER: 0.00999 || Test WER: 0.02290
+2023-03-04 14:45:22,183 - __main__ - INFO - rescore index:1
+2023-03-04 14:45:34,155 - __main__ - INFO - 
+
+2023-03-04 14:45:34,156 - __main__ - INFO - evalWER:141,evalWCount:6185
+2023-03-04 14:45:34,156 - __main__ - INFO - batch18 || Test CER: 0.00987 || Test WER: 0.02280
+2023-03-04 14:52:00,984 - __main__ - INFO - rescore index:1
+2023-03-04 14:52:16,168 - __main__ - INFO - rescore index:1
+2023-03-04 14:52:42,154 - __main__ - INFO - 
+
+2023-03-04 14:52:42,154 - __main__ - INFO - evalWER:145,evalWCount:6511
+2023-03-04 14:52:42,154 - __main__ - INFO - batch19 || Test CER: 0.00966 || Test WER: 0.02227
+2023-03-04 14:55:11,076 - __main__ - INFO - rescore index:7
+2023-03-04 14:55:25,141 - __main__ - INFO - 
+
+2023-03-04 14:55:25,142 - __main__ - INFO - evalWER:147,evalWCount:6660
+2023-03-04 14:55:25,143 - __main__ - INFO - batch20 || Test CER: 0.00947 || Test WER: 0.02207
+2023-03-04 14:55:25,251 - __main__ - INFO - evalWER:147,evalCCount:6660
+2023-03-04 14:55:25,255 - __main__ - INFO - AOMODAL || Test CER: 0.00947 || Test WER: 0.02207
+2023-03-04 14:55:25,256 - __main__ - INFO - 
+Testing Done.
+

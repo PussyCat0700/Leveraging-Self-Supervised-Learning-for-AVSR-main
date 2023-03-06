@@ -28,6 +28,7 @@ from utils.metrics import compute_error_ch, compute_error_word
 from scheduler import  WarmupReduceLROnPlateau
 import time
 
+# !!!! 这个文件是end to end finetune  训练的时候不是冻住了visual 和audio 前端和后端吗，在此基础上打开，再训一下
 
 class LRS2Lightning(pl.LightningDataModule):
     def __init__(self):
@@ -154,8 +155,10 @@ class AVNet(pl.LightningModule):
             #     audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)
             # else:
             #     with torch.no_grad():   # 没有回传！ #（8，754，1024） （8，754）  #wav2vec 每20ms产生一个向量表征
-            audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #(8,303,1024)  #(8,303)
-
+            #audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #(8,303,1024)  #(8,303)
+            result = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #new_version
+            audioBatch,audMask =result["x"],result["padding_mask"] 
+            
             audLen = torch.sum(~audMask, dim=1) #(8,) tensor([299, 754, 146, 106,  81, 310, 119,  68] 最大值是754！ 长度和是1883
         else:
             audLen = None

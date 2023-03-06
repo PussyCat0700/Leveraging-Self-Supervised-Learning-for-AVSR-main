@@ -151,7 +151,9 @@ class AVNet(pl.LightningModule):
         audioBatch, audMask, videoBatch, vidLen = inputBatch  #(8,97280) (8,97280) (8,149,1,112,112) (8,)
         if not self.modal == "VO":   #(8，2  41664） (8，241664） 这是batch1 没报错 报错的太tm长了 （8，398336）
             if self.ft and self.modal == "AO":
-                audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)
+                #audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)
+                result = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #new_version
+                audioBatch,audMask =result["x"],result["padding_mask"] 
             else:
                 with torch.no_grad():   # 没有回传！ #（8，754，1024） （8，754）  #wav2vec 每20ms产生一个向量表征
                     audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #(8,303,1024)  #(8,303)

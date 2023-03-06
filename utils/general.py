@@ -34,6 +34,9 @@ def inference(model, evalLoader, device, logger, inferenceParams,cfg):
         os.remove(args["CODE_DIRECTORY"] + "pred_%s.txt" % inferenceParams["decodeType"])
     if os.path.exists(args["CODE_DIRECTORY"] + "trgt.txt"):
         os.remove(args["CODE_DIRECTORY"] + "trgt.txt")
+        
+    print("beamWidth:",inferenceParams["beamWidth"])
+    logger.info("beamWidth:%f" % inferenceParams["beamWidth"])
 
     model.eval()
     for batch, (inputBatch, targetinBatch, targetoutBatch, targetLenBatch) in enumerate(tqdm(evalLoader, leave=False, desc="Eval", ncols=75)):
