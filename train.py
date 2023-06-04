@@ -156,8 +156,9 @@ class AVNet(pl.LightningModule):
                 audioBatch,audMask =result["x"],result["padding_mask"] 
             else:
                 with torch.no_grad():   # 没有回传！ #（8，754，1024） （8，754）  #wav2vec 每20ms产生一个向量表征
-                    audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #(8,303,1024)  #(8,303)
-
+                    #audioBatch, audMask = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #(8,303,1024)  #(8,303)
+                    result = self.wav2vecModel.extract_features(audioBatch, padding_mask=audMask, mask=maskw2v)  #new_version
+                    audioBatch,audMask =result["x"],result["padding_mask"] 
             audLen = torch.sum(~audMask, dim=1) #(8,) tensor([299, 754, 146, 106,  81, 310, 119,  68] 最大值是754！ 长度和是1883
         else:
             audLen = None
