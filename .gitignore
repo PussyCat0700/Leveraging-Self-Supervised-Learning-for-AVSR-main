@@ -21,3 +21,7 @@ pretrain_model
 check
 
 *.h5
+*.err
+*.out
+*.pyc
+__pycache__/**

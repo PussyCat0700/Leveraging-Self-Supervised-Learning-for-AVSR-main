@@ -69,7 +69,9 @@ def main():
     # declaring the test dataset and test dataloader
     #noiseParams = {"noiseFile": args["NOISE_FILE"], "noiseProb": 1 if args["TEST_WITH_NOISE"] else 0, "noiseSNR": args["TEST_NOISE_SNR_DB"]}   #babble noise
     noiseParams = {"noiseFile": args["HUMAN_NOISE_FILE"], "noiseProb": 1 if args["TEST_WITH_NOISE"] else 0,"noiseSNR": args["TEST_NOISE_SNR_DB"]} #human noise
-    testData = LRS2(cfg.modal, "test", args["DATA_DIRECTORY"], args["HDF5_FILE"], args["CHAR_TO_INDEX"], args["STEP_SIZE"], False, noiseParams)
+    # modality override. This is important.
+    args["MODAL"] = cfg.modal
+    testData = LRS2(args["MODAL"], "test", args["DATA_DIRECTORY"], args["HDF5_FILE"], args["CHAR_TO_INDEX"], args["STEP_SIZE"], False, noiseParams)
     testLoader = DataLoader(testData, batch_size=cfg.batch_size, collate_fn=collate_fn, shuffle=False, **kwargs)
 
     if cfg.eval_lrs3_model_file is not None:#
