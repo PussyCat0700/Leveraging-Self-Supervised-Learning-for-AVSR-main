@@ -7,7 +7,9 @@ fairseq
 tensorboardX
 pytorch_lightning
 cmake
-dlib
+torchvision
+transformers
+sentencepiece
 h5py
 editdistance
 
