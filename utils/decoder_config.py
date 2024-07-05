@@ -34,11 +34,11 @@
 #         metadata={"help": "If set, use unit language model"},
 #     )
 #     lmpath: str = field(
-#         default='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin',
+#         default='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin',
 #         metadata={"help": "Language model for KenLM decoder"},
 #     )
 #     lexicon: Optional[str] = field(
-#         default='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/plus.lst', #'/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst'
+#         default='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/plus.lst', #'/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst'
 #         metadata={"help": "Lexicon for Flashlight decoder"},
 #     )
 #     beam: int = field(
@@ -74,8 +74,8 @@
 # cfg1={'_name': None, 
 #         'nbest': 1,
 #         'unitlm': False,
-#         'lmpath': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin', 
-#         'lexicon': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst', 
+#         'lmpath': '/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin', 
+#         'lexicon': '/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst', 
 #         'beam': 1500,
 #         'beamthreshold': 100.0,
 #         'beamsizetoken': None,

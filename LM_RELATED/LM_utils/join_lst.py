@@ -1,8 +1,8 @@
 
 from tqdm import tqdm
 
-lexicon1="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst"
-lexicon2="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_trainval.lst"
+lexicon1="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/librispeech_lexicon.lst"
+lexicon2="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_trainval.lst"
 
 dataset="plus"
 object=dataset+".lst"

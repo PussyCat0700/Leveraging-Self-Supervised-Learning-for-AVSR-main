@@ -31,7 +31,7 @@ def main():
     """
         Preparation for model and filelist
     """
-    datadir = args['DATA_DIRECTORY']  #'/home/xcpan/LRS2/mvlrs_v1'
+    datadir = args['DATA_DIRECTORY']  #'/data2/alumni/xcpan/LRS2/mvlrs_v1'
     pretrain_datalist = get_files(datadir, 'pretrain', 'pretrain')
     train_datalist = get_files(datadir, 'train', 'main')
     val_datalist = get_files(datadir, 'val', 'main')

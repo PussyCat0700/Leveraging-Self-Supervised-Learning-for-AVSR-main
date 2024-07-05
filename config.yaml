@@ -1,16 +1,16 @@
 # overall config
 modal: "AO"  # "AO" "VO" "AV"
 batch_size: 2
-eval_lrs3_model_file: "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt"
+eval_lrs3_model_file: "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt"
 decode_type: "HYBRID"  # HYBRID ATTN TFATTN CTC HYBRID_LM FAIRSEQ_LM
 type: fairseqlm #kenlm
-logname: "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/log_test.txt"
+logname: "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/log_test.txt"
 
 # decode config
 nbest: 1
 unitlm: False
-lmpath: /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lm_librispeech_word_transformer.pt #/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin
-lexicon: /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/librispeech_lexicon.lst
+lmpath: /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lm_librispeech_word_transformer.pt #/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin
+lexicon: /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/librispeech_lexicon.lst
 beam: 1500
 beamthreshold: 25.0    #fsqlm: beamthreshold: 25  kenlm:beamthreshold: 100
 beamsizetoken: 

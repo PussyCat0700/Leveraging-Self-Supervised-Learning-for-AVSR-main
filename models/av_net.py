@@ -89,14 +89,14 @@ class AVNet(nn.Module):
         self.jointAttentionOutputConv = outputConv("LN", dModel, numClasses)
 
         #LM
-        #path: /home/gryang/LM_results/LRS23vocab_LibriLRS23_wordpiece/all_checkpoints/drop0.5wd0.01/checkpoint1130.pt
-        path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/checkpoint1130.pt"
-        transformer_ckptprefix="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/"
+        #path: /data2/alumni/gryang/LM_results/LRS23vocab_LibriLRS23_wordpiece/all_checkpoints/drop0.5wd0.01/checkpoint1130.pt
+        path="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/checkpoint1130.pt"
+        transformer_ckptprefix="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/"
         transformer_ckpt="checkpoint1130.pt"
         self.transformer_lm=TransformerLanguageModel.from_pretrained(transformer_ckptprefix, transformer_ckpt)
         
-        #path= /home/gryang/LM_results/LibriLRS23_wordpiecedata/LibriLRS23_vocab4000.json
-        self.bert_tokenizer = Tokenizer.from_file("/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/LibriLRS23_vocab4000.json")
+        #path= /data2/alumni/gryang/LM_results/LibriLRS23_wordpiecedata/LibriLRS23_vocab4000.json
+        self.bert_tokenizer = Tokenizer.from_file("/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/final_lm/LibriLRS23_vocab4000.json")
         return
 
     def subNetForward(self, inputBatch, maskw2v):

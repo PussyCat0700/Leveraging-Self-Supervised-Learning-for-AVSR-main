@@ -2,9 +2,9 @@ export CUDA_VISIBLE_DEVICES=2
 
 python eval.py \
 --type fairseqlm \
---logname /mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lrs3_trans_origin_2_500_1.txt \
---lmpath /mnt/lustre/sjtu/home/gry10/fairseq/language_model/checkpoints/transformer_LRS3/checkpoint_best.pt \
---lexicon /mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/pretrain_trainval.lst \
+--logname /mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lrs3_trans_origin_2_500_1.txt \
+--lmpath /mnt/lustre/sjtu/data2/alumni/gry10/fairseq/language_model/checkpoints/transformer_LRS3/checkpoint_best.pt \
+--lexicon /mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/pretrain_trainval.lst \
 --beamthreshold 25.0 \
 --wordscore 2 \
 --beam 500 \

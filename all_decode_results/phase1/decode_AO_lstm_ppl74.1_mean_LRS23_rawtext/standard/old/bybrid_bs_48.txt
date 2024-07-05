@@ -1,6 +1,6 @@
-2023-01-31 08:42:06,406 - __main__ - INFO - Namespace(batch_size=48, beam=500, beamsizetoken=None, beamthreshold=25.0, decode_type='HYBRID', eval_lrs3_model_file='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt', lexicon='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/debug.txt', modal='AO', nbest=1, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=1)
+2023-01-31 08:42:06,406 - __main__ - INFO - Namespace(batch_size=48, beam=500, beamsizetoken=None, beamthreshold=25.0, decode_type='HYBRID', eval_lrs3_model_file='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt', lexicon='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst', lmpath='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin', lmweight=1, logname='/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/debug.txt', modal='AO', nbest=1, silweight=0, type='kenlm', unitlm=False, unkweight=-inf, wordscore=1)
 2023-01-31 08:42:06,406 - __main__ - INFO - 
-Trained Model File: /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt
+Trained Model File: /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt
 2023-01-31 08:42:06,406 - __main__ - INFO - no noise
 2023-01-31 08:42:21,297 - __main__ - INFO - <All keys matched successfully>
 2023-01-31 08:42:21,531 - __main__ - INFO - 

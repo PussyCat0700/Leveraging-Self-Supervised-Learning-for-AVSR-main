@@ -1,8 +1,8 @@
 from tqdm import tqdm
 from collections import Counter
 index_list=[]
-path="/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_AO_result/decode_hybrid_oracle_bs48.txt"
-path="/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_VO_result/decode_hybird_oracle_48.txt"
+path="/mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_AO_result/decode_hybrid_oracle_bs48.txt"
+path="/mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/decode_VO_result/decode_hybird_oracle_48.txt"
 with open(path,"r") as f:
     lines = f.readlines()
     for line in lines:

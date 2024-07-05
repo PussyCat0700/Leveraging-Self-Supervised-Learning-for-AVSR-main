@@ -19,7 +19,7 @@ def preprocess_sample(file, face_detector, landmark_detector):
     Function to preprocess each data sample.
     """
 
-    videoFile = file + ".mp4"  #'/home/xcpan/LRS2/mvlrs_v1/main/5535415699068794046/00001.mp4'
+    videoFile = file + ".mp4"  #'/data2/alumni/xcpan/LRS2/mvlrs_v1/main/5535415699068794046/00001.mp4'
 
     # for each frame, resize to 224x224 and crop the central 112x112 region
     captureObj = cv.VideoCapture(videoFile)

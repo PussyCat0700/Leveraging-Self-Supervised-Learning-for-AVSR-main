@@ -15,14 +15,14 @@ args["CODE_DIRECTORY"] = ''
 
 
 args["DATA_DIRECTORY"] = "LRS3"
-args["HDF5_FILE"] = "/home/gryang/LRS3/LRS3.h5"
+args["HDF5_FILE"] = "/data2/alumni/gryang/LRS3/LRS3.h5"
 #args["HDF5_FILE"] = "/private_dataset/LRS3.h5"
 
-args["LRW_DATA_DIRECTORY"] = "/home/xcpan/LRW/lipread_mp4"
-args["LRW_HDF5_FILE"] = "/home/xcpan/LRW/LRW_AV.h5"
+args["LRW_DATA_DIRECTORY"] = "/data2/alumni/xcpan/LRW/lipread_mp4"
+args["LRW_HDF5_FILE"] = "/data2/alumni/xcpan/LRW/LRW_AV.h5"
 
-args["NOISE_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS3/Noise.h5"
-args["HUMAN_NOISE_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS3/HumanNoise.h5"
+args["NOISE_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS3/Noise.h5"
+args["HUMAN_NOISE_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS3/HumanNoise.h5"
 
 args["SHAPE_PREDICTOR_FILE"] = "pretrain_model/shape_predictor_68_face_landmarks.dat"
 args["MOCO_FILE"] = "pretrain_model/moco_v2_200ep_pretrain.pth"
@@ -57,12 +57,12 @@ args["NOISE_PROBABILITY"] = 0.25
 args["W2V_FREEZE_EPOCH"] = 40
 args["LRS2_WARMUP_PERIOD"] = 40     # 现在这个optimizer肯定没问题了
 
-args["MOCO_FRONTEND_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/moco_frontend.pt"
-args["WAV2VEC_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/wav2vec_vox_new.pt"
+args["MOCO_FRONTEND_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/moco_frontend.pt"
+args["WAV2VEC_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pretrain_model/wav2vec_vox_new.pt"
 
-args["TRAIN_LRS2_MODEL_FILE"] ="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt" # "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check923/train-step_0184-wer_0.062.ckpt" #"/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check914/train-step_0158-wer_0.064.ckpt" #args["TRAIN_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0140-wer_0.073.ckpt"
-args["TRAINED_AO_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt"
-args["TRAINED_VO_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt"
+args["TRAIN_LRS2_MODEL_FILE"] ="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt" # "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check923/train-step_0184-wer_0.062.ckpt" #"/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check914/train-step_0158-wer_0.064.ckpt" #args["TRAIN_LRS2_MODEL_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0140-wer_0.073.ckpt"
+args["TRAINED_AO_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt"
+args["TRAINED_VO_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_1191-wer_0.674.ckpt"
 
 # Used for evaluation
 args["LAMBDA"] = 0.1
@@ -72,16 +72,16 @@ args["TEST_WITH_NOISE"] = False #True
 args["TEST_NOISE_SNR_DB"] = 10
 args["DECODE_TYPE"] = "FAIRSEQ_LM"  # HYBRID ATTN TFATTN CTC HYBRID_LM FAIRSEQ_LM
 
-#args["EVAL_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/checkpoints/models/train-step_0108-wer_0.058.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check925/train-step_0081-wer_0.058.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] = "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check925/train-step_0107-wer_0.058.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/checkpoints/models/train-step_0108-wer_0.058.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check925/train-step_0081-wer_0.058.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] = "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check925/train-step_0107-wer_0.058.ckpt"
 
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/train-step_0153-wer_0.063.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0105-wer_0.057.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0078-wer_0.057.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0083-wer_0.057.ckpt"
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0101-wer_0.057.ckpt"
-args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/check/train-step_1191-wer_0.674.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/train-step_0153-wer_0.063.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0105-wer_0.057.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0078-wer_0.057.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0083-wer_0.057.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check916/train-step_0101-wer_0.057.ckpt"
+args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneed/check/train-step_1191-wer_0.674.ckpt"
 
 
 """ 

@@ -13,7 +13,7 @@ from .flashlight_decoder import FairseqLMDecoder
 np.seterr(divide="ignore")
 
 #debug    
-#fairseq_dictionary= Dictionary.load('fairseq_dict.ltr.txt') #decoder= KenLMDecoder(cfg, fairseq_dictionary)  #decoder=ViterbiDecoder(dictionary) # npy_path= "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/test.npy" # outputBatch= np.load(npy_path) # outputBatch= torch.from_numpy(outputBatch)   #(2, 1624, 32) # print(outputBatch.shape)
+#fairseq_dictionary= Dictionary.load('fairseq_dict.ltr.txt') #decoder= KenLMDecoder(cfg, fairseq_dictionary)  #decoder=ViterbiDecoder(dictionary) # npy_path= "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/test.npy" # outputBatch= np.load(npy_path) # outputBatch= torch.from_numpy(outputBatch)   #(2, 1624, 32) # print(outputBatch.shape)
 """
 def flash_infer(outputBatch, inputLenBatch, eosIx,cfg,logger, blank=0):   #batch_size=1的版本
     outputBatch = outputBatch.cpu() #(155,48,40) 
@@ -23,7 +23,7 @@ def flash_infer(outputBatch, inputLenBatch, eosIx,cfg,logger, blank=0):   #batch
     reqIxs = reqIxs[reqIxs != eosIx]   #array([0,...,38])
     outputBatch = outputBatch[:, :, reqIxs]   #(152,48,39)    #得加上这些
       
-    dictionary=Dictionary.load('/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/dict.ltr.txt')
+    dictionary=Dictionary.load('/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/dict.ltr.txt')
 
     if cfg.type == "fairseqlm":
         cfg=FlashlightDecoderConfig.from_namespace(cfg)
@@ -111,7 +111,7 @@ def flash_infer_store(outputBatch, inputLenBatch, eosIx, blank=0):   #batch_size
       
     dictionary=Dictionary.load('dict.ltr.txt')
     
-    cfg1={'_name': None, 'nbest': 1, 'unitlm': False, 'lmpath': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin', 'lexicon': '/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/dict.ltr.txt', 'beam': 1500, 'beamthreshold': 100.0, 'beamsizetoken': None, 'wordscore': -1.0, 'unkweight': float('-inf'), 'silweight': 0.0, 'lmweight': 2.0, 'type': 'kenlm', 'unique_wer_file': True, 'results_path': None}
+    cfg1={'_name': None, 'nbest': 1, 'unitlm': False, 'lmpath': '/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/4-gram.bin', 'lexicon': '/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/dict.ltr.txt', 'beam': 1500, 'beamthreshold': 100.0, 'beamsizetoken': None, 'wordscore': -1.0, 'unkweight': float('-inf'), 'silweight': 0.0, 'lmweight': 2.0, 'type': 'kenlm', 'unique_wer_file': True, 'results_path': None}
     cfg=FlashlightDecoderConfig(cfg1)  #nb 直接猜出用法哈哈哈 其实是不对的 直接改了default
     
     decoder= KenLMDecoder(cfg, dictionary)   #(155,10,39)  需要B T N 

@@ -1,7 +1,7 @@
 from tqdm import tqdm
 
-lexicon1="/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/librispeech_lexicon.lst"
-lexicon2="/mnt/lustre/sjtu/home/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst"
+lexicon1="/mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/librispeech_lexicon.lst"
+lexicon2="/mnt/lustre/sjtu/data2/alumni/gry10/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst"
 
 
 dataset="23plus"

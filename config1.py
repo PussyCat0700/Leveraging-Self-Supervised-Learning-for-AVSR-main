@@ -13,16 +13,16 @@ args["CODE_DIRECTORY"] = ''
 # args["SHAPE_PREDICTOR_FILE"] = "../pretrain_model/shape_predictor_68_face_landmarks.dat"
 # args["MOCO_FILE"] = "../pretrain_model/moco_v2_200ep_pretrain.pth"
 
-#args["DATA_DIRECTORY"] = "/home/xcpan/LRS2/mvlrs_v1"
-#args["DATA_DIRECTORY"] = "/home/gryang/LRS3"
+#args["DATA_DIRECTORY"] = "/data2/alumni/xcpan/LRS2/mvlrs_v1"
+#args["DATA_DIRECTORY"] = "/data2/alumni/gryang/LRS3"
 args["DATA_DIRECTORY"] = "LRS3"
-#args["HDF5_FILE"] = "/home/xcpan/LRS2/mvlrs_v1/LRS2.h5"
-#args["HDF5_FILE"] = "/home/gryang/LRS3.h5"
+#args["HDF5_FILE"] = "/data2/alumni/xcpan/LRS2/mvlrs_v1/LRS2.h5"
+#args["HDF5_FILE"] = "/data2/alumni/gryang/LRS3.h5"
 args["HDF5_FILE"] = "/private_dataset/LRS3.h5"
 #args["HDF5_FILE"] = "LRS3/LRS3.h5"
 
-args["LRW_DATA_DIRECTORY"] = "/home/xcpan/LRW/lipread_mp4"
-args["LRW_HDF5_FILE"] = "/home/xcpan/LRW/LRW_AV.h5"
+args["LRW_DATA_DIRECTORY"] = "/data2/alumni/xcpan/LRW/lipread_mp4"
+args["LRW_HDF5_FILE"] = "/data2/alumni/xcpan/LRW/LRW_AV.h5"
 
 # args["NOISE_FILE"] = "LRS2/mvlrs_v1/Noise.h5"
 # args["HUMAN_NOISE_FILE"] = "LRS2/mvlrs_v1/HumanNoise.h5"
@@ -67,7 +67,7 @@ args["LRS2_WARMUP_PERIOD"] = 40     # 现在这个optimizer肯定没问题了
 # args["WAV2VEC_FILE"] = "../pretrain_model/wav2vec_vox_new.pt"
 args["MOCO_FRONTEND_FILE"] = "pretrain_model/moco_frontend.pt"
 args["WAV2VEC_FILE"] = "pretrain_model/wav2vec_vox_new.pt"
-args["TRAIN_LRS2_MODEL_FILE"] =None # "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0079-wer_0.109.ckpt"
+args["TRAIN_LRS2_MODEL_FILE"] =None # "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0079-wer_0.109.ckpt"
 args["TRAINED_AO_FILE"] = "check/train-step_0604-wer_0.054.ckpt"
 args["TRAINED_VO_FILE"] = "check/train-step_1191-wer_0.674.ckpt"
 
@@ -77,9 +77,9 @@ args["BEAM_WIDTH"] = 5
 args["TEST_WITH_NOISE"] = False
 args["TEST_NOISE_SNR_DB"] = 5
 args["DECODE_TYPE"] = "HYBRID"  # HYBRID ATTN TFATTN CTC
-#args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_1191-wer_0.674.ckpt"
+#args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_1191-wer_0.674.ckpt"
 
-args["EVAL_LRS2_MODEL_FILE"] =  "/home/gryang/train-step_0153-wer_0.063.ckpt"
+args["EVAL_LRS2_MODEL_FILE"] =  "/data2/alumni/gryang/train-step_0153-wer_0.063.ckpt"
 
 """
     =====Default Parameters=====

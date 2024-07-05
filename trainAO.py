@@ -35,7 +35,7 @@ class LRS2Lightning(pl.LightningDataModule):
 
     def setup(self, stage):
         if stage == "fit" or stage is None:
-            noiseParams = {"noiseFile": args["NOISE_FILE"], "noiseProb": args["NOISE_PROBABILITY"], "noiseSNR": args["NOISE_SNR_DB"]}   #'/home/xcpan/LRS2/mvlrs_v1/Noise.h5'  0.25 5
+            noiseParams = {"noiseFile": args["NOISE_FILE"], "noiseProb": args["NOISE_PROBABILITY"], "noiseSNR": args["NOISE_SNR_DB"]}   #'/data2/alumni/xcpan/LRS2/mvlrs_v1/Noise.h5'  0.25 5
             self.trainData = LRS2(args['MODAL'], "train", args["DATA_DIRECTORY"], args["HDF5_FILE"], args["CHAR_TO_INDEX"], args["STEP_SIZE"],
                                   True, noiseParams)
 
@@ -61,7 +61,7 @@ class LRS2Lightning(pl.LightningDataModule):
 class AVNet(pl.LightningModule):
 
     def __init__(self, modal, W2Vfile, MoCofile, reqInpLen, modelargs):
-        super(AVNet, self).__init__()   #' W2Vfile: /home/xcpan/pretrain_model/wav2vec_vox_new.pt'  'MoCofile: /home/xcpan/pretrain_model/moco_frontend.pt'
+        super(AVNet, self).__init__()   #' W2Vfile: /data2/alumni/xcpan/pretrain_model/wav2vec_vox_new.pt'  'MoCofile: /data2/alumni/xcpan/pretrain_model/moco_frontend.pt'
 
         self.trainParams = {"spaceIx": args["CHAR_TO_INDEX"][" "], "eosIx": args["CHAR_TO_INDEX"]["<EOS>"], "modal": args["MODAL"],
                             "Alpha": args["ALPHA"]}   #{'spaceIx': 1, 'eosIx': 39, 'modal': 'AV', 'Alpha': 0.2}
@@ -466,12 +466,12 @@ def main():
                  args["VIDEO_FEATURE_SIZE"], args["TX_FEEDFORWARD_DIM"], args["TX_DROPOUT"], args["CHAR_NUM_CLASSES"])   #(512, 8, 6, 500, 1024, 2048, 2048, 0.1, 40)
     model = AVNet(args['MODAL'], args['WAV2VEC_FILE'], args['MOCO_FRONTEND_FILE'], args["MAIN_REQ_INPUT_LENGTH"], modelargs)
 
-    # model = AVNet.load_from_checkpoint(checkpoint_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0078-wer_0.142.ckpt",
+    # model = AVNet.load_from_checkpoint(checkpoint_path="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0078-wer_0.142.ckpt",
                                      # modal=args['MODAL'],W2Vfile=args['WAV2VEC_FILE'], MoCofile= args['MOCO_FRONTEND_FILE'],reqInpLen=args["MAIN_REQ_INPUT_LENGTH"], modelargs=modelargs )
-    #model = AVNet.load_from_checkpoint(checkpoint_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0001-wer_1.000.ckpt")
+    #model = AVNet.load_from_checkpoint(checkpoint_path="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0001-wer_1.000.ckpt")
 
 
-    #checkpoint = torch.load("/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0079-wer_0.109.ckpt")
+    #checkpoint = torch.load("/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0079-wer_0.109.ckpt")
     #model.load_state_dict(checkpoint['model_state_dict'])
 
     # loading the pretrained weights
@@ -533,7 +533,7 @@ def main():
 
 
     #trainer.fit(model, LRS2Dataloader)
-    trainer.fit(model, LRS2Dataloader,ckpt_path="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0020-wer_0.992.ckpt")
+    trainer.fit(model, LRS2Dataloader,ckpt_path="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/train-step_0020-wer_0.992.ckpt")
     return
 
 

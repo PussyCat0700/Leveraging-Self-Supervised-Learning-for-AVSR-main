@@ -74,7 +74,7 @@ def prepare_pretrain_input(index, modal, h5, targetFile, charToIx, transform, no
     # reading the whole target file and the target
     #print(targetFile)
     #print(index)
-    # targetFile="/home/gryang/LRS3/pretrain/HdHW77blulg/00006.txt"
+    # targetFile="/data2/alumni/gryang/LRS3/pretrain/HdHW77blulg/00006.txt"
     # index=99639
 
     #print("start debug!")

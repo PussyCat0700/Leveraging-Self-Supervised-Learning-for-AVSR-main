@@ -14,10 +14,10 @@ def get_files(datadir, dataset, fold):
     return datalist
 
 def get_files1(datadir, dataset, fold):
-    with open("/home/gryang/"+datadir + "/" + dataset + ".txt", "r") as f:
+    with open("/data2/alumni/gryang/"+datadir + "/" + dataset + ".txt", "r") as f:
         lines = f.readlines()
     #datalist = [datadir + "/" + fold + "/" + line.strip().split(" ")[0] for line in lines]
-    datalist = ["/home/gryang/"+ line.strip().split(" ")[0][3:] for line in lines]
+    datalist = ["/data2/alumni/gryang/"+ line.strip().split(" ")[0][3:] for line in lines]
     #datalist = [ line.strip().split(" ")[0][3:] for line in lines]
     # print(datalist[0])
     # exit(0)
@@ -33,9 +33,9 @@ class LRS2(Dataset):
         super(LRS2, self).__init__()
         self.modal = modal
                                     #第二个 ../LRS3/trainval/00j9bKdiOjk/50001'
-        self.dataset = dataset    #第二个是从train.txt里读的，'/home/xcpan/LRS2/mvlrs_v1/main/5535415699068794046/00001'
-        if self.dataset == "train":  #../LRS3/pretrain/WQG8EJTY48M/00016  '/home/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00001'
-            self.datalist = get_files1(datadir, 'pretrain', 'pretrain')  + get_files1(datadir, 'train', 'main')   #[list:142157: ['/home/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00001', '/home/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00002',
+        self.dataset = dataset    #第二个是从train.txt里读的，'/data2/alumni/xcpan/LRS2/mvlrs_v1/main/5535415699068794046/00001'
+        if self.dataset == "train":  #../LRS3/pretrain/WQG8EJTY48M/00016  '/data2/alumni/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00001'
+            self.datalist = get_files1(datadir, 'pretrain', 'pretrain')  + get_files1(datadir, 'train', 'main')   #[list:142157: ['/data2/alumni/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00001', '/data2/alumni/xcpan/LRS2/mvlrs_v1/pretrain/5535415699068794046/00002',
             #self.datalist = get_files1(datadir, 'pretrain', 'pretrain') + get_files1(datadir, 'train', 'main')
         elif self.dataset == "val":
             self.datalist = get_files1(datadir, 'val', 'main')  #'../LRS3/trainval/0GL5r3HVAZ0/50013'
@@ -43,8 +43,8 @@ class LRS2(Dataset):
             self.dataset = "test"
             self.datalist = get_files1(datadir, 'test', 'main')
 
-        self.h5file = h5file   #'/home/xcpan/LRS3.h5'
-        with h5py.File(noiseParams["noiseFile"], "r") as f:  #{'noiseFile': '/home/xcpan/LRS2/mvlrs_v1/Noise.h5', 'noiseProb': 0.25, 'noiseSNR': 5}
+        self.h5file = h5file   #'/data2/alumni/xcpan/LRS3.h5'
+        with h5py.File(noiseParams["noiseFile"], "r") as f:  #{'noiseFile': '/data2/alumni/xcpan/LRS2/mvlrs_v1/Noise.h5', 'noiseProb': 0.25, 'noiseSNR': 5}
             self.noise = f["noise"][0]  #ndarray:57600000
         self.noiseSNR = noiseParams["noiseSNR"]
         self.noiseProb = noiseParams["noiseProb"]

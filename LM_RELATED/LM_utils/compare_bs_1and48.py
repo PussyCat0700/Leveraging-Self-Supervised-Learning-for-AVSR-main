@@ -1,7 +1,7 @@
 # compare batchsize_1 and batch_size 48
 
-bs1="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pred_HYBRID_1.txt"
-bs48="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pred_HYBRID_48.txt"
+bs1="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pred_HYBRID_1.txt"
+bs48="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/pred_HYBRID_48.txt"
 with open(bs1, 'r') as f:
     lines1 = f.readlines()
 

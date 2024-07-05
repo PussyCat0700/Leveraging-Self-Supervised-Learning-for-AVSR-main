@@ -17,18 +17,18 @@ def main():
     parser = argparse.ArgumentParser(description='common config')
     parser.add_argument('--modal', choices=['AO', 'VO', 'AV'],default='AO')
     parser.add_argument('--batch_size', type=int,default=1)
-    parser.add_argument('--eval_lrs3_model_file', type=str,default="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt")
+    parser.add_argument('--eval_lrs3_model_file', type=str,default="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/check/train-step_0604-wer_0.054.ckpt")
     parser.add_argument('--decode_type', choices=['HYBRID_RESCORE','HYBRID','HYBRID_SHALLOW_FUSION','ATTN', 'TFATTN' ,'CTC','FAIRSEQ_LM','HYBRID_ORACLE'],default='HYBRID')
     parser.add_argument('--type', choices=['fairseqlm', 'kenlm'],default='kenlm')
-    parser.add_argument('--logname', type=str,default= "/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/debug.txt")
+    parser.add_argument('--logname', type=str,default= "/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/debug.txt")
     parser.add_argument('--beta', type=float,default=0.1)
     parser.add_argument('--beamWidth', type=int,default=5)        
     parser.add_argument('--nbest', type=int,default=30)       
     
     #decode config
     parser.add_argument('--unitlm', type=bool,default=False)
-    parser.add_argument('--lmpath', type=str,default="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin") #4-gram.bin
-    parser.add_argument('--lexicon', type=str,default="/home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst") #4-gram.bin
+    parser.add_argument('--lmpath', type=str,default="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin") #4-gram.bin
+    parser.add_argument('--lexicon', type=str,default="/data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst") #4-gram.bin
     parser.add_argument('--beam', type=int,default=500)
     parser.add_argument('--beamthreshold', type=float,default=100.0 )  #fsqlm: beamthreshold: 25  kenlm:beamthreshold: 100
     parser.add_argument('--beamsizetoken',default=None )

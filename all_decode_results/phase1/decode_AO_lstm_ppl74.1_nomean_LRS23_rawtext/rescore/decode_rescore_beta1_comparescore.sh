@@ -3,9 +3,9 @@ export CUDA_VISIBLE_DEVICES=1
 python eval.py \
 --decode_type HYBRID_RESCORE \
 --type kenlm \
---logname /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneeds/decode_rescore_beta1_comparescore.txt \
---lmpath /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin \
---lexicon /home/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst \
+--logname /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main_noneeds/decode_rescore_beta1_comparescore.txt \
+--lmpath /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/LRS23_4gram.bin \
+--lexicon /data2/alumni/gryang/Leveraging-Self-Supervised-Learning-for-AVSR-main/lst/LRS23.lst \
 --beam 500 \
 --beamthreshold 25.0 \
 --wordscore 1 \
